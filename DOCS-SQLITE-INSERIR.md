@@ -15,6 +15,7 @@ npm list sqlite3
 ```
 
 **Saída esperada:**
+
 ```
 portal-noticias@1.0.0 /home/nathalia/Desktop/Portal
 └── sqlite3@5.1.7
@@ -53,16 +54,16 @@ CREATE TABLE IF NOT EXISTS noticias (
 
 #### Campos da Tabela:
 
-| Campo | Tipo | Obrigatório | Descrição |
-|-------|------|-------------|-----------|
-| `id` | INTEGER | Sim (Auto) | Identificador único (gerado automaticamente) |
-| `titulo` | TEXT | **Sim** | Título principal da notícia |
-| `subtitulo` | TEXT | Não | Subtítulo ou linha de apoio |
-| `conteudo` | TEXT | **Sim** | Texto completo da notícia |
-| `imagem_url` | TEXT | Não | URL ou caminho da imagem de capa |
-| `video_url` | TEXT | Não | URL de vídeo relacionado (YouTube, etc) |
-| `data_publicacao` | DATETIME | Sim (Auto) | Data/hora de criação (automático) |
-| `autor` | TEXT | **Sim** | Nome do autor da notícia |
+| Campo             | Tipo     | Obrigatório | Descrição                                    |
+| ----------------- | -------- | ----------- | -------------------------------------------- |
+| `id`              | INTEGER  | Sim (Auto)  | Identificador único (gerado automaticamente) |
+| `titulo`          | TEXT     | **Sim**     | Título principal da notícia                  |
+| `subtitulo`       | TEXT     | Não         | Subtítulo ou linha de apoio                  |
+| `conteudo`        | TEXT     | **Sim**     | Texto completo da notícia                    |
+| `imagem_url`      | TEXT     | Não         | URL ou caminho da imagem de capa             |
+| `video_url`       | TEXT     | Não         | URL de vídeo relacionado (YouTube, etc)      |
+| `data_publicacao` | DATETIME | Sim (Auto)  | Data/hora de criação (automático)            |
+| `autor`           | TEXT     | **Sim**     | Nome do autor da notícia                     |
 
 ---
 
@@ -71,18 +72,18 @@ CREATE TABLE IF NOT EXISTS noticias (
 ### 1. Conexão com o Banco de Dados
 
 ```javascript
-const sqlite3 = require('sqlite3').verbose();
-const path = require('path');
+const sqlite3 = require("sqlite3").verbose();
+const path = require("path");
 
 // Caminho do arquivo do banco
-const dbPath = path.join(__dirname, 'noticias.db');
+const dbPath = path.join(__dirname, "noticias.db");
 
 // Conectar ao banco (cria o arquivo se não existir)
 const database = new sqlite3.Database(dbPath, (err) => {
   if (err) {
-    console.error('❌ Erro ao conectar:', err.message);
+    console.error("❌ Erro ao conectar:", err.message);
   } else {
-    console.log('✅ Conectado ao banco de dados SQLite');
+    console.log("✅ Conectado ao banco de dados SQLite");
   }
 });
 ```
@@ -90,6 +91,7 @@ const database = new sqlite3.Database(dbPath, (err) => {
 ### 2. Função inserirNoticia(dados)
 
 #### Localização no Código
+
 - **Arquivo:** `server.js` (linhas 42-89)
 - **Tipo:** Função assíncrona (retorna Promise)
 - **Uso:** Inserir nova notícia no banco de dados
@@ -100,21 +102,28 @@ const database = new sqlite3.Database(dbPath, (err) => {
 function inserirNoticia(dados) {
   return new Promise((resolve, reject) => {
     const { titulo, subtitulo, conteudo, imagem_url, video_url, autor } = dados;
-    
+
     // SQL com prepared statements
     const sql = `INSERT INTO noticias (titulo, subtitulo, conteudo, imagem_url, video_url, autor, data_publicacao)
                  VALUES (?, ?, ?, ?, ?, ?, datetime('now'))`;
-    
-    const params = [titulo, subtitulo || '', conteudo, imagem_url || '', video_url || '', autor];
-    
-    database.run(sql, params, function(err) {
+
+    const params = [
+      titulo,
+      subtitulo || "",
+      conteudo,
+      imagem_url || "",
+      video_url || "",
+      autor,
+    ];
+
+    database.run(sql, params, function (err) {
       if (err) {
         reject(err);
       } else {
         resolve({
           id: this.lastID,
-          message: 'Notícia criada com sucesso',
-          titulo: titulo
+          message: "Notícia criada com sucesso",
+          titulo: titulo,
         });
       }
     });
@@ -126,12 +135,12 @@ function inserirNoticia(dados) {
 
 ```javascript
 const dados = {
-  titulo: "Título da Notícia",           // Obrigatório
-  subtitulo: "Subtítulo opcional",       // Opcional
-  conteudo: "Texto completo...",         // Obrigatório
-  imagem_url: "/uploads/imagem.jpg",     // Opcional
-  video_url: "https://youtube.com/...",  // Opcional
-  autor: "Nome do Autor"                 // Obrigatório
+  titulo: "Título da Notícia", // Obrigatório
+  subtitulo: "Subtítulo opcional", // Opcional
+  conteudo: "Texto completo...", // Obrigatório
+  imagem_url: "/uploads/imagem.jpg", // Opcional
+  video_url: "https://youtube.com/...", // Opcional
+  autor: "Nome do Autor", // Obrigatório
 };
 ```
 
@@ -183,10 +192,11 @@ database.run(sql, [titulo], callback);
 **URL:** `http://localhost:3001/admin/noticias/nova`
 
 **Rota Backend:**
+
 ```javascript
 // src/admin.js
-router.get('/noticias/nova', (req, res) => {
-  res.render('admin-nova-noticia', { noticia: null, erro: null });
+router.get("/noticias/nova", (req, res) => {
+  res.render("admin-nova-noticia", { noticia: null, erro: null });
 });
 ```
 
@@ -197,15 +207,16 @@ router.get('/noticias/nova', (req, res) => {
 ### 2. Usuário Preenche e Envia o Formulário
 
 **Formulário (admin-nova-noticia.ejs):**
+
 ```html
 <form method="POST" action="/admin/noticias/nova" enctype="multipart/form-data">
-  <input type="text" name="titulo" required>
-  <input type="text" name="subtitulo">
+  <input type="text" name="titulo" required />
+  <input type="text" name="subtitulo" />
   <textarea name="conteudo" required></textarea>
-  <input type="file" name="imagem" accept="image/*">
-  <input type="text" name="imagem_url">
-  <input type="text" name="video_url">
-  <input type="text" name="autor" required>
+  <input type="file" name="imagem" accept="image/*" />
+  <input type="text" name="imagem_url" />
+  <input type="text" name="video_url" />
+  <input type="text" name="autor" required />
   <button type="submit">Salvar Notícia</button>
 </form>
 ```
@@ -219,44 +230,44 @@ router.get('/noticias/nova', (req, res) => {
 **Rota Backend (src/admin.js):**
 
 ```javascript
-router.post('/noticias/nova', upload.single('imagem'), async (req, res) => {
+router.post("/noticias/nova", upload.single("imagem"), async (req, res) => {
   try {
     // 1. Extrair dados do formulário (req.body)
-    const { titulo, subtitulo, conteudo, imagem_url, video_url, autor } = req.body;
-    
+    const { titulo, subtitulo, conteudo, imagem_url, video_url, autor } =
+      req.body;
+
     // 2. Validar campos obrigatórios
     if (!titulo || !conteudo || !autor) {
-      return res.render('admin-nova-noticia', { 
-        noticia: req.body, 
-        erro: 'Título, conteúdo e autor são obrigatórios' 
+      return res.render("admin-nova-noticia", {
+        noticia: req.body,
+        erro: "Título, conteúdo e autor são obrigatórios",
       });
     }
-    
+
     // 3. Processar upload de imagem (se houver)
-    let imagemFinal = imagem_url || '';
+    let imagemFinal = imagem_url || "";
     if (req.file) {
-      imagemFinal = '/uploads/' + req.file.filename;
+      imagemFinal = "/uploads/" + req.file.filename;
     }
-    
+
     // 4. Chamar função para inserir no banco
     const resultado = await db.createNoticia({
       titulo,
-      subtitulo: subtitulo || '',
+      subtitulo: subtitulo || "",
       conteudo,
       imagem_url: imagemFinal,
-      video_url: video_url || '',
-      autor
+      video_url: video_url || "",
+      autor,
     });
-    
+
     // 5. Redirecionar para lista de notícias
     console.log(`✅ Notícia criada com ID: ${resultado.id}`);
-    res.redirect('/admin/noticias?sucesso=true');
-    
+    res.redirect("/admin/noticias?sucesso=true");
   } catch (error) {
-    console.error('Erro ao criar notícia:', error);
-    res.render('admin-nova-noticia', { 
-      noticia: req.body, 
-      erro: 'Erro ao criar notícia. Tente novamente.' 
+    console.error("Erro ao criar notícia:", error);
+    res.render("admin-nova-noticia", {
+      noticia: req.body,
+      erro: "Erro ao criar notícia. Tente novamente.",
     });
   }
 });
@@ -271,14 +282,15 @@ router.post('/noticias/nova', upload.single('imagem'), async (req, res) => {
 ```javascript
 const createNoticia = (noticia) => {
   return new Promise((resolve, reject) => {
-    const { titulo, subtitulo, conteudo, imagem_url, video_url, autor } = noticia;
-    
+    const { titulo, subtitulo, conteudo, imagem_url, video_url, autor } =
+      noticia;
+
     // Prepared statement: usa placeholders (?) para segurança
     db.run(
       `INSERT INTO noticias (titulo, subtitulo, conteudo, imagem_url, video_url, autor)
        VALUES (?, ?, ?, ?, ?, ?)`,
       [titulo, subtitulo, conteudo, imagem_url, video_url, autor],
-      function(err) {
+      function (err) {
         if (err) {
           reject(err);
         } else {
@@ -295,16 +307,19 @@ const createNoticia = (noticia) => {
 ### 5. Notícia Inserida com Sucesso
 
 **Console Output:**
+
 ```
 ✅ Notícia criada com ID: 1
 ```
 
 **Redirecionamento:**
+
 ```
 → http://localhost:3001/admin/noticias?sucesso=true
 ```
 
 **Mensagem na Interface:**
+
 ```
 ✅ Notícia criada com sucesso!
 ```
@@ -329,6 +344,7 @@ curl -X POST http://localhost:3001/api/noticias/criar \
 ```
 
 **Resposta Esperada:**
+
 ```json
 {
   "id": 5,
@@ -346,6 +362,7 @@ node test-inserir-noticia.js
 ```
 
 **Saída Esperada:**
+
 ```
 ✅ Conectado ao banco de dados SQLite
 
@@ -400,35 +417,35 @@ SELECT * FROM noticias ORDER BY id DESC LIMIT 1;
 
 ### No server.js
 
-| Função | Descrição | Retorno |
-|--------|-----------|---------|
-| `inserirNoticia(dados)` | Insere nova notícia | `Promise<{id, message, titulo}>` |
-| `listarNoticias(limite)` | Lista N notícias recentes | `Promise<Array<Noticia>>` |
+| Função                   | Descrição                 | Retorno                          |
+| ------------------------ | ------------------------- | -------------------------------- |
+| `inserirNoticia(dados)`  | Insere nova notícia       | `Promise<{id, message, titulo}>` |
+| `listarNoticias(limite)` | Lista N notícias recentes | `Promise<Array<Noticia>>`        |
 
 ### No src/database.js
 
-| Função | Descrição | Retorno |
-|--------|-----------|---------|
-| `init()` | Cria tabela se não existir | `Promise<void>` |
-| `createNoticia(dados)` | Insere notícia (similar a inserirNoticia) | `Promise<{id}>` |
-| `getAllNoticias()` | Lista todas as notícias | `Promise<Array>` |
-| `getLatestNoticias(limit)` | Lista N notícias recentes | `Promise<Array>` |
-| `getNoticiaById(id)` | Busca notícia por ID | `Promise<Noticia>` |
-| `updateNoticia(id, dados)` | Atualiza notícia existente | `Promise<{changes}>` |
-| `deleteNoticia(id)` | Remove notícia | `Promise<{changes}>` |
+| Função                     | Descrição                                 | Retorno              |
+| -------------------------- | ----------------------------------------- | -------------------- |
+| `init()`                   | Cria tabela se não existir                | `Promise<void>`      |
+| `createNoticia(dados)`     | Insere notícia (similar a inserirNoticia) | `Promise<{id}>`      |
+| `getAllNoticias()`         | Lista todas as notícias                   | `Promise<Array>`     |
+| `getLatestNoticias(limit)` | Lista N notícias recentes                 | `Promise<Array>`     |
+| `getNoticiaById(id)`       | Busca notícia por ID                      | `Promise<Noticia>`   |
+| `updateNoticia(id, dados)` | Atualiza notícia existente                | `Promise<{changes}>` |
+| `deleteNoticia(id)`        | Remove notícia                            | `Promise<{changes}>` |
 
 ---
 
 ## 🚀 Rotas Administrativas
 
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| GET | `/admin/noticias` | Lista todas as notícias |
-| GET | `/admin/noticias/nova` | Formulário de nova notícia |
-| **POST** | **`/admin/noticias/nova`** | **Salva nova notícia (usa inserirNoticia)** |
-| GET | `/admin/noticias/editar/:id` | Formulário de edição |
-| POST | `/admin/noticias/editar/:id` | Atualiza notícia |
-| POST | `/admin/noticias/deletar/:id` | Remove notícia |
+| Método   | Rota                          | Descrição                                   |
+| -------- | ----------------------------- | ------------------------------------------- |
+| GET      | `/admin/noticias`             | Lista todas as notícias                     |
+| GET      | `/admin/noticias/nova`        | Formulário de nova notícia                  |
+| **POST** | **`/admin/noticias/nova`**    | **Salva nova notícia (usa inserirNoticia)** |
+| GET      | `/admin/noticias/editar/:id`  | Formulário de edição                        |
+| POST     | `/admin/noticias/editar/:id`  | Atualiza notícia                            |
+| POST     | `/admin/noticias/deletar/:id` | Remove notícia                              |
 
 ---
 
@@ -459,6 +476,7 @@ O sistema está **100% funcional** e pronto para uso:
 5. ✅ Sistema completo de CRUD (Create, Read, Update, Delete)
 
 **Para criar uma notícia:**
+
 1. Acesse: `http://localhost:3001/admin/noticias/nova`
 2. Preencha o formulário
 3. Clique em "Salvar Notícia"
@@ -481,4 +499,4 @@ Se encontrar algum erro:
 
 ---
 
-*Documentação gerada em: 27 de Novembro de 2025*
+_Documentação gerada em: 27 de Novembro de 2025_

@@ -1,7 +1,8 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbPath = path.join(__dirname, '..', 'noticias.db');
+// Conectar ao banco de dados jornal_maraba.sqlite
+const dbPath = path.join(__dirname, '..', 'jornal_maraba.sqlite');
 const db = new sqlite3.Database(dbPath);
 
 // Inicializar banco de dados

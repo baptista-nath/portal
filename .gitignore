@@ -1,0 +1,10 @@
+node_modules/
+*.db
+*.sqlite
+*.sqlite3
+jornal_maraba.sqlite
+noticias.db
+.env
+.DS_Store
+public/uploads/*
+!public/uploads/.gitkeep

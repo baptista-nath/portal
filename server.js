@@ -3,6 +3,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
 const multer = require("multer");
+const session = require("express-session");
+const bcrypt = require("bcrypt");
 const db = require("./src/database");
 const adminRoutes = require("./src/admin");
 
@@ -289,6 +291,34 @@ app.set("views", path.join(__dirname, "views"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// ============================================
+// CONFIGURAÇÃO DE SESSÃO (EXPRESS-SESSION)
+// ============================================
+app.use(session({
+  secret: 'portal-noticias-secret-key-2025', // Chave secreta forte
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24, // 24 horas
+    httpOnly: true,
+    secure: false // Mude para true em produção com HTTPS
+  }
+}));
+
+// ============================================
+// MIDDLEWARE DE AUTENTICAÇÃO
+// ============================================
+function checkAuth(req, res, next) {
+  if (req.session && req.session.user_id) {
+    // Usuário está autenticado
+    return next();
+  } else {
+    // Usuário não autenticado, redirecionar para login
+    console.log('⛔ Acesso negado - Redirecionando para login');
+    return res.redirect('/login');
+  }
+}
+
 // Rotas principais
 // Rota Home - Renderiza template EJS com notícias do banco de dados
 app.get("/", async (req, res) => {
@@ -377,8 +407,134 @@ app.post("/api/noticias/criar", async (req, res) => {
   }
 });
 
-// Rotas administrativas
-app.use("/admin", adminRoutes);
+// ============================================
+// ROTAS DE AUTENTICAÇÃO
+// ============================================
+
+// Rota GET /login - Exibe formulário de login
+app.get("/login", (req, res) => {
+  if (req.session && req.session.user_id) {
+    // Se já está logado, redireciona para admin
+    return res.redirect('/admin/noticias');
+  }
+  res.render("login", { erro: null });
+});
+
+// Rota POST /login - Processa login
+app.post("/login", async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    console.log('\n🔐 === TENTATIVA DE LOGIN ===');
+    console.log(`👤 Username: ${username}`);
+    
+    // Validação básica
+    if (!username || !password) {
+      console.log('❌ Campos vazios');
+      return res.render("login", { erro: "Preencha usuário e senha" });
+    }
+    
+    // Buscar usuário no banco
+    const sql = `SELECT * FROM usuarios WHERE username = ?`;
+    database.get(sql, [username], async (err, user) => {
+      if (err) {
+        console.error('❌ Erro ao buscar usuário:', err);
+        return res.render("login", { erro: "Erro ao fazer login" });
+      }
+      
+      if (!user) {
+        console.log('❌ Usuário não encontrado');
+        return res.render("login", { erro: "Usuário ou senha inválidos" });
+      }
+      
+      // Verificar senha com bcrypt
+      const senhaCorreta = await bcrypt.compare(password, user.password);
+      
+      if (!senhaCorreta) {
+        console.log('❌ Senha incorreta');
+        return res.render("login", { erro: "Usuário ou senha inválidos" });
+      }
+      
+      // Login bem-sucedido
+      req.session.user_id = user.id;
+      req.session.username = user.username;
+      
+      console.log(`✅ Login bem-sucedido! User ID: ${user.id}`);
+      console.log('='.repeat(50));
+      
+      res.redirect('/admin/noticias');
+    });
+  } catch (error) {
+    console.error('❌ Erro no login:', error);
+    res.render("login", { erro: "Erro ao fazer login" });
+  }
+});
+
+// Rota GET /logout - Destrói sessão
+app.get("/logout", (req, res) => {
+  console.log('\n👋 === LOGOUT ===');
+  console.log(`User ID: ${req.session.user_id}`);
+  
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('❌ Erro ao fazer logout:', err);
+    } else {
+      console.log('✅ Logout realizado com sucesso');
+    }
+    res.redirect('/login');
+  });
+});
+
+// Rota /admin/setup-user - Criar primeiro usuário admin
+app.get("/admin/setup-user", async (req, res) => {
+  try {
+    // Verificar se já existe algum usuário
+    const checkSql = `SELECT COUNT(*) as count FROM usuarios`;
+    database.get(checkSql, async (err, result) => {
+      if (err) {
+        return res.status(500).send("Erro ao verificar usuários");
+      }
+      
+      if (result.count > 0) {
+        return res.send("❌ Já existe um usuário cadastrado. Use /login para acessar.");
+      }
+      
+      // Criar usuário admin padrão
+      const username = "admin";
+      const password = "admin123"; // ALTERAR EM PRODUÇÃO!
+      const hashedPassword = await bcrypt.hash(password, 10);
+      
+      const insertSql = `INSERT INTO usuarios (username, password) VALUES (?, ?)`;
+      database.run(insertSql, [username, hashedPassword], function(err) {
+        if (err) {
+          console.error('❌ Erro ao criar usuário:', err);
+          return res.status(500).send("Erro ao criar usuário");
+        }
+        
+        console.log('\n✅ === USUÁRIO ADMIN CRIADO ===');
+        console.log(`👤 Username: ${username}`);
+        console.log(`🔑 Password: ${password}`);
+        console.log(`🆔 ID: ${this.lastID}`);
+        console.log('⚠️  IMPORTANTE: Altere a senha após o primeiro login!');
+        console.log('='.repeat(50));
+        
+        res.send(`
+          <h1>✅ Usuário Admin Criado!</h1>
+          <p><strong>Username:</strong> ${username}</p>
+          <p><strong>Password:</strong> ${password}</p>
+          <p><strong>IMPORTANTE:</strong> Altere a senha após o primeiro login!</p>
+          <a href="/login">Fazer Login</a>
+        `);
+      });
+    });
+  } catch (error) {
+    console.error('❌ Erro no setup:', error);
+    res.status(500).send("Erro ao criar usuário");
+  }
+});
+
+// Rotas administrativas (PROTEGIDAS COM AUTENTICAÇÃO)
+app.use("/admin", checkAuth, adminRoutes);
 
 // Inicializar banco de dados e servidor
 db.init()

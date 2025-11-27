@@ -9,6 +9,7 @@ const db = new sqlite3.Database(dbPath);
 const init = () => {
   return new Promise((resolve, reject) => {
     db.serialize(() => {
+      // Criar tabela de notícias
       db.run(`
         CREATE TABLE IF NOT EXISTS noticias (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,11 +23,28 @@ const init = () => {
         )
       `, (err) => {
         if (err) {
-          reject(err);
-        } else {
-          console.log('✅ Banco de dados inicializado com sucesso');
-          resolve();
+          console.error('❌ Erro ao criar tabela noticias:', err);
+          return reject(err);
         }
+        console.log('✅ Tabela noticias pronta');
+      });
+      
+      // Criar tabela de usuários (para autenticação)
+      db.run(`
+        CREATE TABLE IF NOT EXISTS usuarios (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          username TEXT UNIQUE NOT NULL,
+          password TEXT NOT NULL,
+          created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+      `, (err) => {
+        if (err) {
+          console.error('❌ Erro ao criar tabela usuarios:', err);
+          return reject(err);
+        }
+        console.log('✅ Tabela usuarios pronta');
+        console.log('✅ Banco de dados inicializado com sucesso');
+        resolve();
       });
     });
   });

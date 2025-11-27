@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornal Marabá - Portal de Notícias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Merriweather', serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    
+    <!-- Barra Superior Utilitária -->
+    <div class="bg-gray-100 border-b border-gray-300">
+        <div class="max-w-7xl mx-auto px-4 py-2">
+            <div class="flex justify-between items-center text-xs">
+                <div class="flex gap-4 text-gray-600">
+                    <a href="#" class="hover:text-red-700">Quem Somos</a>
+                    <a href="#" class="hover:text-red-700">Contato</a>
+                    <a href="#" class="hover:text-red-700">Política de Privacidade</a>
+                    <a href="#" class="hover:text-red-700">Anuncie</a>
+                </div>
+                <div class="flex gap-2">
+                    <a href="#" class="w-7 h-7 bg-blue-600 text-white flex items-center justify-center rounded hover:bg-blue-700">
+                        <i class="fab fa-facebook-f text-xs"></i>
+                    </a>
+                    <a href="#" class="w-7 h-7 bg-blue-400 text-white flex items-center justify-center rounded hover:bg-blue-500">
+                        <i class="fab fa-twitter text-xs"></i>
+                    </a>
+                    <a href="#" class="w-7 h-7 bg-green-500 text-white flex items-center justify-center rounded hover:bg-green-600">
+                        <i class="fab fa-whatsapp text-xs"></i>
+                    </a>
+                    <a href="#" class="w-7 h-7 bg-red-600 text-white flex items-center justify-center rounded hover:bg-red-700">
+                        <i class="fab fa-instagram text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Principal com Logo -->
+    <header class="border-b-4 border-red-700">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="text-center">
+                <div class="mb-2">
+                    <span class="text-2xl font-normal text-gray-800">Jornal</span>
+                    <span class="text-5xl font-extrabold text-red-700 ml-2">Marabá</span>
+                </div>
+                <p class="text-xs text-gray-500 uppercase tracking-wide">Portal de Notícias - Informação com Credibilidade</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação Principal -->
+    <nav class="bg-red-700 border-b border-red-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <ul class="flex justify-center gap-1 text-sm font-semibold">
+                <li><a href="/" class="block px-4 py-3 text-white hover:bg-red-800 transition">HOME</a></li>
+                <li><a href="#politica" class="block px-4 py-3 text-white hover:bg-red-800 transition">POLÍTICA</a></li>
+                <li><a href="#comercio" class="block px-4 py-3 text-white hover:bg-red-800 transition">COMÉRCIO</a></li>
+                <li><a href="#cidadania" class="block px-4 py-3 text-white hover:bg-red-800 transition">CIDADANIA</a></li>
+                <li><a href="#saude" class="block px-4 py-3 text-white hover:bg-red-800 transition">SAÚDE</a></li>
+                <li><a href="#cultura" class="block px-4 py-3 text-white hover:bg-red-800 transition">CULTURA</a></li>
+                <li><a href="#esportes" class="block px-4 py-3 text-white hover:bg-red-800 transition">ESPORTES</a></li>
+                <li><a href="/admin/noticias" class="block px-4 py-3 text-white hover:bg-red-800 transition">ADMIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Linha Separadora Fina -->
+    <div class="border-t border-gray-200"></div>
+
+    <!-- Conteúdo Principal - Grid Estilo Jornal -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        
+        <!-- Grid Principal: 3 Colunas -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Coluna Esquerda (3/12) -->
+            <aside class="lg:col-span-3 space-y-6">
+                
+                <!-- Box Destaque Verde -->
+                <div class="border-2 border-green-500 bg-green-50 p-4">
+                    <div class="text-center">
+                        <h3 class="text-lg font-bold text-green-700 mb-2">
+                            <i class="fas fa-newspaper text-2xl mb-2"></i>
+                            <br>10.000 Jornais
+                        </h3>
+                        <p class="text-sm text-gray-700 mb-3">Distribuídos gratuitamente toda semana!</p>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded font-semibold hover:bg-green-600 transition w-full">
+                            CLIQUE E LEIA
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Seção Política -->
+                <div class="border-l-4 border-blue-600 pl-3">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3 flex items-center gap-2">
+                        <i class="fas fa-landmark"></i>
+                        POLÍTICA
+                    </h3>
+                    <div class="space-y-3">
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Câmara aprova projeto de lei para desenvolvimento regional
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 2 horas</p>
+                        </article>
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Prefeito anuncia novo plano de investimentos
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 4 horas</p>
+                        </article>
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Vereadores discutem orçamento municipal
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 5 horas</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Banner Publicidade -->
+                <div class="bg-gray-100 border border-gray-300 h-64 flex items-center justify-center">
+                    <p class="text-gray-400 text-sm">Publicidade<br>300x250</p>
+                </div>
+
+            </aside>
+
+            <!-- Coluna Central (6/12) -->
+            <div class="lg:col-span-6">
+                
+                <!-- Notícia Principal Destaque -->
+                <article class="mb-6 pb-6 border-b-2 border-red-700">
+                    <div class="relative mb-3">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800" 
+                             alt="Notícia Principal" 
+                             class="w-full h-80 object-cover">
+                        <div class="absolute top-3 left-3 bg-red-700 text-white px-3 py-1 text-xs font-bold uppercase">
+                            Destaque
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold font-serif text-gray-900 mb-3 leading-tight">
+                        Desenvolvimento econômico impulsiona crescimento da cidade
+                    </h1>
+                    <p class="text-gray-600 text-base leading-relaxed mb-3">
+                        Novos investimentos prometem transformar o cenário econômico local, gerando empregos e oportunidades para a população. Especialistas apontam crescimento sustentável nos próximos anos.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-gray-500">
+                        <span><i class="far fa-clock"></i> Há 1 hora</span>
+                        <span><i class="far fa-user"></i> Redação</span>
+                        <span><i class="far fa-comment"></i> 23 comentários</span>
+                    </div>
+                </article>
+
+                <!-- Grid de Notícias Secundárias -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    
+                    <article class="border-b pb-4">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400" 
+                             alt="Notícia" 
+                             class="w-full h-40 object-cover mb-3">
+                        <h3 class="text-lg font-bold mb-2 hover:text-red-700 cursor-pointer leading-tight">
+                            Nova escola será inaugurada no bairro central
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-2">
+                            Investimento em educação traz esperança para famílias da região.
+                        </p>
+                        <span class="text-xs text-gray-500"><i class="far fa-clock"></i> Há 3 horas</span>
+                    </article>
+
+                    <article class="border-b pb-4">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400" 
+                             alt="Notícia" 
+                             class="w-full h-40 object-cover mb-3">
+                        <h3 class="text-lg font-bold mb-2 hover:text-red-700 cursor-pointer leading-tight">
+                            Campanha de vacinação atinge 80% do público-alvo
+                        </h3>
+                        <p class="text-sm text-gray-600 mb-2">
+                            Secretaria de Saúde comemora números positivos da campanha.
+                        </p>
+                        <span class="text-xs text-gray-500"><i class="far fa-clock"></i> Há 4 horas</span>
+                    </article>
+
+                </div>
+
+                <!-- Seção Comércio -->
+                <div class="border-l-4 border-orange-500 pl-3 mb-6">
+                    <h3 class="text-xl font-bold text-orange-500 mb-3 flex items-center gap-2">
+                        <i class="fas fa-store"></i>
+                        COMÉRCIO
+                    </h3>
+                    <div class="space-y-3">
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Feira de empreendedores movimenta economia local
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 2 horas</p>
+                        </article>
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Novos estabelecimentos comerciais abrem na cidade
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 5 horas</p>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Coluna Direita (3/12) -->
+            <aside class="lg:col-span-3 space-y-6">
+                
+                <!-- Seção Cidadania -->
+                <div class="border-l-4 border-green-600 pl-3">
+                    <h3 class="text-xl font-bold text-green-600 mb-3 flex items-center gap-2">
+                        <i class="fas fa-hands-helping"></i>
+                        CIDADANIA
+                    </h3>
+                    <div class="space-y-3">
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Projeto social beneficia 500 famílias da comunidade
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 1 hora</p>
+                        </article>
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Mutirão de limpeza mobiliza moradores
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 3 horas</p>
+                        </article>
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                ONGs promovem ações solidárias no fim de semana
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 6 horas</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Seção Saúde -->
+                <div class="border-l-4 border-red-600 pl-3">
+                    <h3 class="text-xl font-bold text-red-600 mb-3 flex items-center gap-2">
+                        <i class="fas fa-heartbeat"></i>
+                        SAÚDE
+                    </h3>
+                    <div class="space-y-3">
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Novo posto de saúde começa a atender no próximo mês
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 2 horas</p>
+                        </article>
+                        <article class="pb-3 border-b border-gray-200">
+                            <h4 class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight">
+                                Médicos especialistas reforçam atendimento
+                            </h4>
+                            <p class="text-xs text-gray-500 mt-1">Há 4 horas</p>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Banner Publicidade Vertical -->
+                <div class="bg-gray-100 border border-gray-300 h-96 flex items-center justify-center">
+                    <p class="text-gray-400 text-sm">Publicidade<br>300x600</p>
+                </div>
+
+                <!-- Box Redes Sociais -->
+                <div class="bg-gray-50 border border-gray-300 p-4">
+                    <h4 class="font-bold text-gray-800 mb-3 text-center">SIGA-NOS</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="flex items-center gap-3 bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                            <span class="text-sm font-semibold">Facebook</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 bg-red-600 text-white p-3 rounded hover:bg-red-700 transition">
+                            <i class="fab fa-instagram"></i>
+                            <span class="text-sm font-semibold">Instagram</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 bg-green-500 text-white p-3 rounded hover:bg-green-600 transition">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="text-sm font-semibold">WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+
+        <!-- Linha Separadora -->
+        <div class="border-t border-gray-300 my-8"></div>
+
+        <!-- Seção Fala Povo (Largura Total) -->
+        <section class="mb-8">
+            <div class="border-l-4 border-purple-600 pl-3 mb-4">
+                <h2 class="text-2xl font-bold text-purple-600 flex items-center gap-2">
+                    <i class="fas fa-bullhorn"></i>
+                    FALA POVO
+                </h2>
+                <p class="text-sm text-gray-600">A voz da comunidade</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="bg-purple-50 border-l-4 border-purple-600 p-4">
+                    <p class="text-sm text-gray-700 italic mb-3">
+                        "Precisamos de mais iluminação nas ruas do bairro. A segurança está comprometida."
+                    </p>
+                    <p class="text-xs font-semibold text-purple-700">- Maria Silva, moradora</p>
+                </article>
+                
+                <article class="bg-purple-50 border-l-4 border-purple-600 p-4">
+                    <p class="text-sm text-gray-700 italic mb-3">
+                        "A coleta de lixo melhorou muito este ano. Parabéns à prefeitura!"
+                    </p>
+                    <p class="text-xs font-semibold text-purple-700">- João Santos, comerciante</p>
+                </article>
+                
+                <article class="bg-purple-50 border-l-4 border-purple-600 p-4">
+                    <p class="text-sm text-gray-700 italic mb-3">
+                        "Quando vão asfaltar a rua principal? Já esperamos há anos."
+                    </p>
+                    <p class="text-xs font-semibold text-purple-700">- Ana Costa, moradora</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Linha Separadora Final -->
+    <div class="border-t-4 border-red-700"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-3 text-red-500">Jornal Marabá</h3>
+                    <p class="text-sm text-gray-400">
+                        Portal de notícias comprometido com a verdade e transparência.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3">Seções</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Política</a></li>
+                        <li><a href="#" class="hover:text-white">Comércio</a></li>
+                        <li><a href="#" class="hover:text-white">Cidadania</a></li>
+                        <li><a href="#" class="hover:text-white">Saúde</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3">Institucional</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white">Quem Somos</a></li>
+                        <li><a href="#" class="hover:text-white">Contato</a></li>
+                        <li><a href="#" class="hover:text-white">Anuncie</a></li>
+                        <li><a href="#" class="hover:text-white">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-3">Contato</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><i class="fas fa-envelope"></i> contato@jornalmaraba.com.br</li>
+                        <li><i class="fas fa-phone"></i> (94) 3322-1100</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Marabá - PA</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Jornal Marabá. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

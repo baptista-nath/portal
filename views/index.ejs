@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Notícias - Jornal Digital</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap');
+    body { font-family: 'Open Sans', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Merriweather', serif; }
+    .category-badge { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Top Bar -->
+  <div class="bg-gray-900 text-white py-2">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between text-sm">
+        <span><i class="far fa-calendar-alt mr-2"></i><%= new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+        <div class="flex space-x-4">
+          <span class="hidden md:inline">Siga-nos:</span>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <div class="py-6 text-center border-b">
+        <h1 class="text-5xl md:text-6xl font-black text-gray-900">PORTAL DE NOTÍCIAS</h1>
+        <p class="text-sm text-gray-600 mt-2 uppercase">A Verdade em Primeiro Lugar</p>
+      </div>
+      <nav class="py-4">
+        <ul class="flex flex-wrap justify-center space-x-2 md:space-x-6 text-sm md:text-base font-semibold">
+          <li><a href="/" class="text-red-600 px-3 py-2">HOME</a></li>
+          <li><a href="#cidadania" class="text-gray-700 hover:text-red-600 px-3 py-2">CIDADANIA</a></li>
+          <li><a href="#comercio" class="text-gray-700 hover:text-red-600 px-3 py-2">COMÉRCIO</a></li>
+          <li><a href="#politica" class="text-gray-700 hover:text-red-600 px-3 py-2">POLÍTICA</a></li>
+          <li><a href="#saude" class="text-gray-700 hover:text-red-600 px-3 py-2">SAÚDE</a></li>
+          <li><a href="/admin/noticias" class="text-blue-600 px-3 py-2"><i class="fas fa-user-shield mr-1"></i>ADMIN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Publicidade -->
+  <div class="bg-gray-200 border-y-2">
+    <div class="container mx-auto px-4 py-6 text-center">
+      <div class="bg-white rounded shadow p-6">
+        <p class="text-gray-400 text-xs uppercase mb-2">Publicidade</p>
+        <p class="text-gray-600">970x90</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout Principal -->
+  <main class="container mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- SIDEBAR ESQUERDA -->
+      <aside class="lg:col-span-3 space-y-6">
+        <div class="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-lg shadow-lg p-6 text-center">
+          <i class="fas fa-newspaper text-5xl mb-4 opacity-90"></i>
+          <h3 class="text-xl font-bold mb-2">Clique e Leia</h3>
+          <p class="text-sm mb-4 opacity-90">A Última Edição Digital</p>
+          <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100">Acessar</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h3 class="font-bold text-lg mb-4 pb-2 border-b-2 border-red-600"><i class="fas fa-share-alt text-red-600 mr-2"></i>Redes Sociais</h3>
+          <div class="space-y-3">
+            <a href="#" class="flex items-center justify-between p-3 bg-blue-600 text-white rounded"><span><i class="fab fa-facebook-f mr-2"></i>Facebook</span></a>
+            <a href="#" class="flex items-center justify-between p-3 bg-sky-500 text-white rounded"><span><i class="fab fa-twitter mr-2"></i>Twitter</span></a>
+            <a href="#" class="flex items-center justify-between p-3 bg-green-600 text-white rounded"><span><i class="fab fa-whatsapp mr-2"></i>WhatsApp</span></a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <div class="lg:col-span-9">
+        <% if (noticias && noticias.length > 0) { %>
+          
+          <!-- Notícia Destaque -->
+          <% const destaque = noticias[0]; %>
+          <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            <div class="grid md:grid-cols-2">
+              <div class="relative h-64 md:h-auto">
+                <img src="<%= destaque.imagem_url || 'https://via.placeholder.com/600x400?text=Destaque' %>" alt="<%= destaque.titulo %>" class="w-full h-full object-cover">
+                <span class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded category-badge shadow-lg"><i class="fas fa-star mr-1"></i>DESTAQUE</span>
+              </div>
+              <div class="p-6 md:p-8 flex flex-col justify-center bg-gradient-to-br from-white to-gray-50">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight"><%= destaque.titulo %></h2>
+                <% if (destaque.subtitulo) { %><p class="text-lg text-gray-700 mb-4 font-medium"><%= destaque.subtitulo %></p><% } %>
+                <p class="text-gray-600 mb-4"><%= destaque.conteudo.substring(0, 200) %>...</p>
+                <div class="flex items-center justify-between mt-auto pt-4 border-t">
+                  <span class="text-sm text-gray-500"><i class="fas fa-user-circle mr-2"></i><%= destaque.autor %></span>
+                  <a href="/noticia.html?id=<%= destaque.id %>" class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700">Ler Mais <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Grid de Seções -->
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            
+            <!-- POLÍTICA -->
+            <% if (noticias.length > 1) { %>
+            <section id="politica" class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-bold text-2xl mb-4 pb-3 border-b-2 border-blue-600 flex items-center"><i class="fas fa-landmark text-blue-600 mr-2"></i>POLÍTICA</h3>
+              <div class="space-y-4">
+                <% for(let i = 1; i < Math.min(4, noticias.length); i++) { %>
+                  <article class="border-b border-gray-200 pb-4 last:border-0">
+                    <a href="/noticia.html?id=<%= noticias[i].id %>" class="block hover:bg-gray-50 p-2 rounded">
+                      <h4 class="font-bold text-gray-900 mb-2 hover:text-blue-600"><%= noticias[i].titulo %></h4>
+                      <p class="text-sm text-gray-600 line-clamp-2"><%= noticias[i].conteudo.substring(0, 100) %>...</p>
+                      <span class="text-xs text-blue-600 font-semibold mt-2 inline-block">LER MAIS →</span>
+                    </a>
+                  </article>
+                <% } %>
+              </div>
+            </section>
+            <% } %>
+
+            <!-- CIDADANIA -->
+            <% if (noticias.length > 4) { %>
+            <section id="cidadania" class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-bold text-2xl mb-4 pb-3 border-b-2 border-green-600 flex items-center"><i class="fas fa-hands-helping text-green-600 mr-2"></i>CIDADANIA</h3>
+              <div class="space-y-4">
+                <% for(let i = 4; i < Math.min(7, noticias.length); i++) { %>
+                  <article class="border-b border-gray-200 pb-4 last:border-0">
+                    <a href="/noticia.html?id=<%= noticias[i].id %>" class="block hover:bg-gray-50 p-2 rounded">
+                      <h4 class="font-bold text-gray-900 mb-2 hover:text-green-600"><%= noticias[i].titulo %></h4>
+                      <p class="text-sm text-gray-600 line-clamp-2"><%= noticias[i].conteudo.substring(0, 100) %>...</p>
+                      <span class="text-xs text-green-600 font-semibold mt-2 inline-block">LER MAIS →</span>
+                    </a>
+                  </article>
+                <% } %>
+              </div>
+            </section>
+            <% } %>
+
+          </div>
+
+          <!-- Mais Seções -->
+          <div class="grid md:grid-cols-3 gap-6">
+            
+            <!-- COMÉRCIO -->
+            <% if (noticias.length > 1) { %>
+            <section id="comercio" class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-orange-600 flex items-center"><i class="fas fa-store text-orange-600 mr-2"></i>COMÉRCIO</h3>
+              <% for(let i = 1; i < Math.min(3, noticias.length); i++) { %>
+                <article class="border-b pb-3 mb-3 last:border-0">
+                  <a href="/noticia.html?id=<%= noticias[i].id %>">
+                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-orange-600 line-clamp-2"><%= noticias[i].titulo %></h4>
+                    <span class="text-xs text-orange-600 font-semibold">LER MAIS →</span>
+                  </a>
+                </article>
+              <% } %>
+            </section>
+            <% } %>
+
+            <!-- SAÚDE -->
+            <% if (noticias.length > 3) { %>
+            <section id="saude" class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-red-500 flex items-center"><i class="fas fa-heartbeat text-red-500 mr-2"></i>SAÚDE</h3>
+              <% for(let i = 3; i < Math.min(5, noticias.length); i++) { %>
+                <article class="border-b pb-3 mb-3 last:border-0">
+                  <a href="/noticia.html?id=<%= noticias[i].id %>">
+                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-red-500 line-clamp-2"><%= noticias[i].titulo %></h4>
+                    <span class="text-xs text-red-500 font-semibold">LER MAIS →</span>
+                  </a>
+                </article>
+              <% } %>
+            </section>
+            <% } %>
+
+            <!-- FALA POVO -->
+            <% if (noticias.length > 5) { %>
+            <section id="fala-povo" class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-purple-600 flex items-center"><i class="fas fa-bullhorn text-purple-600 mr-2"></i>FALA POVO</h3>
+              <% for(let i = 5; i < Math.min(7, noticias.length); i++) { %>
+                <article class="border-b pb-3 mb-3 last:border-0">
+                  <a href="/noticia.html?id=<%= noticias[i].id %>">
+                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-purple-600 line-clamp-2"><%= noticias[i].titulo %></h4>
+                    <span class="text-xs text-purple-600 font-semibold">LER MAIS →</span>
+                  </a>
+                </article>
+              <% } %>
+            </section>
+            <% } %>
+
+          </div>
+
+        <% } else { %>
+          <div class="bg-white rounded-lg shadow-md p-12 text-center">
+            <i class="fas fa-newspaper text-6xl text-gray-300 mb-4"></i>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Nenhuma Notícia Disponível</h3>
+            <a href="/admin/noticias/nova" class="bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 inline-block mt-4"><i class="fas fa-plus mr-2"></i>Adicionar Notícia</a>
+          </div>
+        <% } %>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white mt-16 py-12">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Portal de Notícias. Todos os direitos reservados.</p>
+      <p class="text-sm text-gray-400 mt-2">Desenvolvido com Node.js, Express e SQLite</p>
+    </div>
+  </footer>
+</body>
+</html>

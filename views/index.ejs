@@ -1,220 +1,794 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal de Notícias - Jornal Digital</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap');
-    body { font-family: 'Open Sans', sans-serif; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Merriweather', serif; }
-    .category-badge { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  </style>
-</head>
-<body class="bg-gray-50">
-  <!-- Top Bar -->
-  <div class="bg-gray-900 text-white py-2">
-    <div class="container mx-auto px-4">
-      <div class="flex items-center justify-between text-sm">
-        <span><i class="far fa-calendar-alt mr-2"></i><%= new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></span>
-        <div class="flex space-x-4">
-          <span class="hidden md:inline">Siga-nos:</span>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
+<!DOCTYPE html><!DOCTYPE html>
 
-  <!-- Header -->
-  <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="container mx-auto px-4">
-      <div class="py-6 text-center border-b">
-        <h1 class="text-5xl md:text-6xl font-black text-gray-900">PORTAL DE NOTÍCIAS</h1>
+<html lang="pt-BR"><html lang="pt-BR">
+
+  <head><head>
+
+    <meta charset="UTF-8" />  <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jornal Marabá - Portal de Notícias</title>  <title>Portal de Notícias - Jornal Digital</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>  <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">  <style>
+
+    <style>    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+      .gradiente-esquerda {    body { font-family: 'Open Sans', sans-serif; }
+
+        background: linear-gradient(to right, transparent, #16a34a);    h1, h2, h3, h4, h5, h6 { font-family: 'Merriweather', serif; }
+
+      }    .category-badge { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+
+      .gradiente-direita {    .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+        background: linear-gradient(to left, transparent, #16a34a);  </style>
+
+      }</head>
+
+    </style><body class="bg-gray-50">
+
+  </head>  <!-- Top Bar -->
+
+  <body class="bg-gray-100">  <div class="bg-gray-900 text-white py-2">
+
+        <div class="container mx-auto px-4">
+
+    <!-- Barra Superior -->      <div class="flex items-center justify-between text-sm">
+
+    <div class="w-full bg-white border-b border-gray-200">        <span><i class="far fa-calendar-alt mr-2"></i><%= new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+
+      <div class="max-w-7xl mx-auto px-4 py-2">        <div class="flex space-x-4">
+
+        <div class="flex justify-between items-center text-xs text-gray-600">          <span class="hidden md:inline">Siga-nos:</span>
+
+          <div class="flex items-center space-x-2">          <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+            <i class="far fa-calendar-alt"></i>          <a href="#"><i class="fab fa-twitter"></i></a>
+
+            <span><%= new Date().toLocaleDateString('pt-BR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></span>          <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+          </div>        </div>
+
+          <div class="flex space-x-4">      </div>
+
+            <a href="#" class="hover:text-green-600"><i class="fab fa-facebook-f"></i></a>    </div>
+
+            <a href="#" class="hover:text-green-600"><i class="fab fa-instagram"></i></a>  </div>
+
+            <a href="#" class="hover:text-green-600"><i class="fab fa-whatsapp"></i></a>
+
+            <a href="/admin/noticias" class="hover:text-blue-600"><i class="fas fa-user-shield"></i> Admin</a>  <!-- Header -->
+
+          </div>  <header class="bg-white shadow-md sticky top-0 z-50">
+
+        </div>    <div class="container mx-auto px-4">
+
+      </div>      <div class="py-6 text-center border-b">
+
+    </div>        <h1 class="text-5xl md:text-6xl font-black text-gray-900">PORTAL DE NOTÍCIAS</h1>
+
         <p class="text-sm text-gray-600 mt-2 uppercase">A Verdade em Primeiro Lugar</p>
-      </div>
-      <nav class="py-4">
-        <ul class="flex flex-wrap justify-center space-x-2 md:space-x-6 text-sm md:text-base font-semibold">
-          <li><a href="/" class="text-red-600 px-3 py-2">HOME</a></li>
-          <li><a href="#cidadania" class="text-gray-700 hover:text-red-600 px-3 py-2">CIDADANIA</a></li>
-          <li><a href="#comercio" class="text-gray-700 hover:text-red-600 px-3 py-2">COMÉRCIO</a></li>
-          <li><a href="#politica" class="text-gray-700 hover:text-red-600 px-3 py-2">POLÍTICA</a></li>
-          <li><a href="#saude" class="text-gray-700 hover:text-red-600 px-3 py-2">SAÚDE</a></li>
-          <li><a href="/admin/noticias" class="text-blue-600 px-3 py-2"><i class="fas fa-user-shield mr-1"></i>ADMIN</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Banner Publicidade -->
-  <div class="bg-gray-200 border-y-2">
-    <div class="container mx-auto px-4 py-6 text-center">
-      <div class="bg-white rounded shadow p-6">
-        <p class="text-gray-400 text-xs uppercase mb-2">Publicidade</p>
-        <p class="text-gray-600">970x90</p>
-      </div>
-    </div>
-  </div>
+    <!-- Logo e Título -->      </div>
 
-  <!-- Layout Principal -->
-  <main class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div class="w-full bg-white">      <nav class="py-4">
+
+      <div class="max-w-7xl mx-auto px-4 py-6 text-center">        <ul class="flex flex-wrap justify-center space-x-2 md:space-x-6 text-sm md:text-base font-semibold">
+
+        <h1 class="text-4xl md:text-5xl font-black text-gray-900">          <li><a href="/" class="text-red-600 px-3 py-2">HOME</a></li>
+
+          Jornal           <li><a href="#cidadania" class="text-gray-700 hover:text-red-600 px-3 py-2">CIDADANIA</a></li>
+
+          <span class="text-orange-500">          <li><a href="#comercio" class="text-gray-700 hover:text-red-600 px-3 py-2">COMÉRCIO</a></li>
+
+            <i class="fas fa-home"></i>          <li><a href="#politica" class="text-gray-700 hover:text-red-600 px-3 py-2">POLÍTICA</a></li>
+
+          </span>           <li><a href="#saude" class="text-gray-700 hover:text-red-600 px-3 py-2">SAÚDE</a></li>
+
+          Marabá          <li><a href="/admin/noticias" class="text-blue-600 px-3 py-2"><i class="fas fa-user-shield mr-1"></i>ADMIN</a></li>
+
+        </h1>        </ul>
+
+        <p class="text-xs text-gray-500 mt-1 uppercase">Portal de Notícias</p>      </nav>
+
+      </div>    </div>
+
+    </div>  </header>
+
+
+
+    <!-- Menu de Navegação com Linhas Verdes -->  <!-- Banner Publicidade -->
+
+    <div class="menu-bar-container flex items-center justify-center w-full my-4 px-[50px]">  <div class="bg-gray-200 border-y-2">
+
+      <div class="bg-green-600 h-1 flex-1"></div>    <div class="container mx-auto px-4 py-6 text-center">
+
+      <nav class="flex justify-center flex-shrink-0 text-xs font-semibold uppercase space-x-4 mx-4">      <div class="bg-white rounded shadow p-6">
+
+        <a href="/" class="text-green-700 hover:text-green-500">Home</a>        <p class="text-gray-400 text-xs uppercase mb-2">Publicidade</p>
+
+        <a href="#cidadania" class="text-green-700 hover:text-green-500">Cidadania</a>        <p class="text-gray-600">970x90</p>
+
+        <a href="#comercio" class="text-green-700 hover:text-green-500">Comércio</a>      </div>
+
+        <a href="#politica" class="text-green-700 hover:text-green-500">Política</a>    </div>
+
+        <a href="#saude" class="text-green-700 hover:text-green-500">Saúde</a>  </div>
+
+        <a href="#noticias" class="text-green-700 hover:text-green-500">Notícias</a>
+
+      </nav>  <!-- Layout Principal -->
+
+      <div class="bg-green-600 h-1 flex-1"></div>  <main class="container mx-auto px-4 py-8">
+
+    </div>    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
       
-      <!-- SIDEBAR ESQUERDA -->
-      <aside class="lg:col-span-3 space-y-6">
-        <div class="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-lg shadow-lg p-6 text-center">
-          <i class="fas fa-newspaper text-5xl mb-4 opacity-90"></i>
-          <h3 class="text-xl font-bold mb-2">Clique e Leia</h3>
-          <p class="text-sm mb-4 opacity-90">A Última Edição Digital</p>
-          <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100">Acessar</a>
-        </div>
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <h3 class="font-bold text-lg mb-4 pb-2 border-b-2 border-red-600"><i class="fas fa-share-alt text-red-600 mr-2"></i>Redes Sociais</h3>
-          <div class="space-y-3">
-            <a href="#" class="flex items-center justify-between p-3 bg-blue-600 text-white rounded"><span><i class="fab fa-facebook-f mr-2"></i>Facebook</span></a>
+
+    <!-- Banner Natal e Carro Chefe -->      <!-- SIDEBAR ESQUERDA -->
+
+    <div class="w-full bg-white">      <aside class="lg:col-span-3 space-y-6">
+
+      <div class="max-w-7xl mx-auto px-4 py-6">        <div class="bg-gradient-to-br from-red-600 to-red-700 text-white rounded-lg shadow-lg p-6 text-center">
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8">          <i class="fas fa-newspaper text-5xl mb-4 opacity-90"></i>
+
+                    <h3 class="text-xl font-bold mb-2">Clique e Leia</h3>
+
+          <!-- Publicidade Esquerda (Reserva) -->          <p class="text-sm mb-4 opacity-90">A Última Edição Digital</p>
+
+          <div class="flex-1 text-center">          <a href="#" class="bg-white text-red-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100">Acessar</a>
+
+            <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded p-8">        </div>
+
+              <p class="text-gray-400 text-sm">Espaço Publicitário</p>        <div class="bg-white rounded-lg shadow-md p-6">
+
+              <p class="text-gray-300 text-xs">300x300</p>          <h3 class="font-bold text-lg mb-4 pb-2 border-b-2 border-red-600"><i class="fas fa-share-alt text-red-600 mr-2"></i>Redes Sociais</h3>
+
+            </div>          <div class="space-y-3">
+
+          </div>            <a href="#" class="flex items-center justify-between p-3 bg-blue-600 text-white rounded"><span><i class="fab fa-facebook-f mr-2"></i>Facebook</span></a>
+
             <a href="#" class="flex items-center justify-between p-3 bg-sky-500 text-white rounded"><span><i class="fab fa-twitter mr-2"></i>Twitter</span></a>
-            <a href="#" class="flex items-center justify-between p-3 bg-green-600 text-white rounded"><span><i class="fab fa-whatsapp mr-2"></i>WhatsApp</span></a>
+
+          <!-- Banner Central - Natal -->            <a href="#" class="flex items-center justify-between p-3 bg-green-600 text-white rounded"><span><i class="fab fa-whatsapp mr-2"></i>WhatsApp</span></a>
+
+          <div class="flex-1 text-center">          </div>
+
+            <span class="text-green-600 text-5xl leading-tight" style="font-family: 'Dancing Script', cursive;">        </div>
+
+              Natal<br>      </aside>
+
+            </span>
+
+            <span class="text-green-600 text-3xl leading-tight" style="font-family: 'Dancing Script', cursive;">      <!-- CONTEÚDO PRINCIPAL -->
+
+              de<br>      <div class="lg:col-span-9">
+
+            </span>        <% if (noticias && noticias.length > 0) { %>
+
+            <span class="text-red-700 font-extrabold font-serif text-4xl leading-tight">          
+
+              QUALIDADE<br>          <!-- Notícia Destaque -->
+
+            </span>          <% const destaque = noticias[0]; %>
+
+            <span class="text-green-600 text-3xl leading-tight" style="font-family: 'Dancing Script', cursive;">          <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+
+              e<br>            <div class="grid md:grid-cols-2">
+
+            </span>              <div class="relative h-64 md:h-auto">
+
+            <span class="text-red-700 font-extrabold font-serif text-4xl leading-tight">                <img src="<%= destaque.imagem_url || 'https://via.placeholder.com/600x400?text=Destaque' %>" alt="<%= destaque.titulo %>" class="w-full h-full object-cover">
+
+              ECONOMIA<br>                <span class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded category-badge shadow-lg"><i class="fas fa-star mr-1"></i>DESTAQUE</span>
+
+            </span>              </div>
+
+            <span class="text-green-600 text-3xl leading-tight" style="font-family: 'Dancing Script', cursive;">              <div class="p-6 md:p-8 flex flex-col justify-center bg-gradient-to-br from-white to-gray-50">
+
+              é<br>                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight"><%= destaque.titulo %></h2>
+
+            </span>                <% if (destaque.subtitulo) { %><p class="text-lg text-gray-700 mb-4 font-medium"><%= destaque.subtitulo %></p><% } %>
+
+            <span class="text-black font-extrabold font-serif text-4xl leading-tight">                <p class="text-gray-600 mb-4"><%= destaque.conteudo.substring(0, 200) %>...</p>
+
+              NO                <div class="flex items-center justify-between mt-auto pt-4 border-t">
+
+            </span>                  <span class="text-sm text-gray-500"><i class="fas fa-user-circle mr-2"></i><%= destaque.autor %></span>
+
+          </div>                  <a href="/noticia.html?id=<%= destaque.id %>" class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700">Ler Mais <i class="fas fa-arrow-right ml-1"></i></a>
+
+                </div>
+
+          <!-- Publicidade Direita (Carro Chefe) -->              </div>
+
+          <div class="flex-1 text-center">            </div>
+
+            <img          </article>
+
+              src="/assets/carrochefe.jpeg"
+
+              alt="Carro Chefe Supermercados"          <!-- Grid de Seções -->
+
+              class="w-full max-w-sm mx-auto"          <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+            />            
+
+            <p class="text-gray-700 font-semibold text-sm mt-2">SUPERMERCADOS</p>            <!-- POLÍTICA -->
+
+          </div>            <% if (noticias.length > 1) { %>
+
+        </div>            <section id="politica" class="bg-white rounded-lg shadow-md p-6">
+
+      </div>              <h3 class="font-bold text-2xl mb-4 pb-3 border-b-2 border-blue-600 flex items-center"><i class="fas fa-landmark text-blue-600 mr-2"></i>POLÍTICA</h3>
+
+    </div>              <div class="space-y-4">
+
+                <% for(let i = 1; i < Math.min(4, noticias.length); i++) { %>
+
+    <!-- Endereços e Contatos -->                  <article class="border-b border-gray-200 pb-4 last:border-0">
+
+    <div class="w-full bg-white">                    <a href="/noticia.html?id=<%= noticias[i].id %>" class="block hover:bg-gray-50 p-2 rounded">
+
+      <div class="max-w-7xl mx-auto px-4 mt-4 mb-8">                      <h4 class="font-bold text-gray-900 mb-2 hover:text-blue-600"><%= noticias[i].titulo %></h4>
+
+        <p class="font-medium text-[10px] text-center leading-relaxed">                      <p class="text-sm text-gray-600 line-clamp-2"><%= noticias[i].conteudo.substring(0, 100) %>...</p>
+
+          <span class="font-bold text-green-700">Loja 1 -</span>                      <span class="text-xs text-blue-600 font-semibold mt-2 inline-block">LER MAIS →</span>
+
+          <span class="text-red-600">Bairro Independência</span> -                    </a>
+
+          <span class="text-black">(94) 991 33 86 86</span> /                  </article>
+
+          <span class="font-bold text-green-700">Loja 2 -</span>                <% } %>
+
+          <span class="text-red-600">Vila Militar</span> -              </div>
+
+          <span class="text-black">(94) 991 83 09 00</span> /            </section>
+
+          <span class="font-bold text-green-700">Loja 3 -</span>            <% } %>
+
+          <span class="text-red-600">Bairro Amapá</span> -
+
+          <span class="text-black">(94) 991 75 11 17</span> /            <!-- CIDADANIA -->
+
+          <span class="font-bold text-green-700">Loja 4 -</span>            <% if (noticias.length > 4) { %>
+
+          <span class="text-red-600">Bairro São Félix</span> -            <section id="cidadania" class="bg-white rounded-lg shadow-md p-6">
+
+          <span class="text-black">(94) 991 75 11 17</span> /              <h3 class="font-bold text-2xl mb-4 pb-3 border-b-2 border-green-600 flex items-center"><i class="fas fa-hands-helping text-green-600 mr-2"></i>CIDADANIA</h3>
+
+          <span class="font-bold text-green-700">Loja 5 -</span>              <div class="space-y-4">
+
+          <span class="text-red-600">Bairro Nova Marabá</span> -                <% for(let i = 4; i < Math.min(7, noticias.length); i++) { %>
+
+          <span class="text-black">(94) 991 93 80 73</span>                  <article class="border-b border-gray-200 pb-4 last:border-0">
+
+        </p>                    <a href="/noticia.html?id=<%= noticias[i].id %>" class="block hover:bg-gray-50 p-2 rounded">
+
+      </div>                      <h4 class="font-bold text-gray-900 mb-2 hover:text-green-600"><%= noticias[i].titulo %></h4>
+
+    </div>                      <p class="text-sm text-gray-600 line-clamp-2"><%= noticias[i].conteudo.substring(0, 100) %>...</p>
+
+                      <span class="text-xs text-green-600 font-semibold mt-2 inline-block">LER MAIS →</span>
+
+    <!-- Linha Verde Separadora -->                    </a>
+
+    <div class="w-full px-[50px] my-6">                  </article>
+
+      <div class="bg-green-600 h-1 w-full"></div>                <% } %>
+
+    </div>              </div>
+
+            </section>
+
+    <!-- Banner Prefeitura -->            <% } %>
+
+    <div class="w-full flex justify-center py-3">
+
+      <div class="w-full max-w-md h-24 relative overflow-hidden rounded shadow-md">          </div>
+
+        <img src="https://images.unsplash.com/photo-1562095241-8c6714fd4178?w=400&h=150&fit=crop" 
+
+             alt="Banner Prefeitura"           <!-- Mais Seções -->
+
+             class="absolute inset-0 w-full h-full object-cover opacity-30">          <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="relative z-10 flex items-center justify-center h-full bg-gradient-to-r from-blue-900/70 to-blue-700/70">            
+
+          <span class="text-white text-base font-bold px-4 text-center">Prefeitura: você mais cidadania e desenvolvimento</span>            <!-- COMÉRCIO -->
+
+        </div>            <% if (noticias.length > 1) { %>
+
+      </div>            <section id="comercio" class="bg-white rounded-lg shadow-md p-6">
+
+    </div>              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-orange-600 flex items-center"><i class="fas fa-store text-orange-600 mr-2"></i>COMÉRCIO</h3>
+
+              <% for(let i = 1; i < Math.min(3, noticias.length); i++) { %>
+
+    <!-- Primeira Seção de Notícias (3 Colunas) -->                <article class="border-b pb-3 mb-3 last:border-0">
+
+    <div class="w-full bg-white py-6">                  <a href="/noticia.html?id=<%= noticias[i].id %>">
+
+      <div class="max-w-7xl mx-auto px-4">                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-orange-600 line-clamp-2"><%= noticias[i].titulo %></h4>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">                    <span class="text-xs text-orange-600 font-semibold">LER MAIS →</span>
+
+                            </a>
+
+          <!-- Coluna 1: Jornais Impressos -->                </article>
+
+          <div class="space-y-4">              <% } %>
+
+            <div class="bg-white p-4 border border-gray-200 shadow-sm">            </section>
+
+              <h3 class="text-base font-bold text-center mb-3">            <% } %>
+
+                Clic e leia a última edição dos 10.000 jornais impressos
+
+              </h3>            <!-- SAÚDE -->
+
+              <img             <% if (noticias.length > 3) { %>
+
+                src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=500&fit=crop"             <section id="saude" class="bg-white rounded-lg shadow-md p-6">
+
+                alt="Jornal Impresso"               <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-red-500 flex items-center"><i class="fas fa-heartbeat text-red-500 mr-2"></i>SAÚDE</h3>
+
+                class="w-full h-auto rounded shadow"              <% for(let i = 3; i < Math.min(5, noticias.length); i++) { %>
+
+              />                <article class="border-b pb-3 mb-3 last:border-0">
+
+            </div>                  <a href="/noticia.html?id=<%= noticias[i].id %>">
+
+          </div>                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-red-500 line-clamp-2"><%= noticias[i].titulo %></h4>
+
+                    <span class="text-xs text-red-500 font-semibold">LER MAIS →</span>
+
+          <!-- Coluna 2: Cidadania, Comércio, Notícias -->                  </a>
+
+          <div class="space-y-4">                </article>
+
+                          <% } %>
+
+            <!-- Cidadania -->            </section>
+
+            <div id="cidadania" class="bg-white p-3">            <% } %>
+
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Cidadania</h4>
+
+              <% if (noticias && noticias.length > 0) { %>            <!-- FALA POVO -->
+
+                <% const noticiaCidadania = noticias.find(n => n.categoria === 'cidadania') || noticias[0]; %>            <% if (noticias.length > 5) { %>
+
+                <div class="flex gap-2 items-start">            <section id="fala-povo" class="bg-white rounded-lg shadow-md p-6">
+
+                  <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center flex-shrink-0">              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-purple-600 flex items-center"><i class="fas fa-bullhorn text-purple-600 mr-2"></i>FALA POVO</h3>
+
+                    <i class="fas fa-hands-helping text-white"></i>              <% for(let i = 5; i < Math.min(7, noticias.length); i++) { %>
+
+                  </div>                <article class="border-b pb-3 mb-3 last:border-0">
+
+                  <div>                  <a href="/noticia.html?id=<%= noticias[i].id %>">
+
+                    <a href="/noticia/<%= noticiaCidadania.id %>">                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-purple-600 line-clamp-2"><%= noticias[i].titulo %></h4>
+
+                      <p class="font-semibold text-xs hover:text-blue-600"><%= noticiaCidadania.titulo %></p>                    <span class="text-xs text-purple-600 font-semibold">LER MAIS →</span>
+
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaCidadania.conteudo.substring(0, 80) %>...</p>                  </a>
+
+                    </a>                </article>
+
+                  </div>              <% } %>
+
+                </div>            </section>
+
+              <% } else { %>            <% } %>
+
+                <div class="flex gap-2 items-start">
+
+                  <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center flex-shrink-0">          </div>
+
+                    <i class="fas fa-hands-helping text-white"></i>
+
+                  </div>        <% } else { %>
+
+                  <div>          <div class="bg-white rounded-lg shadow-md p-12 text-center">
+
+                    <p class="font-semibold text-xs">Procon Marabá</p>            <i class="fas fa-newspaper text-6xl text-gray-300 mb-4"></i>
+
+                    <p class="text-[10px] text-gray-600 mt-1">Notícias sobre cidadania e direitos do consumidor</p>            <h3 class="text-2xl font-bold text-gray-800 mb-2">Nenhuma Notícia Disponível</h3>
+
+                  </div>            <a href="/admin/noticias/nova" class="bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 inline-block mt-4"><i class="fas fa-plus mr-2"></i>Adicionar Notícia</a>
+
+                </div>          </div>
+
+              <% } %>        <% } %>
+
+            </div>      </div>
+
+
+
+            <!-- Comércio -->    </div>
+
+            <div id="comercio" class="bg-white p-3">  </main>
+
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Comércio</h4>
+
+              <% if (noticias && noticias.length > 1) { %>  <!-- Footer -->
+
+                <% const noticiaComercio = noticias.find(n => n.categoria === 'comercio') || noticias[1]; %>  <footer class="bg-gray-900 text-white mt-16 py-12">
+
+                <div class="flex gap-2 items-start">    <div class="container mx-auto px-4 text-center">
+
+                  <img       <p>&copy; 2025 Portal de Notícias. Todos os direitos reservados.</p>
+
+                    src="<%= noticiaComercio.imagem_url || 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=100&h=100&fit=crop' %>"       <p class="text-sm text-gray-400 mt-2">Desenvolvido com Node.js, Express e SQLite</p>
+
+                    alt="Comércio"     </div>
+
+                    class="w-12 h-12 object-cover rounded"  </footer>
+
+                  /></body>
+
+                  <div></html>
+
+                    <a href="/noticia/<%= noticiaComercio.id %>">
+                      <p class="font-semibold text-xs hover:text-orange-600"><%= noticiaComercio.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaComercio.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=100&h=100&fit=crop" alt="Comércio" class="w-12 h-12 object-cover rounded" />
+                  <div>
+                    <p class="font-semibold text-xs">Novidades do Comércio Local</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Acompanhe as últimas novidades</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+            <!-- Notícias -->
+            <div id="noticias" class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Notícias</h4>
+              <% if (noticias && noticias.length > 2) { %>
+                <% const noticiaGeral = noticias[2]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-red-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-newspaper text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaGeral.id %>">
+                      <p class="font-semibold text-xs hover:text-red-600"><%= noticiaGeral.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaGeral.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-red-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-newspaper text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Últimas Notícias</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Fique por dentro das novidades</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+          </div>
+
+          <!-- Coluna 3: Política, Saúde, Da Redação -->
+          <div class="space-y-4">
+            
+            <!-- Política -->
+            <div id="politica" class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Política</h4>
+              <% if (noticias && noticias.length > 3) { %>
+                <% const noticiaPolitica = noticias.find(n => n.categoria === 'politica') || noticias[3]; %>
+                <div class="flex gap-2 items-start">
+                  <img 
+                    src="<%= noticiaPolitica.imagem_url || 'https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=100&h=100&fit=crop' %>" 
+                    alt="Política" 
+                    class="w-12 h-12 object-cover rounded"
+                  />
+                  <div>
+                    <a href="/noticia/<%= noticiaPolitica.id %>">
+                      <p class="font-semibold text-xs hover:text-blue-600"><%= noticiaPolitica.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaPolitica.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=100&h=100&fit=crop" alt="Política" class="w-12 h-12 object-cover rounded" />
+                  <div>
+                    <p class="font-semibold text-xs">Política Local</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Acompanhe as notícias políticas</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+            <!-- Saúde -->
+            <div id="saude" class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Saúde</h4>
+              <% if (noticias && noticias.length > 4) { %>
+                <% const noticiaSaude = noticias.find(n => n.categoria === 'saude') || noticias[4]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-purple-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-heartbeat text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaSaude.id %>">
+                      <p class="font-semibold text-xs hover:text-purple-600"><%= noticiaSaude.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaSaude.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-purple-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-heartbeat text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Saúde e Bem-Estar</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Dicas e informações de saúde</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+            <!-- Da Redação -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Da Redação</h4>
+              <% if (noticias && noticias.length > 5) { %>
+                <% const noticiaRedacao = noticias[5]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-green-600 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-pen-fancy text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaRedacao.id %>">
+                      <p class="font-semibold text-xs hover:text-green-600"><%= noticiaRedacao.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaRedacao.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-green-600 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-pen-fancy text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Direto da Redação</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Artigos e opiniões da equipe</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
           </div>
         </div>
-      </aside>
+      </div>
+    </div>
 
-      <!-- CONTEÚDO PRINCIPAL -->
-      <div class="lg:col-span-9">
-        <% if (noticias && noticias.length > 0) { %>
+    <!-- Linha Verde Separadora -->
+    <div class="w-full px-[50px] my-6">
+      <div class="bg-green-600 h-1 w-full"></div>
+    </div>
+
+    <!-- Segunda Seção de Notícias (3 Colunas) -->
+    <div class="w-full bg-white py-6">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <!-- Notícia Destaque -->
-          <% const destaque = noticias[0]; %>
-          <article class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-            <div class="grid md:grid-cols-2">
-              <div class="relative h-64 md:h-auto">
-                <img src="<%= destaque.imagem_url || 'https://via.placeholder.com/600x400?text=Destaque' %>" alt="<%= destaque.titulo %>" class="w-full h-full object-cover">
-                <span class="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 rounded category-badge shadow-lg"><i class="fas fa-star mr-1"></i>DESTAQUE</span>
-              </div>
-              <div class="p-6 md:p-8 flex flex-col justify-center bg-gradient-to-br from-white to-gray-50">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight"><%= destaque.titulo %></h2>
-                <% if (destaque.subtitulo) { %><p class="text-lg text-gray-700 mb-4 font-medium"><%= destaque.subtitulo %></p><% } %>
-                <p class="text-gray-600 mb-4"><%= destaque.conteudo.substring(0, 200) %>...</p>
-                <div class="flex items-center justify-between mt-auto pt-4 border-t">
-                  <span class="text-sm text-gray-500"><i class="fas fa-user-circle mr-2"></i><%= destaque.autor %></span>
-                  <a href="/noticia.html?id=<%= destaque.id %>" class="bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700">Ler Mais <i class="fas fa-arrow-right ml-1"></i></a>
+          <!-- Coluna 1: Mais Saúde -->
+          <div class="space-y-4">
+            <div class="bg-gray-800 text-white p-4 rounded">
+              <h3 class="text-lg font-bold mb-3">Mais saúde bem-estar</h3>
+              <% if (noticias && noticias.length > 6) { %>
+                <% const noticiaSaude2 = noticias.find(n => n.categoria === 'saude') || noticias[6]; %>
+                <a href="/noticia/<%= noticiaSaude2.id %>">
+                  <p class="text-sm font-semibold hover:text-purple-400"><%= noticiaSaude2.titulo %></p>
+                  <p class="text-xs text-gray-300 mt-2"><%= noticiaSaude2.conteudo.substring(0, 100) %>...</p>
+                </a>
+              <% } else { %>
+                <p class="text-sm">Dicas e informações sobre saúde e bem-estar para você e sua família</p>
+              <% } %>
+            </div>
+          </div>
+
+          <!-- Coluna 2: Blog Delas, Comércio, Notícias -->
+          <div class="space-y-4">
+            
+            <!-- Blog Delas -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Blog Delas</h4>
+              <% if (noticias && noticias.length > 7) { %>
+                <% const noticiaBlog = noticias[7]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-pink-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-venus text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaBlog.id %>">
+                      <p class="font-semibold text-xs hover:text-pink-600"><%= noticiaBlog.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaBlog.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-pink-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-venus text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Blog Delas</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Conteúdo especial para o público feminino</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+            <!-- Comércio -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Comércio</h4>
+              <% if (noticias && noticias.length > 8) { %>
+                <% const noticiaComercio2 = noticias.find(n => n.categoria === 'comercio' && n.id !== (noticias[1] || {}).id) || noticias[8]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-orange-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-store text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaComercio2.id %>">
+                      <p class="font-semibold text-xs hover:text-orange-600"><%= noticiaComercio2.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaComercio2.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-orange-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-store text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Comércio Local</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Novidades e promoções</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+            <!-- Notícias (Orgulho Gay) -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Notícias</h4>
+              <div class="flex gap-2 items-start">
+                <div class="w-14 h-14 bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500 rounded"></div>
+                <div>
+                  <p class="font-semibold text-xs">Orgulho Gay</p>
+                  <p class="text-[10px] text-gray-600 mt-1">Diversidade e inclusão em destaque</p>
                 </div>
               </div>
             </div>
-          </article>
 
-          <!-- Grid de Seções -->
-          <div class="grid md:grid-cols-2 gap-6 mb-8">
+          </div>
+
+          <!-- Coluna 3: Cidadania, Fala Povo, Comer Bem -->
+          <div class="space-y-4">
             
-            <!-- POLÍTICA -->
-            <% if (noticias.length > 1) { %>
-            <section id="politica" class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="font-bold text-2xl mb-4 pb-3 border-b-2 border-blue-600 flex items-center"><i class="fas fa-landmark text-blue-600 mr-2"></i>POLÍTICA</h3>
-              <div class="space-y-4">
-                <% for(let i = 1; i < Math.min(4, noticias.length); i++) { %>
-                  <article class="border-b border-gray-200 pb-4 last:border-0">
-                    <a href="/noticia.html?id=<%= noticias[i].id %>" class="block hover:bg-gray-50 p-2 rounded">
-                      <h4 class="font-bold text-gray-900 mb-2 hover:text-blue-600"><%= noticias[i].titulo %></h4>
-                      <p class="text-sm text-gray-600 line-clamp-2"><%= noticias[i].conteudo.substring(0, 100) %>...</p>
-                      <span class="text-xs text-blue-600 font-semibold mt-2 inline-block">LER MAIS →</span>
+            <!-- Cidadania -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Cidadania</h4>
+              <% if (noticias && noticias.length > 9) { %>
+                <% const noticiaCidadania2 = noticias.find(n => n.categoria === 'cidadania' && n.id !== (noticias[0] || {}).id) || noticias[9]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-users text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaCidadania2.id %>">
+                      <p class="font-semibold text-xs hover:text-blue-600"><%= noticiaCidadania2.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaCidadania2.conteudo.substring(0, 80) %>...</p>
                     </a>
-                  </article>
-                <% } %>
-              </div>
-            </section>
-            <% } %>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-blue-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-users text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Cidadania</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Seus direitos e deveres</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
 
-            <!-- CIDADANIA -->
-            <% if (noticias.length > 4) { %>
-            <section id="cidadania" class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="font-bold text-2xl mb-4 pb-3 border-b-2 border-green-600 flex items-center"><i class="fas fa-hands-helping text-green-600 mr-2"></i>CIDADANIA</h3>
-              <div class="space-y-4">
-                <% for(let i = 4; i < Math.min(7, noticias.length); i++) { %>
-                  <article class="border-b border-gray-200 pb-4 last:border-0">
-                    <a href="/noticia.html?id=<%= noticias[i].id %>" class="block hover:bg-gray-50 p-2 rounded">
-                      <h4 class="font-bold text-gray-900 mb-2 hover:text-green-600"><%= noticias[i].titulo %></h4>
-                      <p class="text-sm text-gray-600 line-clamp-2"><%= noticias[i].conteudo.substring(0, 100) %>...</p>
-                      <span class="text-xs text-green-600 font-semibold mt-2 inline-block">LER MAIS →</span>
+            <!-- Fala Povo -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Fala Povo</h4>
+              <% if (noticias && noticias.length > 10) { %>
+                <% const noticiaFalaPovo = noticias[10]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-indigo-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-bullhorn text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaFalaPovo.id %>">
+                      <p class="font-semibold text-xs hover:text-indigo-600"><%= noticiaFalaPovo.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaFalaPovo.conteudo.substring(0, 80) %>...</p>
                     </a>
-                  </article>
-                <% } %>
-              </div>
-            </section>
-            <% } %>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-indigo-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-bullhorn text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Fala Povo</p>
+                    <p class="text-[10px] text-gray-600 mt-1">A voz da comunidade</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
+
+            <!-- Comer Bem -->
+            <div class="bg-white p-3">
+              <h4 class="text-sm font-bold text-gray-900 mb-2">Comer Bem</h4>
+              <% if (noticias && noticias.length > 11) { %>
+                <% const noticiaComerBem = noticias[11]; %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-green-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-utensils text-white"></i>
+                  </div>
+                  <div>
+                    <a href="/noticia/<%= noticiaComerBem.id %>">
+                      <p class="font-semibold text-xs hover:text-green-600"><%= noticiaComerBem.titulo %></p>
+                      <p class="text-[10px] text-gray-600 mt-1"><%= noticiaComerBem.conteudo.substring(0, 80) %>...</p>
+                    </a>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="flex gap-2 items-start">
+                  <div class="w-12 h-12 bg-green-500 rounded flex items-center justify-center flex-shrink-0">
+                    <i class="fas fa-utensils text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold text-xs">Comer Bem</p>
+                    <p class="text-[10px] text-gray-600 mt-1">Receitas e gastronomia</p>
+                  </div>
+                </div>
+              <% } %>
+            </div>
 
           </div>
-
-          <!-- Mais Seções -->
-          <div class="grid md:grid-cols-3 gap-6">
-            
-            <!-- COMÉRCIO -->
-            <% if (noticias.length > 1) { %>
-            <section id="comercio" class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-orange-600 flex items-center"><i class="fas fa-store text-orange-600 mr-2"></i>COMÉRCIO</h3>
-              <% for(let i = 1; i < Math.min(3, noticias.length); i++) { %>
-                <article class="border-b pb-3 mb-3 last:border-0">
-                  <a href="/noticia.html?id=<%= noticias[i].id %>">
-                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-orange-600 line-clamp-2"><%= noticias[i].titulo %></h4>
-                    <span class="text-xs text-orange-600 font-semibold">LER MAIS →</span>
-                  </a>
-                </article>
-              <% } %>
-            </section>
-            <% } %>
-
-            <!-- SAÚDE -->
-            <% if (noticias.length > 3) { %>
-            <section id="saude" class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-red-500 flex items-center"><i class="fas fa-heartbeat text-red-500 mr-2"></i>SAÚDE</h3>
-              <% for(let i = 3; i < Math.min(5, noticias.length); i++) { %>
-                <article class="border-b pb-3 mb-3 last:border-0">
-                  <a href="/noticia.html?id=<%= noticias[i].id %>">
-                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-red-500 line-clamp-2"><%= noticias[i].titulo %></h4>
-                    <span class="text-xs text-red-500 font-semibold">LER MAIS →</span>
-                  </a>
-                </article>
-              <% } %>
-            </section>
-            <% } %>
-
-            <!-- FALA POVO -->
-            <% if (noticias.length > 5) { %>
-            <section id="fala-povo" class="bg-white rounded-lg shadow-md p-6">
-              <h3 class="font-bold text-xl mb-4 pb-3 border-b-2 border-purple-600 flex items-center"><i class="fas fa-bullhorn text-purple-600 mr-2"></i>FALA POVO</h3>
-              <% for(let i = 5; i < Math.min(7, noticias.length); i++) { %>
-                <article class="border-b pb-3 mb-3 last:border-0">
-                  <a href="/noticia.html?id=<%= noticias[i].id %>">
-                    <h4 class="font-bold text-sm text-gray-900 mb-1 hover:text-purple-600 line-clamp-2"><%= noticias[i].titulo %></h4>
-                    <span class="text-xs text-purple-600 font-semibold">LER MAIS →</span>
-                  </a>
-                </article>
-              <% } %>
-            </section>
-            <% } %>
-
-          </div>
-
-        <% } else { %>
-          <div class="bg-white rounded-lg shadow-md p-12 text-center">
-            <i class="fas fa-newspaper text-6xl text-gray-300 mb-4"></i>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2">Nenhuma Notícia Disponível</h3>
-            <a href="/admin/noticias/nova" class="bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 inline-block mt-4"><i class="fas fa-plus mr-2"></i>Adicionar Notícia</a>
-          </div>
-        <% } %>
+        </div>
       </div>
-
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white mt-16 py-12">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 Portal de Notícias. Todos os direitos reservados.</p>
-      <p class="text-sm text-gray-400 mt-2">Desenvolvido com Node.js, Express e SQLite</p>
-    </div>
-  </footer>
-</body>
+    <!-- Footer -->
+    <footer class="w-full bg-gray-800 text-white py-6 mt-8">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <p class="text-sm">&copy; <%= new Date().getFullYear() %> Jornal Marabá. Todos os direitos reservados.</p>
+        <p class="text-xs text-gray-400 mt-2">Portal de Notícias - Marabá, Pará</p>
+        <div class="mt-4 flex justify-center space-x-4">
+          <a href="/admin/noticias" class="text-blue-400 hover:text-blue-300 text-xs">
+            <i class="fas fa-user-shield mr-1"></i>Área Administrativa
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

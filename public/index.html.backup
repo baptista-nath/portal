@@ -568,3 +568,399 @@
       });
     </script>
   </body>
+</html>
+        <aside class="lg:col-span-3 space-y-4 sm:space-y-6">
+          <!-- Box Destaque Verde -->
+          <div class="border-2 border-green-500 bg-green-50 p-4">
+            <div class="text-center">
+              <h3 class="text-base sm:text-lg font-bold text-green-700 mb-2">
+                <i class="fas fa-newspaper text-xl sm:text-2xl mb-2"></i>
+                <br />10.000 Jornais
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-700 mb-3">
+                Distribuídos gratuitamente toda semana!
+              </p>
+              <button
+                class="bg-green-500 text-white px-4 py-2 rounded font-semibold hover:bg-green-600 transition w-full text-sm"
+              >
+                CLIQUE E LEIA
+              </button>
+            </div>
+          </div>
+
+          <!-- Seção Política -->
+          <div class="border-l-4 border-blue-600 pl-3">
+            <h3
+              class="text-lg sm:text-xl font-bold text-blue-600 mb-3 flex items-center gap-2"
+            >
+              <i class="fas fa-landmark"></i>
+              POLÍTICA
+            </h3>
+            <div class="space-y-3">
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Câmara aprova projeto de lei para desenvolvimento regional
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 2 horas</p>
+              </article>
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Prefeito anuncia novo plano de investimentos
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 4 horas</p>
+              </article>
+              <article>
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Vereadores discutem orçamento municipal
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 5 horas</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Banner Publicidade -->
+          <div
+            class="bg-gray-100 border border-gray-300 h-48 sm:h-64 flex items-center justify-center"
+          >
+            <p class="text-gray-400 text-xs sm:text-sm">Publicidade<br />300x250</p>
+          </div>
+        </aside>
+
+        <!-- Coluna Central (6/12) -->
+        <div class="lg:col-span-6">
+          <!-- Notícia Principal Destaque -->
+          <article class="mb-4 sm:mb-6 pb-4 sm:pb-6 border-b-2 border-red-700">
+            <div class="relative mb-3">
+              <img
+                src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800"
+                alt="Notícia Principal"
+                class="w-full h-48 sm:h-64 md:h-80 object-cover"
+              />
+              <div
+                class="absolute top-2 sm:top-3 left-2 sm:left-3 bg-red-700 text-white px-2 sm:px-3 py-1 text-xs font-bold uppercase"
+              >
+                Destaque
+              </div>
+            </div>
+            <h1
+              class="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-gray-900 mb-2 sm:mb-3 leading-tight"
+            >
+              Desenvolvimento econômico impulsiona crescimento da cidade
+            </h1>
+            <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-3">
+              Novos investimentos prometem transformar o cenário econômico
+              local, gerando empregos e oportunidades para a população.
+              Especialistas apontam crescimento sustentável nos próximos anos.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500">
+              <span><i class="far fa-clock"></i> Há 1 hora</span>
+              <span><i class="far fa-user"></i> Redação</span>
+              <span><i class="far fa-comment"></i> 23 comentários</span>
+            </div>
+          </article>
+
+          <!-- Grid de Notícias Secundárias -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+            <article class="border-b pb-4">
+              <img
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400"
+                alt="Notícia"
+                class="w-full h-40 object-cover mb-3"
+              />
+              <h3
+                class="text-base sm:text-lg font-bold mb-2 hover:text-red-700 cursor-pointer leading-tight"
+              >
+                Nova escola será inaugurada no bairro central
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Investimento em educação traz esperança para famílias da região.
+              </p>
+              <span class="text-xs text-gray-500"
+                ><i class="far fa-clock"></i> Há 3 horas</span
+              >
+            </article>
+
+            <article class="border-b pb-4">
+              <img
+                src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400"
+                alt="Notícia"
+                class="w-full h-40 object-cover mb-3"
+              />
+              <h3
+                class="text-base sm:text-lg font-bold mb-2 hover:text-red-700 cursor-pointer leading-tight"
+              >
+                Campanha de vacinação atinge 80% do público-alvo
+              </h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Secretaria de Saúde comemora números positivos da campanha.
+              </p>
+              <span class="text-xs text-gray-500"
+                ><i class="far fa-clock"></i> Há 4 horas</span
+              >
+            </article>
+          </div>
+
+          <!-- Seção Comércio -->
+          <div class="border-l-4 border-orange-500 pl-3 mb-4 sm:mb-6">
+            <h3
+              class="text-lg sm:text-xl font-bold text-orange-500 mb-3 flex items-center gap-2"
+            >
+              <i class="fas fa-store"></i>
+              COMÉRCIO
+            </h3>
+            <div class="space-y-3">
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Feira de empreendedores movimenta economia local
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 2 horas</p>
+              </article>
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Novos estabelecimentos comerciais abrem na cidade
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 5 horas</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita (3/12) -->
+        <aside class="lg:col-span-3 space-y-4 sm:space-y-6">
+          <!-- Seção Cidadania -->
+          <div class="border-l-4 border-green-600 pl-3">
+            <h3
+              class="text-lg sm:text-xl font-bold text-green-600 mb-3 flex items-center gap-2"
+            >
+              <i class="fas fa-hands-helping"></i>
+              CIDADANIA
+            </h3>
+            <div class="space-y-3">
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Projeto social beneficia 500 famílias da comunidade
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 1 hora</p>
+              </article>
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Mutirão de limpeza mobiliza moradores
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 3 horas</p>
+              </article>
+              <article>
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  ONGs promovem ações solidárias no fim de semana
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 6 horas</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Seção Saúde -->
+          <div class="border-l-4 border-red-600 pl-3">
+            <h3
+              class="text-lg sm:text-xl font-bold text-red-600 mb-3 flex items-center gap-2"
+            >
+              <i class="fas fa-heartbeat"></i>
+              SAÚDE
+            </h3>
+            <div class="space-y-3">
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Novo posto de saúde começa a atender no próximo mês
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 2 horas</p>
+              </article>
+              <article class="pb-3 border-b border-gray-200">
+                <h4
+                  class="font-semibold text-sm hover:text-red-700 cursor-pointer leading-tight"
+                >
+                  Médicos especialistas reforçam atendimento
+                </h4>
+                <p class="text-xs text-gray-500 mt-1">Há 4 horas</p>
+              </article>
+            </div>
+          </div>
+
+          <!-- Banner Publicidade Vertical -->
+          <div
+            class="bg-gray-100 border border-gray-300 h-64 sm:h-96 flex items-center justify-center"
+          >
+            <p class="text-gray-400 text-xs sm:text-sm">Publicidade<br />300x600</p>
+          </div>
+
+          <!-- Box Redes Sociais -->
+          <div class="bg-gray-50 border border-gray-300 p-4">
+            <h4 class="font-bold text-gray-800 mb-3 text-center text-sm sm:text-base">SIGA-NOS</h4>
+            <div class="space-y-2">
+              <a
+                href="#"
+                class="flex items-center gap-3 bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+                <span class="text-sm font-semibold">Facebook</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-3 bg-red-600 text-white p-3 rounded hover:bg-red-700 transition"
+              >
+                <i class="fab fa-instagram"></i>
+                <span class="text-sm font-semibold">Instagram</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center gap-3 bg-green-500 text-white p-3 rounded hover:bg-green-600 transition"
+              >
+                <i class="fab fa-whatsapp"></i>
+                <span class="text-sm font-semibold">WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Linha Separadora -->
+      <div class="border-t border-gray-300 my-6 sm:my-8"></div>
+
+      <!-- Seção Fala Povo (Largura Total) -->
+      <section class="mb-6 sm:mb-8">
+        <div class="border-l-4 border-purple-600 pl-3 mb-4">
+          <h2
+            class="text-xl sm:text-2xl font-bold text-purple-600 flex items-center gap-2"
+          >
+            <i class="fas fa-bullhorn"></i>
+            FALA POVO
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-600">A voz da comunidade</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <article class="bg-purple-50 border-l-4 border-purple-600 p-4">
+            <p class="text-sm text-gray-700 italic mb-3">
+              "Precisamos de mais iluminação nas ruas do bairro. A segurança
+              está comprometida."
+            </p>
+            <p class="text-xs font-semibold text-purple-700">
+              - Maria Silva, moradora
+            </p>
+          </article>
+
+          <article class="bg-purple-50 border-l-4 border-purple-600 p-4">
+            <p class="text-sm text-gray-700 italic mb-3">
+              "A coleta de lixo melhorou muito este ano. Parabéns à prefeitura!"
+            </p>
+            <p class="text-xs font-semibold text-purple-700">
+              - João Santos, comerciante
+            </p>
+          </article>
+
+          <article class="bg-purple-50 border-l-4 border-purple-600 p-4">
+            <p class="text-sm text-gray-700 italic mb-3">
+              "Quando vão asfaltar a rua principal? Já esperamos há anos."
+            </p>
+            <p class="text-xs font-semibold text-purple-700">
+              - Ana Costa, moradora
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Linha Separadora Final -->
+    <div class="border-t-4 border-red-700"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 sm:py-8">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+          <div>
+            <h3 class="text-base sm:text-lg font-bold mb-3 text-red-500">Jornal Marabá</h3>
+            <p class="text-xs sm:text-sm text-gray-400">
+              Portal de notícias comprometido com a verdade e transparência.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-sm sm:text-base font-semibold mb-3">Seções</h4>
+            <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white">Política</a></li>
+              <li><a href="#" class="hover:text-white">Comércio</a></li>
+              <li><a href="#" class="hover:text-white">Cidadania</a></li>
+              <li><a href="#" class="hover:text-white">Saúde</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-sm sm:text-base font-semibold mb-3">Institucional</h4>
+            <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+              <li><a href="#" class="hover:text-white">Quem Somos</a></li>
+              <li><a href="#" class="hover:text-white">Contato</a></li>
+              <li><a href="#" class="hover:text-white">Anuncie</a></li>
+              <li><a href="#" class="hover:text-white">Trabalhe Conosco</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-sm sm:text-base font-semibold mb-3">Contato</h4>
+            <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+              <li>
+                <i class="fas fa-envelope"></i> contato@jornalmaraba.com.br
+              </li>
+              <li><i class="fas fa-phone"></i> (94) 3322-1100</li>
+              <li><i class="fas fa-map-marker-alt"></i> Marabá - PA</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 pt-4 sm:pt-6 text-center text-xs sm:text-sm text-gray-400"
+        >
+          <p>&copy; 2025 Jornal Marabá. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle do menu mobile
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+
+      // Fechar menu ao clicar em um link
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

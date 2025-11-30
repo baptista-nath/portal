@@ -79,24 +79,15 @@
       <div
         class="max-w-7xl mx-auto px-4 py-1 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0"
       >
-        <div class="text-xs text-gray-500 text-center md:text-left">
-          NPº - Modelo - Pará Quarta-feira 28 de novembro de 2025
+        <div class="text-xs text-gray-500 text-center md:text-left flex items-center gap-1">
+          <i id="weatherIcon" class="fas fa-sun text-yellow-500 text-sm"></i>
+          <span>30ºc - Marabá - Pará Quarta-feira 28 de novembro de 2025</span>
         </div>
-        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 font-segoe">
           <span class="text-xs text-gray-700 hidden md:inline">Quem Somos</span>
           <span class="text-xs text-gray-700 hidden md:inline">Política de Privacidade</span>
           <span class="text-xs text-gray-700 hidden md:inline">Fale Conosco</span>
-          <div class="flex gap-1">
-            <div class="w-5 h-5 bg-green-500 flex items-center justify-center">
-              <i class="fab fa-whatsapp text-white text-xs"></i>
-            </div>
-            <div class="w-5 h-5 bg-blue-600 flex items-center justify-center">
-              <i class="fab fa-facebook-f text-white text-xs"></i>
-            </div>
-            <div class="w-5 h-5 bg-purple-600 flex items-center justify-center">
-              <i class="fab fa-instagram text-white text-xs"></i>
-            </div>
-          </div>
+          <img src="/assets/icones-redesocial.png" alt="redes sociais" class="h-4 md:h-5" />
         </div>
       </div>
     </div>
@@ -106,9 +97,9 @@
       <div class="max-w-7xl mx-auto px-4">
         <!-- Logo -->
         <div class="flex justify-center items-center mb-2">
-          <span class="text-green-700 font-bold text-3xl md:text-5xl">Jornal</span>
+          <span class="text-green-700 font-bold text-3xl md:text-5xl" style="font-family: Cambria, Georgia, serif;">Jornal</span>
           <span class="text-orange-500 text-2xl md:text-3xl mx-2">🏠</span>
-          <span class="text-green-700 font-extrabold text-3xl md:text-5xl">Marabá</span>
+          <span class="text-green-700 font-extrabold text-3xl md:text-5xl" style="font-family: Cambria, Georgia, serif;">Marabá</span>
         </div>
       </div>
     </div>
@@ -118,9 +109,9 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center justify-center">
         <div class="bg-green-600 h-1 flex-1"></div>
-        <nav class="flex justify-center flex-shrink-0 text-xs font-semibold uppercase space-x-4 mx-4">
-          <a href="#" class="text-green-700 hover:text-green-500">cidadania</a>
-          <a href="#" class="text-green-700 hover:text-green-500">comércio</a>
+        <nav class="flex justify-center flex-shrink-0 text-xs font-semibold space-x-4 mx-4" style="font-family: 'Calibri', Arial, sans-serifFZ;">
+          <a href="#" class="text-green-700 hover:text-green-500">cidadania </a>
+          <a href="#" class="text-green-700 hover:text-green-500"> comércio</a>
           <a href="#" class="text-green-700 hover:text-green-500">notícias</a>
           <a href="#" class="text-green-700 hover:text-green-500">política</a>
           <a href="#" class="text-green-700 hover:text-green-500">saúde</a>
@@ -167,13 +158,13 @@
           <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
             de<br />
           </span>
-          <span class="text-red-700 font-extrabold font-serif text-3xl md:text-4xl leading-tight">
+          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
             QUALIDADE<br />
           </span>
           <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
             e<br />
           </span>
-          <span class="text-red-700 font-extrabold font-serif text-3xl md:text-4xl leading-tight">
+          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
             PREÇOS BAIXOS<br />
           </span>
           <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
@@ -187,7 +178,7 @@
         <!-- Imagem Central -->
         <div class="flex-1 order-1 md:order-2 hidden md:block">
           <img
-            src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400"
+            src="/assets/img-natal.png"
             alt="Família com carrinho de compras"
             class="w-full max-w-sm mx-auto"
           />
@@ -196,7 +187,7 @@
         <!-- Publicidade Direita (Carro Chefe) -->
         <div class="flex-1 text-center order-3 relative">
           <img
-            src="../assets/carrochefe.jpeg"
+            src="/assets/img-mercado.png"
             alt="Carro Chefe Supermercados"
             class="w-full max-w-xs md:max-w-sm mx-auto"
           />
@@ -204,17 +195,17 @@
           
           <!-- Ícones de Acessibilidade -->
           <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2">
-            <!-- Aumentar fonte -->
-            
-            
             <!-- Libras -->
-            <button onclick="abrirLibras()" class="w-10 h-10 flex items-center justify-center bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg transition-all hover:scale-110" title="Tradução em Libras">
-              <i class="fas fa-sign-language text-lg"></i>
+            <button onclick="abrirLibras()" class="w-12 h-12 flex items-center justify-center bg-white hover:bg-gray-50 rounded-full shadow-lg transition-all hover:scale-110 overflow-hidden" title="Tradução em Libras">
+              <img src="/assets/acessibilidade1.png" alt="Libras" class="w-full h-full object-cover">
             </button>
             
-            <!-- Acessibilidade -->
-            <button onclick="infoAcessibilidade()" class="w-10 h-10 flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg transition-all hover:scale-110" title="Informações de Acessibilidade">
-              <i class="fas fa-universal-access text-lg"></i>
+            <!-- Acessibilidade Geral -->
+            <button onclick="infoAcessibilidade()" class="w-12 h-12 flex items-center justify-center bg-white hover:bg-gray-50 rounded-full shadow-lg transition-all hover:scale-110 overflow-hidden" title="Informações de Acessibilidade">
+              <img src="/assets/image.png" alt="Acessibilidade" class="w-full h-full object-cover">
+            </button>
+            <button onclick="contato()" class="w-12 h-12 flex items-center justify-center bg-white hover:bg-gray-50 rounded-full shadow-lg transition-all hover:scale-110 overflow-hidden" title="Informações de Acessibilidade">
+              <img src="/assets/whats-lateral.png" alt="Acessibilidade" class="w-full h-full object-cover">
             </button>
           </div>
         </div>
@@ -224,7 +215,7 @@
     <!-- Endereços e Contatos -->
     <div class="w-full bg-white">
       <div class="max-w-7xl mx-auto px-4 mt-4 mb-8">
-        <p class="font-medium text-[9px] md:text-[10px] text-center leading-relaxed">
+        <p class="font-medium text-[9px] md:text-[10px] text-center leading-relaxed font-segoe">
           <span class="font-bold text-green-700">Loja 1 -</span>
           <span class="text-red-600">Bairro Independência</span> -
           <span class="text-black">(94) 991 33 86 86</span>
@@ -579,6 +570,39 @@
       function infoAcessibilidade() {
         alert('Recursos de Acessibilidade:\n\n• A+ / A- : Aumentar e diminuir tamanho da fonte\n• Alto Contraste: Inverter cores para melhor visualização\n• Libras: Tradução em Língua Brasileira de Sinais\n• Este ícone: Informações sobre acessibilidade');
       }
+
+      // Atualizar ícone do clima baseado no horário
+      function atualizarIconeClima() {
+        const agora = new Date();
+        const hora = agora.getHours();
+        const weatherIcon = document.getElementById('weatherIcon');
+        
+        if (!weatherIcon) return;
+        
+        // Limpar classes existentes
+        weatherIcon.className = '';
+        
+        // Definir ícone baseado no horário
+        if (hora >= 6 && hora < 12) {
+          // Manhã: Sol nascendo
+          weatherIcon.className = 'fas fa-sun text-yellow-500 text-sm';
+        } else if (hora >= 12 && hora < 18) {
+          // Tarde: Sol forte
+          weatherIcon.className = 'fas fa-sun text-orange-500 text-sm';
+        } else if (hora >= 18 && hora < 20) {
+          // Entardecer: Sol com nuvem
+          weatherIcon.className = 'fas fa-cloud-sun text-orange-400 text-sm';
+        } else {
+          // Noite: Lua
+          weatherIcon.className = 'fas fa-moon text-blue-300 text-sm';
+        }
+      }
+
+      // Atualizar ao carregar a página
+      document.addEventListener('DOMContentLoaded', atualizarIconeClima);
+      
+      // Atualizar a cada 1 hora (opcional)
+      setInterval(atualizarIconeClima, 3600000);
     </script>
 
   </body>

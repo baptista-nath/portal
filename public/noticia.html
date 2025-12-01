@@ -10,44 +10,125 @@
     body {
       font-family: 'Inter', sans-serif;
     }
+    /* Menu Mobile */
+    #mobile-menu-noticia {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+    #mobile-menu-noticia.active {
+      max-height: 300px;
+    }
   </style>
 </head>
 <body class="bg-gray-50">
   <!-- Header -->
   <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg">
-    <div class="container mx-auto px-4 py-6">
-      <div class="flex items-center justify-between">
-        <div>
-          <h1 class="text-4xl font-bold">Portal de Notícias</h1>
-          <p class="text-blue-100 mt-1">Fique por dentro das últimas novidades</p>
+    <div class="container mx-auto px-4 py-4 sm:py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="text-center sm:text-left">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold">Portal de Notícias</h1>
+          <p class="text-blue-100 mt-1 text-sm sm:text-base">Fique por dentro das últimas novidades</p>
         </div>
-        <nav class="hidden md:flex space-x-6">
+        
+        <!-- Menu Desktop -->
+        <nav class="hidden sm:flex space-x-4 sm:space-x-6 text-sm sm:text-base">
           <a href="/" class="hover:text-blue-200 transition">Home</a>
           <a href="#" class="hover:text-blue-200 transition">Categorias</a>
           <a href="#" class="hover:text-blue-200 transition">Sobre</a>
         </nav>
+
+        <!-- Botão Hambúrguer Mobile -->
+        <button
+          id="menu-toggle-noticia"
+          class="sm:hidden text-white focus:outline-none absolute top-4 right-4"
+          aria-label="Toggle menu"
+        >
+          <svg
+            id="menu-icon-noticia"
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            id="close-icon-noticia"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </div>
+
+      <!-- Menu Mobile Retrátil -->
+      <nav id="mobile-menu-noticia" class="sm:hidden mt-4">
+        <div class="flex flex-col space-y-2 border-t border-blue-500 pt-3">
+          <a href="/" class="hover:text-blue-200 transition py-2 px-2">Home</a>
+          <a href="#" class="hover:text-blue-200 transition py-2 px-2">Categorias</a>
+          <a href="#" class="hover:text-blue-200 transition py-2 px-2">Sobre</a>
+        </div>
+      </nav>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="container mx-auto px-4 py-8">
+  <main class="container mx-auto px-2 sm:px-4 py-6 sm:py-8">
     <div id="noticia-container" class="max-w-4xl mx-auto">
       <!-- Loading -->
       <div id="loading" class="text-center py-12">
         <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        <p class="mt-4 text-gray-600">Carregando notícia...</p>
+        <p class="mt-4 text-gray-600 text-sm sm:text-base">Carregando notícia...</p>
       </div>
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white mt-16 py-8">
+  <footer class="bg-gray-800 text-white mt-12 sm:mt-16 py-6 sm:py-8">
     <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2025 Portal de Notícias. Todos os direitos reservados.</p>
+      <p class="text-sm sm:text-base">&copy; 2025 Portal de Notícias. Todos os direitos reservados.</p>
     </div>
   </footer>
 
   <script src="/js/noticia.js"></script>
+  <script>
+    // Toggle do menu mobile na página de notícia
+    const menuToggleNoticia = document.getElementById('menu-toggle-noticia');
+    const mobileMenuNoticia = document.getElementById('mobile-menu-noticia');
+    const menuIconNoticia = document.getElementById('menu-icon-noticia');
+    const closeIconNoticia = document.getElementById('close-icon-noticia');
+
+    if (menuToggleNoticia) {
+      menuToggleNoticia.addEventListener('click', () => {
+        mobileMenuNoticia.classList.toggle('active');
+        menuIconNoticia.classList.toggle('hidden');
+        closeIconNoticia.classList.toggle('hidden');
+      });
+
+      // Fechar menu ao clicar em um link
+      const menuLinksNoticia = mobileMenuNoticia.querySelectorAll('a');
+      menuLinksNoticia.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuNoticia.classList.remove('active');
+          menuIconNoticia.classList.remove('hidden');
+          closeIconNoticia.classList.add('hidden');
+        });
+      });
+    }
+  </script>
 </body>
 </html>

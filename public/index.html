@@ -71,23 +71,47 @@
       .hamburger.active span:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
       }
+
+      /* Animação Fade In */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-text {
+        animation: fadeIn 1.5s ease-out forwards;
+      }
+
+      .fade-in-image {
+        animation: fadeIn 2s ease-out 0.5s forwards;
+        opacity: 0;
+      }
     </style>
   </head>
   <body class="bg-white">
     <!-- Top Bar (Barra Superior Muito Fina) -->
-    <div class="w-full bg-white border-b border-gray-200">
+    <div class="w-full bg-white border-b border-gray-200" style="background-color: #fff59D; width: 90%; margin: 0 auto;">
       <div
         class="max-w-7xl mx-auto px-4 py-1 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0"
       >
-        <div class="text-xs text-gray-500 text-center md:text-left flex items-center gap-1">
-          <i class="fas fa-sun text-yellow-500 text-sm"></i>
-          <span>30ºc - Marabá - Pará Quarta-feira 28 de novembro de 2025</span>
+        <div id="weatherInfo" class="text-xs text-gray-500 text-center md:text-left flex items-center gap-1" style="background-color: #fff59D;">
+          <i id="weatherIcon" class="fas fa-sun text-yellow-500 text-sm"></i>
+          <span id="weatherText">Carregando previsão do tempo...</span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 font-segoe">
-          <span class="text-xs text-gray-700 hidden md:inline">Quem Somos</span>
-          <span class="text-xs text-gray-700 hidden md:inline">Política de Privacidade</span>
-          <span class="text-xs text-gray-700 hidden md:inline">Fale Conosco</span>
-          <img src="/assets/icones-redesocial.png" alt="redes sociais" class="h-4 md:h-5" />
+          <a href="quem-somos.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600">Quem Somos</a>
+          <span class="text-xs text-gray-400 hidden md:inline">•</span>
+          <a href="politica-privacidade.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600">Política de Privacidade</a>
+          <span class="text-xs text-gray-400 hidden md:inline">•</span>
+          <a href="fale-conosco.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600">Fale Conosco</a>
+          <span class="text-xs text-gray-400 hidden md:inline">•</span>
+          <img src="../assets/icones.png" alt="redes sociais" class="h-4 md:h-5" />
         </div>
       </div>
     </div>
@@ -151,7 +175,7 @@
     <div class="w-full flex justify-center items-center py-4 md:py-8 bg-white">
       <div class="max-w-7xl w-full px-4 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
         <!-- Texto Esquerda -->
-        <div class="flex-1 text-center order-2 md:order-1">
+        <div class="flex-1 text-center order-2 md:order-1 fade-in-text">
           <span class="text-green-600 text-3xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
             Natal<br />
           </span>
@@ -176,9 +200,9 @@
         </div>
 
         <!-- Imagem Central -->
-        <div class="flex-1 order-1 md:order-2 hidden md:block">
+        <div class="flex-1 order-1 md:order-2 hidden md:block fade-in-image">
           <img
-            src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400"
+            src="../assets/img-natal.png"
             alt="Família com carrinho de compras"
             class="w-full max-w-sm mx-auto"
           />
@@ -187,26 +211,42 @@
         <!-- Publicidade Direita (Carro Chefe) -->
         <div class="flex-1 text-center order-3 relative">
           <img
-            src="../assets/carrochefe.jpeg"
+            src="../assets/img-mercado.png"
             alt="Carro Chefe Supermercados"
             class="w-full max-w-xs md:max-w-sm mx-auto"
           />
           <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2">SUPERMERCADOS</p>
           
           <!-- Ícones de Acessibilidade -->
-          <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2">
-            <!-- Aumentar fonte -->
-            
+          <div class="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3">
             
             <!-- Libras -->
-            <button onclick="abrirLibras()" class="w-10 h-10 flex items-center justify-center bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg transition-all hover:scale-110" title="Tradução em Libras">
-              <i class="fas fa-sign-language text-lg"></i>
+            <button 
+              onclick="abrirLibras()" 
+              class="w-12 h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110" 
+              title="Tradução em Libras"
+            >
+              <img src="../assets/acessibilidade1.png" alt="Libras" class="w-8 h-8 object-contain">
             </button>
             
-            <!-- Acessibilidade -->
-            <button onclick="infoAcessibilidade()" class="w-10 h-10 flex items-center justify-center bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg transition-all hover:scale-110" title="Informações de Acessibilidade">
-              <i class="fas fa-universal-access text-lg"></i>
+            <!-- Informações de Acessibilidade -->
+            <button 
+              onclick="infoAcessibilidade()" 
+              class="w-12 h-12 flex items-center justify-center  rounded-full shadow-lg transition-all hover:scale-110" 
+              title="Informações de Acessibilidade"
+            >
+              <img src="../assets/image.png" alt="Acessibilidade" class="w-8 h-8 object-contain">
             </button>
+
+            <!-- WhatsApp / Contato -->
+            <button 
+              onclick="contato()" 
+              class="w-12 h-12 flex items-center justify-center   rounded-full shadow-lg transition-all hover:scale-110" 
+              title="Fale Conosco via WhatsApp"
+            >
+              <img src="../assets/whats-lateral.png" alt="WhatsApp" class="w-8 h-8 object-contain">
+            </button>
+            
           </div>
         </div>
       </div>
@@ -514,6 +554,19 @@
       </div>
     </footer>
 
+    <!-- Banner de Consentimento de Cookies -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 w-full bg-gray-800 p-4 text-white shadow-lg z-50" style="display: none;">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm flex-1">
+      Utilizamos cookies e outras tecnologias semelhantes para melhorar a sua experiência no portal (personalizando publicidades, recomendando conteúdos e oferecendo serviços). 
+      Saiba mais a respeito consultando a nossa página de <a href="politica-privacidade.html" class="text-blue-400 hover:underline">Política de Privacidade</a>.
+        </p>
+        <button id="acceptCookies" class="bg-green-600 text-white px-4 py-2 font-bold rounded hover:bg-green-700 whitespace-nowrap">
+          OK. PROSSEGUIR!!
+        </button>
+      </div>
+    </div>
+
     <!-- JavaScript para Menu Hambúrguer -->
     <script>
       const menuToggle = document.getElementById('menuToggle');
@@ -570,6 +623,106 @@
       function infoAcessibilidade() {
         alert('Recursos de Acessibilidade:\n\n• A+ / A- : Aumentar e diminuir tamanho da fonte\n• Alto Contraste: Inverter cores para melhor visualização\n• Libras: Tradução em Língua Brasileira de Sinais\n• Este ícone: Informações sobre acessibilidade');
       }
+
+      function contato() {
+        // Redireciona para o WhatsApp do Jornal Marabá
+        // Substitua o número abaixo pelo número real do jornal (formato: 5594XXXXXXXXX)
+        const numeroWhatsApp = '5594991338686'; // Número da Loja 1
+        const mensagem = encodeURIComponent('Olá! Gostaria de mais informações sobre o Jornal Marabá.');
+        window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
+      }
+
+      // Banner de Cookies
+      function checkCookieConsent() {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) {
+          document.getElementById('cookieBanner').style.display = 'block';
+        }
+      }
+
+      document.getElementById('acceptCookies')?.addEventListener('click', function() {
+        localStorage.setItem('cookieConsent', 'true');
+        document.getElementById('cookieBanner').style.display = 'none';
+      });
+
+      // Verificar consentimento ao carregar
+      window.addEventListener('DOMContentLoaded', checkCookieConsent);
+
+      // Previsão do Tempo em Tempo Real
+      async function carregarPrevisaoTempo() {
+        const weatherText = document.getElementById('weatherText');
+        const weatherIcon = document.getElementById('weatherIcon');
+        
+        // Sempre mostrar a data atual primeiro
+        const agora = new Date();
+        const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+        const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        const diaSemana = diasSemana[agora.getDay()];
+        const dia = agora.getDate();
+        const mes = meses[agora.getMonth()];
+        const ano = agora.getFullYear();
+        
+        // Coordenadas de Marabá, Pará
+        const lat = -5.3686;
+        const lon = -49.1178;
+        
+        // API OpenWeatherMap (chave pública de demonstração - recomenda-se criar sua própria)
+        const apiKey = 'bd5e378503939ddaee76f12ad7a97608';
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`;
+        
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
+          
+          if (response.ok) {
+            // Temperatura arredondada
+            const temp = Math.round(data.main.temp);
+            
+            // Atualizar texto com temperatura + data
+            weatherText.textContent = `${temp}ºC - Marabá - Pará | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+            
+            // Atualizar ícone baseado no clima
+            const weatherCode = data.weather[0].main.toLowerCase();
+            
+            // Remover classes antigas
+            weatherIcon.className = 'text-sm';
+            
+            // Definir ícone e cor baseado nas condições
+            if (weatherCode.includes('clear')) {
+              weatherIcon.classList.add('fas', 'fa-sun', 'text-yellow-500');
+            } else if (weatherCode.includes('cloud')) {
+              weatherIcon.classList.add('fas', 'fa-cloud', 'text-gray-500');
+            } else if (weatherCode.includes('rain') || weatherCode.includes('drizzle')) {
+              weatherIcon.classList.add('fas', 'fa-cloud-rain', 'text-blue-500');
+            } else if (weatherCode.includes('thunder')) {
+              weatherIcon.classList.add('fas', 'fa-bolt', 'text-yellow-600');
+            } else if (weatherCode.includes('snow')) {
+              weatherIcon.classList.add('fas', 'fa-snowflake', 'text-blue-300');
+            } else {
+              weatherIcon.classList.add('fas', 'fa-cloud-sun', 'text-yellow-400');
+            }
+            
+            console.log('✅ Previsão do tempo carregada:', temp + '°C');
+            
+          } else {
+            // Se houver erro na API, mostrar data sem temperatura
+            weatherText.textContent = `Marabá - Pará | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+            weatherIcon.className = 'fas fa-sun text-yellow-500 text-sm';
+            console.warn('⚠️ API retornou erro:', data);
+          }
+        } catch (error) {
+          // Em caso de erro de conexão, mostrar data sem temperatura
+          console.error('❌ Erro ao buscar previsão do tempo:', error);
+          weatherText.textContent = `30ºC - Marabá - Pará | ${diaSemana}, ${dia} de ${mes} de ${ano}`;
+          weatherIcon.className = 'fas fa-sun text-yellow-500 text-sm';
+        }
+      }
+
+      // Carregar previsão ao iniciar a página
+      window.addEventListener('DOMContentLoaded', carregarPrevisaoTempo);
+      
+      // Atualizar a cada 10 minutos (600000 ms)
+      setInterval(carregarPrevisaoTempo, 600000);
     </script>
 
   </body>

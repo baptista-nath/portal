@@ -139,11 +139,10 @@
     <div class="w-full bg-white py-4">
       <div class="max-w-7xl mx-auto px-4">
         <!-- Logo -->
-        <div class="flex justify-center items-center mb-2 gap-2 md:gap-6">
-          <span class="text-green-700 font-bold" style="font-family: Cambria, Georgia, serif; font-size: 3rem; margin: 10px;">Jornal</span>
-          <img src="../assets/Logo.webp" alt="logo" style="height: 35px; margin-top: 8px;" class="md:hidden">
-          <img src="../assets/Logo.webp" alt="logo" style="height: 60px; margin-top: 15px;" class="hidden md:block">
-          <span class="text-green-700 font-extrabold" style="font-family: Cambria, Georgia, serif; font-size: 3rem; margin: 10px;">Marabá</span>
+        <div class="flex justify-center items-center mb-2 gap-6">
+          <span class="text-green-700 font-bold text-4xl md:text-7xl" style="font-family: Cambria, Georgia, serif; font-size: 7rem; margin: 40px;">Jornal</span>
+          <img src="../assets/Logo.webp" alt="logo" style="height: 60px; margin-top: 15px;">
+          <span class="text-green-700 font-extrabold text-4xl md:text-7xl" style="font-family: Cambria, Georgia, serif; font-size: 7rem; margin: 40px;">Marabá</span>
         </div>
       </div>
     </div>
@@ -201,104 +200,53 @@
 
     <!-- Banner Principal (Natal de Qualidade) -->
     <div class="w-full flex justify-center items-center py-4 md:py-8 bg-white">
-      <div class="max-w-7xl w-full px-4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+      <div class="max-w-7xl w-full px-4" style="display: flex; flex-direction: row; align-items: flex-end; justify-content: center; gap: 20px;">
+        <!-- Item 1 - Texto (à direita na sequência visual) -->
+        <div class="text-center fade-in-text item1" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; order: 1;">
+          <span class="text-green-600 text-4xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
+            Natal<br />
+          </span>
+          <span class="text-green-600 text-3xl md:text-4xl leading-tight" style="font-family: 'Dancing Script', cursive">
+            de<br />
+          </span>
+          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
+            QUALIDADE<br />
+          </span>
+          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
+            e<br />
+          </span>
+          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight" style="letter-spacing: 0.05em;">
+            PREÇOS BAIXOS
+          </span>
+          <br />
+          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
+            é<br />
+          </span>
+          <span class="text-green-600 font-extrabold font-sans text-4xl md:text-5xl leading-tight">
+            Aqui!
+          </span>
+        </div>
         
-        <!-- Mobile: Layout em coluna -->
-        <div class="md:hidden w-full" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-          <!-- Texto Natal -->
-          <div class="text-center fade-in-text">
-            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 2rem;">
-              Natal<br />
-            </span>
-            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
-              de<br />
-            </span>
-            <span class="text-red-700 font-extrabold leading-tight" style="font-size: 2rem;">
-              QUALIDADE<br />
-            </span>
-            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
-              e<br />
-            </span>
-            <span class="text-red-700 font-extrabold leading-tight" style="font-size: 2rem; letter-spacing: 0.05em;">
-              PREÇOS BAIXOS
-            </span>
-            <br />
-            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
-              é<br />
-            </span>
-            <span class="text-green-600 font-extrabold leading-tight" style="font-size: 2.5rem;">
-              Aqui!
-            </span>
-          </div>
-          
-          <!-- Imagem Central -->
-          <div class="fade-in-image">
-            <img
-              src="../assets/imagem-natal.png"
-              alt="Família com carrinho de compras"
-              style="width: 180px; height: auto; object-fit: contain;"
-            />
-          </div>
-          
-          <!-- Publicidade -->
-          <div style="text-align: center; width: 100%;">
+        <!-- Item 2 - Imagem Central (centralizada) -->
+        <div class="item2 fade-in-image" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; order: 2;">
+          <img
+            src="../assets/imagem-natal.png"
+            alt="Família com carrinho de compras"
+            style="width: 250px; height: 320px; object-fit: contain;"
+          />
+        </div>
+
+        <!-- Item 3 - Publicidade (à esquerda na sequência visual) -->
+        <div class="item3" style="flex: 1; display: flex; flex-direction: column; align-items: flex-start; order: 3;">
+          <div style="width: 100%;">
             <img
               src="../assets/img-mercado.png"
               alt="Carro Chefe Supermercados"
-              style="max-width: 250px; width: 100%; height: auto; object-fit: contain;"
+              style="max-width: 300px; width: 100%; height: auto; object-fit: contain;"
             />
-            <p class="text-gray-700 font-semibold text-xs mt-2" style="text-align: left; padding-left: 60px;">SUPERMERCADOS</p>
-          </div>
-        </div>
-        
-        <!-- Desktop: Layout em linha -->
-        <div class="hidden md:flex w-full" style="flex-direction: row; align-items: flex-end; justify-content: center; gap: 20px;">
-          <!-- Item 1 - Texto -->
-          <div class="text-center fade-in-text" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; order: 1;">
-            <span class="text-green-600 text-4xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
-              Natal<br />
-            </span>
-            <span class="text-green-600 text-3xl md:text-4xl leading-tight" style="font-family: 'Dancing Script', cursive">
-              de<br />
-            </span>
-            <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
-              QUALIDADE<br />
-            </span>
-            <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-              e<br />
-            </span>
-            <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight" style="letter-spacing: 0.05em;">
-              PREÇOS BAIXOS
-            </span>
-            <br />
-            <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-              é<br />
-            </span>
-            <span class="text-green-600 font-extrabold font-sans text-4xl md:text-5xl leading-tight">
-              Aqui!
-            </span>
+            <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2" style="text-align: left; padding-left: 80px;">SUPERMERCADOS</p>
           </div>
           
-          <!-- Item 2 - Imagem Central -->
-          <div class="fade-in-image" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; order: 2;">
-            <img
-              src="../assets/imagem-natal.png"
-              alt="Família com carrinho de compras"
-              style="width: 250px; height: 320px; object-fit: contain;"
-            />
-          </div>
-
-          <!-- Item 3 - Publicidade -->
-          <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start; order: 3;">
-            <div style="width: 100%;">
-              <img
-                src="../assets/img-mercado.png"
-                alt="Carro Chefe Supermercados"
-                style="max-width: 300px; width: 100%; height: auto; object-fit: contain;"
-              />
-              <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2" style="text-align: left; padding-left: 80px;">SUPERMERCADOS</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>

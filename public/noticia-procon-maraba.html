@@ -9,6 +9,40 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      /* Classes para destaque de texto */
+      .texto-negrito {
+        font-weight: 700;
+        color: #1f2937; /* Cinza escuro */
+      }
+
+      .texto-verde {
+        color: #16a34a; /* Verde */
+        font-weight: 600;
+      }
+
+      .texto-vermelho {
+        color: #dc2626; /* Vermelho */
+        font-weight: 600;
+      }
+
+      .texto-azul {
+        color: #2563eb; /* Azul */
+        font-weight: 600;
+      }
+
+      .texto-amarelo {
+        color: #ca8a04; /* Amarelo/Dourado */
+        font-weight: 600;
+      }
+
+      .texto-destaque {
+        background-color: #fef3c7; /* Fundo amarelo claro */
+        padding: 2px 4px;
+        border-radius: 2px;
+        font-weight: 600;
+      }
+    </style>
   </head>
   <body class="bg-gray-50">
     <!-- Header -->
@@ -26,15 +60,6 @@
 
     <!-- Artigo -->
     <article class="max-w-4xl mx-auto px-4 py-8">
-      <!-- Categoria -->
-      <div class="mb-4">
-        <span
-          class="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-        >
-          Cidadania
-        </span>
-      </div>
-
       <!-- Imagem CDC -->
       <div class="mb-8 flex justify-center">
         <img
@@ -44,32 +69,69 @@
         />
       </div>
 
-      <!-- Título -->
-      <h1
-        class="text-2xl md:text-4xl font-bold text-gray-900 mb-4"
-        style="font-family: 'Segoe UI Semibold', sans-serif"
-      >
-        Cidadania
-      </h1>
+      <!-- Container centralizado alinhado com a imagem -->
+      <div class="flex justify-center mb-8">
+        <div class="w-full md:w-3/4">
+          <!-- Categoria -->
 
-      <h2
-        class="text-lg md:text-2xl text-gray-700 mb-6"
-        style="font-family: 'Segoe UI', sans-serif"
-      >
-        Procon Marabá, Guarda Municipal e Vigilância Sanitária promovem ações
-        conjuntas na defesa cidadã
-      </h2>
+          <!-- Título -->
+          <h1
+            class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight"
+            style="font-family: 'Segoe UI Semibold', sans-serif"
+          >
+            Cidadania
+          </h1>
 
-      <!-- Subtítulo -->
-      <div class="bg-green-50 border-l-4 border-green-600 p-4 mb-8">
-        <h3 class="text-lg font-semibold text-gray-800">
-          Procon, Guarda Municipal e Vigilância Sanitária unem forças na
-          prevenção e defesa dos direitos do cidadão marabaense
-        </h3>
+          <h2
+            class="text-gray-700 mb-6 leading-relaxed"
+            style="font-family: 'Segoe UI', sans-serif; font-size: 12px"
+          >
+            <span class="texto-negrito"
+              >Procon Marabá, Guarda Municipal e Vigilância Sanitária</span
+            >
+            promovem <span class="texto-negrito">ações</span> conjuntas na
+            defesa
+            <span class="texto-negrito">cidadã</span>
+          </h2>
+
+          <p class="text-base md:text-lg mb-6 font-medium text-gray-800">
+            <span
+              style="
+                background-color: yellow;
+                padding: 2px 6px;
+                border-radius: 3px;
+              "
+              >Cidadania</span
+            >
+          </p>
+
+          <!-- Subtítulo -->
+          <div>
+            <h3 class="text-base md:text-lg text-gray-800 leading-relaxed">
+              <span class="texto-negrito"
+                >Procon Marabá, Guarda Municipal e Vigilância Sanitária</span
+              >
+              unem forças na <span class="texto-negrito">prevenção</span> e
+              <span class="texto-negrito">defesa</span> dos
+              <span class="texto-negrito">direitos</span> do cidadão marabaense
+            </h3>
+          </div>
+          <br>
+
+          <!-- Linha divisória -->
+          <hr
+            style="border: 0; height: 2px; background-color: #333; width: 100%"
+          />
+
+          <!-- Autor -->
+          <div class="flex items-center gap-2 mb-8">
+            <img src="../assets/image copy.png" alt="logo" class="h-5 w-auto" />
+            <br><br>
+            
+            <p class="texto-negrito">Da Redação</p>
+          </div>
+        </div>
       </div>
-
-      <!-- Autor -->
-      <p class="text-sm text-gray-600 mb-6 italic">Da Redação</p>
 
       <!-- Imagem principal -->
       <div class="mb-8 flex justify-center">
@@ -77,9 +139,10 @@
           <img
             src="../assets/fiscalizacao.png"
             alt="Código de Defesa do Consumidor"
-            class="w-full h-auto rounded-lg shadow-md"
+            class="w-full h-auto shadow-md mx-auto"
+            style="max-width: 450px"
           />
-          <p class="text-sm text-gray-600 mt-2 text-center italic">
+          <p class="text-sm font-bold text-red-600 mt-2 text-center">
             Procon Marabá, Vigilância Sanitária e Guarda Municipal atuam em
             visitações dia e noite fiscalizando estabelecimentos comerciais por
             toda cidade em 2025
@@ -88,193 +151,337 @@
       </div>
 
       <!-- Conteúdo -->
-      <div class="prose prose-lg max-w-none">
-        <p class="text-gray-700 leading-relaxed mb-4">
-          O trabalho das instituições públicas em Marabá reflete o compromisso
-          com a população, revelando desempenho nas ações exercidas em conjunto
-          com secretarias e autarquias.
-        </p>
+      <div class="flex justify-center">
+        <div class="w-full md:w-3/4 prose prose-lg max-w-none">
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            O trabalho das instituições públicas em Marabá reflete o compromisso
+            com a população, revelando desempenho nas ações exercidas em
+            conjunto com secretarias e autarquias.
+          </p>
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Exemplo ocorre em conjunto com a Guarda Municipal, a Vigilância
-          Sanitária e o Procon. Diversas ocorrências envolveram a integração
-          desses três órgãos municipais em 2025. Casos recentes envolveram a
-          fiscalização contra bebidas vencidas e suspeitas de alterações com o
-          metanol, com nenhum caso registrado em Marabá, a fiscalização do
-          combustível nos postos de gasolina de Marabá também não revelando
-          adulterações em todos os postos fiscalizados, orientações de como
-          prevenir golpes na recente Black Friday e a contínua fiscalização
-          cotidiana e as que envolvem as compras para as festas natalinas e
-          comemorações do Ano Novo envolvendo os direitos do cidadão e o
-          respeito entre fornecedores ao consumidor, com segurança de consumo
-          entre as partes.
-        </p>
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            Exemplo ocorre em conjunto com a
+            <span class="texto-negrito"
+              >Guarda Municipal, a Vigilância Sanitária e o Procon</span
+            >. Diversas ocorrências envolveram a integração desses três órgãos
+            municipais em 2025. Casos recentes envolveram a fiscalização contra
+            <span class="texto-negrito">bebidas vencidas</span> e suspeitas de
+            alterações com o metanol, com nenhum caso registrado em Marabá, a
+            fiscalização do
+            <span class="texto-negrito"
+              >combustível nos postos de gasolina</span
+            >
+            de Marabá também não revelando adulterações em todos os postos
+            fiscalizados, orientações de como prevenir
+            <span class="texto-negrito">golpes na recente Black Friday</span> e
+            a contínua fiscalização cotidiana e as que envolvem as compras para
+            as
+            <span class="texto-negrito"
+              >festas natalinas e comemorações do Ano Novo</span
+            >
+            envolvendo os direitos do cidadão e o respeito entre fornecedores ao
+            consumidor, com segurança de consumo entre as partes.
+          </p>
 
-        <p class="text-gray-700 leading-relaxed mb-6">
-          A reportagem destaca em dezembro a importante atuação do Procon Marabá
-          tendo à frente a advogada e coordenadora da instituição Zélia Lopes,
-          integrante do setor jurídico do Procon Marabá desde 2011 e em 2017
-          atuando na coordenadoria do órgão.
-        </p>
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            A reportagem destaca em dezembro a importante atuação do
+            <span class="texto-negrito">Procon Marabá</span>
+            tendo à frente a advogada e coordenadora da instituição Zélia Lopes,
+            integrante do setor jurídico do Procon Marabá desde 2011 e em 2017
+            atuando na coordenadoria do órgão.
+          </p>
 
-        <!-- Imagem Zélia Lopes -->
-        <div class="my-8 flex justify-center">
-          <div class="w-full md:w-3/4">
+          <!-- Imagem Zélia Lopes -->
+          <div class="my-8 flex justify-center">
+            <div class="w-full md:w-3/4">
+              <img
+                src="../assets/zelha-lopes.png"
+                alt="Zélia Lopes, coordenadora do Procon Marabá"
+                class="w-full h-auto shadow-md"
+              />
+              <p class="texto-vermelho mt-2 text-center">
+                Zélia Lopes: "Boa relação de consumo é uma das prioridades Junto
+                ao comércio e consumidores do Procon Marabá"
+              </p>
+            </div>
+          </div>
+
+          <!-- Destaque -->
+
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            "A prioridade é a vida, e a vida do consumidor não pode correr
+            riscos, mas sim estar protegida como está no Código de Defesa do
+            Consumidor (CDC) e na Constituição. A prevenção e pós-prevenção são
+            hábitos diários exercidos pelo Procon Marabá, conciliado à relação
+            de consumo entre consumidores e fornecedores dos serviços e produtos
+            em Marabá. Ambos os lados demonstram cada vez mais conhecimento nas
+            ações do Procon. A relação de consumo sempre será a nossa pauta,
+            pois o consumidor não pode se sentir ferido em seus direitos. A
+            missão do Procon não é simplesmente multar nos casos de inflação.
+            Nosso objetivo maior é proteger o consumidor, criando políticas
+            públicas voltadas ao seu bem-estar de ambas as partes do consumo. De
+            um lado temos o comerciante, merecedor do reconhecimento do seu
+            papel junto à sociedade, respeitando o consumidor. Recentemente em
+            uma fiscalização em quase 600 estabelecimentos de Marabá, 99% dos
+            comerciantes não criaram obstáculos contra a fiscalização,
+            agradecendo nossa presença e orientações."
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            "Lamentavelmente a única ocorrência foi gerada pela aversão da nossa
+            presença feminina comandando a ação dando a destinação final de
+            grande quantidade de cervejas vencidas e impróprias ao consumo
+            humano, não podendo ser comercializadas, mas situação contornada
+            graças a presença da guarda Municipal, sempre parceira ao suporte e
+            segurança da fiscalização do Procon e Vigilância Sanitária
+            preservando a vida e os direitos do consumidor. Comerciantes
+            entendem que a fiscalização em seus estabelecimentos é uma excelente
+            e positiva estratégia de marketing para venderem mais, ao passar e
+            tornar pública a segurança de seus produtos ao consumidor após a
+            visita do Procon e vigilância Sanitária. Essas ações, bem recebidas
+            pelos comerciantes resultam inclusive pelo comércio na criação do
+            selo <span class="texto-negrito">'Amigos do PROCON'</span>,
+            atestando que a fiscalização esteve presente, transmitindo segurança
+            ao consumidor."
+          </p>
+
+          <div class="my-8 flex justify-start">
+            <div class="w-full md:w-3/4">
+              <img
+                src="../assets/procom-maraba.png"
+                alt="imagem do Procon Marabá"
+                class="w-full h-auto shadow-md"
+              />
+              <p class="texto-vermelho mt-2 text-left">
+                Atendimento rápido e humanizado marcam o novo prédio
+              </p>
+            </div>
+          </div>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            "A educação necessária na relação de consumo, orientando e
+            conscientizando comerciantes e suas equipes de funcionários sobre a
+            importância do desempenho da excelência entre a relação de consumo
+            faz parte das funções orientativa do Procon Marabá, e estamos
+            prontos para somar junto aos comerciantes em seus chamados para
+            orientar, prevenir e evitar fatos futuros, pois contra fatos não
+            restam argumentos posteriores", explica Zélia Lopes.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-6">
+            A reportagem percebeu outro destaque na modernidade,
+            profissionalismo e qualidade do Procon Marabá, diferenciando sua
+            atuação entre os 144 municípios paraenses desde Abaetetuba até
+            Xinguara ao ser
+            <span class="texto-negrito">a primeira cidade do estado</span>
+            disponibilizando o
+            <span class="texto-negrito"
+              >Núcleo de Apoio ao Superendividado (Nas)</span
+            >, explica Zélia Lopes.
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            "O endividamento geral em outubro de 2025 atingiu o recorde de quase
+            80% das famílias endividadas no país, gerando a incapacidade de
+            pagar as dívidas, sem comprometer o mínimo existencial. Isto merece
+            a atenção para a adoção de medidas. O Serasa apontou que no final de
+            2024, mais de 73 milhões de brasileiros estariam endividados, e
+            dentre esses milhões, provavelmente no Pará e especificamente em
+            nosso município exista uma quantidade desconhecida, mas que mereça
+            atenção e soluções por iniciativa e orientação do Procon Marabá."
+          </p>
+
+          <p class="text-gray-700 leading-relaxed mb-4">
+            "Em Marabá, a visão e gestão voltadas ao bem-estar e qualidade de
+            vida da população marabaense fizeram o prefeito Toni Cunha investir
+            na criação do
+            <span class="texto-negrito"
+              >Núcleo de Apoio ao Superendividado (NAS)</span
+            >, atendendo os munícipes da zona rural e urbana dos
+            superendividados. A Lei 14.181/2021 (Lei do Superendividamento)
+            protege as pessoas físicas com dívidas excessivas de consumo
+            contraídas de boa-fé que se tornaram impagáveis, como contas de
+            empréstimos com instituições financeiras ou prestadores de serviços
+            capazes de comprometer o próprio sustento. A Lei do
+            Superendividamento permite judicialmente repactuar as dívidas para
+            que não impeça o consumidor de ter recursos para despesas básicas
+            como alimentação, moradia e saúde; comprometendo em média até 35% da
+            renda familiar com o
+            <span class="texto-negrito">prazo de pagamento de até 5 anos</span>,
+            combatendo práticas abusivas por parte dos credores. A lei exclui as
+            dívidas de natureza alimentar, como pensão alimentícia, dívidas
+            fiscais e tributárias e dívidas contraídas por má-fé", conclui a
+            coordenadora do Procon Marabá, Zélia Lopes.
+          </p>
+
+          <!-- Destaque final -->
+          <div class="my-8">
             <img
               src="../assets/zelha.png"
-              alt="Zélia Lopes, coordenadora do Procon Marabá"
-              class="w-full h-auto rounded-lg shadow-md"
+              alt="imagem zelha"
+              class="w-full h-auto shadow-md"
+              style="width: 350px"
             />
-            <p class="text-sm text-gray-600 mt-2 text-center italic">
-              Zélia Lopes, coordenadora do Procon Marabá
+
+            <p class="texto-vermelho mt-2">
+              Prefeito Toni Cunha e coordenadora do Procon Marabá, Zélia Lopes:
+              " Resgatar a cidadania envolve ofertar dignidade para renegociação
+              dos superendividados através das ações feitas pelo NAS, sem que
+              não afete a alimentação, moradia e qualidade de vida do cidadão
+              marabaense"
             </p>
           </div>
-        </div>
 
-        <!-- Destaque -->
-        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 my-8">
-          <h4 class="text-xl font-bold text-gray-900 mb-4">
-            Zélia Lopes: "Boa relação de consumo é uma das prioridades junto ao
-            comércio e consumidores do Procon Marabá"
-          </h4>
-        </div>
+          <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">
+            Dicas para não se endividar
+          </h3>
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          "A prioridade é a vida, e a vida do consumidor não pode correr riscos,
-          mas sim estar protegida como está no Código de Defesa do Consumidor
-          (CDC) e na Constituição. A prevenção e pós-prevenção são hábitos
-          diários exercidos pelo Procon Marabá, conciliado à relação de consumo
-          entre consumidores e fornecedores dos serviços e produtos em Marabá.
-          Ambos os lados demonstram cada vez mais conhecimento nas ações do
-          Procon. A relação de consumo sempre será a nossa pauta, pois o
-          consumidor não pode se sentir ferido em seus direitos. A missão do
-          Procon não é simplesmente multar nos casos de inflação. Nosso objetivo
-          maior é proteger o consumidor, criando políticas públicas voltadas ao
-          seu bem-estar de ambas as partes do consumo. De um lado temos o
-          comerciante, merecedor do reconhecimento do seu papel junto à
-          sociedade, respeitando o consumidor. Recentemente em uma fiscalização
-          em quase 600 estabelecimentos de Marabá, 99% dos comerciantes não
-          criaram obstáculos contra a fiscalização, agradecendo nossa presença e
-          orientações."
-        </p>
+          <!-- Anuncio -->
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          "Lamentavelmente a única ocorrência foi gerada pela aversão da nossa
-          presença feminina comandando a ação dando a destinação final de grande
-          quantidade de cervejas vencidas e impróprias ao consumo humano, não
-          podendo ser comercializadas, mas situação contornada graças a presença
-          da guarda Municipal, sempre parceira ao suporte e segurança da
-          fiscalização do Procon e Vigilância Sanitária preservando a vida e os
-          direitos do consumidor. Comerciantes entendem que a fiscalização em
-          seus estabelecimentos é uma excelente e positiva estratégia de
-          marketing para venderem mais, ao passar e tornar pública a segurança
-          de seus produtos ao consumidor após a visita do Procon e vigilância
-          Sanitária. Essas ações, bem recebidas pelos comerciantes resultam
-          inclusive pelo comércio na criação do selo 'Amigos do PROCON',
-          atestando que a fiscalização esteve presente, transmitindo segurança
-          ao consumidor."
-        </p>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Vale a dica de que é possível economizar e não se endividar em
+            dezembro, mesmo com as festas de fim de ano, pois o que faz o
+            endividamento da maioria das pessoas se enrolar é a emoção e euforia
+            do tipo "recebi o 13º salário, estou rico, vou gastar"... Calma!
+            Pare um pouco e pense se esteja realmente precisando.
+          </p>
 
-        <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">
-          Atendimento rápido e humanizado marcam o novo prédio
-        </h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Aplicar parte do dinheiro neste período é importantíssimo, devendo
+            ser a primeira coisa a ser feita, antes de começar a gastar.
+            Recebeu? Então reserve aquele valor para qualquer emergência.
+          </p>
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          "A educação necessária na relação de consumo, orientando e
-          conscientizando comerciantes e suas equipes de funcionários sobre a
-          importância do desempenho da excelência entre a relação de consumo faz
-          parte das funções orientativa do Procon Marabá, e estamos prontos para
-          somar junto aos comerciantes em seus chamados para orientar, prevenir
-          e evitar fatos futuros, pois contra fatos não restam argumentos
-          posteriores", explica Zélia Lopes.
-        </p>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Analistas em finanças consultados em Marabá afirmam que a poupança
+            não é a melhor opção do mercado para fazer o nosso dinheiro
+            trabalhar favoravelmente nos beneficiando, pois rende pouco.
+          </p>
 
-        <p class="text-gray-700 leading-relaxed mb-6">
-          A reportagem percebeu outro destaque na modernidade, profissionalismo
-          e qualidade do Procon Marabá, diferenciando sua atuação entre os 144
-          municípios paraenses desde Abaetetuba até Xinguara ao ser a primeira
-          cidade do estado disponibilizando o Núcleo de Apoio ao Superendividado
-          (Nas), explica Zélia Lopes.
-        </p>
-
-        <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">
-          Núcleo de Apoio ao Superendividado
-        </h3>
-
-        <p class="text-gray-700 leading-relaxed mb-4">
-          "O endividamento geral em outubro de 2025 atingiu o recorde de quase
-          80% das famílias endividadas no país, gerando a incapacidade de pagar
-          as dívidas, sem comprometer o mínimo existencial. Isto merece a
-          atenção para a adoção de medidas. O Serasa apontou que no final de
-          2024, mais de 73 milhões de brasileiros estariam endividados, e dentre
-          esses milhões, provavelmente no Pará e especificamente em nosso
-          município exista uma quantidade desconhecida, mas que mereça atenção e
-          soluções por iniciativa e orientação do Procon Marabá."
-        </p>
-
-        <p class="text-gray-700 leading-relaxed mb-4">
-          "Em Marabá, a visão e gestão voltadas ao bem-estar e qualidade de vida
-          da população marabaense fizeram o prefeito Toni Cunha investir na
-          criação do Núcleo de Apoio ao Superendividado (NAS), atendendo os
-          munícipes da zona rural e urbana dos superendividados. A Lei
-          14.181/2021 (Lei do Superendividamento) protege as pessoas físicas com
-          dívidas excessivas de consumo contraídas de boa-fé que se tornaram
-          impagáveis, como contas de empréstimos com instituições financeiras ou
-          prestadores de serviços capazes de comprometer o próprio sustento. A
-          Lei do Superendividamento permite judicialmente repactuar as dívidas
-          para que não impeça o consumidor de ter recursos para despesas básicas
-          como alimentação, moradia e saúde; comprometendo em média até 35% da
-          renda familiar com o prazo de pagamento de até 5 anos, combatendo
-          práticas abusivas por parte dos credores. A lei exclui as dívidas de
-          natureza alimentar, como pensão alimentícia, dívidas fiscais e
-          tributárias e dívidas contraídas por má-fé", conclui a coordenadora do
-          Procon Marabá, Zélia Lopes.
-        </p>
-
-        <!-- Destaque final -->
-        <div class="bg-green-50 border-l-4 border-green-600 p-6 my-8">
-          <h4 class="text-lg font-bold text-gray-900 mb-2">
-            Prefeito Toni Cunha e coordenadora do Procon Marabá, Zélia Lopes:
-          </h4>
-          <p class="text-gray-700 italic">
-            "Resgatar a cidadania envolve ofertar dignidade para renegociação
-            dos superendividados através das ações feitas pelo NAS, sem que não
-            afete a alimentação, moradia e qualidade de vida do cidadão
-            marabaense"
+          <p class="text-gray-700 leading-relaxed mb-6">
+            O mercado financeiro tem ofertado opções melhores e seguras como os
+            CDBs com liquidez diária e que podem ser resgatados a qualquer
+            momento, e as caixinhas dos bancos digitais são super conhecidas,
+            fáceis de usar e de organizar. O importante é proteger a saúde
+            financeira sempre guardar um pouquinho todo o mês.
           </p>
         </div>
+      </div>
 
-        <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">
-          Dicas para não se endividar
-        </h3>
+      <!-- Banner Carro Chefe -->
+      <div class="flex justify-center my-8">
+        <img src="../assets/banner-teste.png" alt="banner" style="width: 80%" />
+      </div>
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Vale a dica de que é possível economizar e não se endividar em
-          dezembro, mesmo com as festas de fim de ano, pois o que faz o
-          endividamento da maioria das pessoas se enrolar é a emoção e euforia
-          do tipo "recebi o 13º salário, estou rico, vou gastar"... Calma! Pare
-          um pouco e pense se esteja realmente precisando.
-        </p>
+      <!-- Tags e Compartilhamento -->
+      <div class="flex flex-wrap items-center justify-between gap-4 my-8 px-4">
+        <!-- Tags -->
+        <div class="flex items-center gap-2">
+          <span class="bg-gray-800 text-white text-xs font-bold px-3 py-1"
+            >TAGS</span
+          >
+          <a href="#" class="text-gray-700 hover:text-green-600 text-sm"
+            >google-destaques</a
+          >
+          <a href="#" class="text-gray-700 hover:text-green-600 text-sm"
+            >Procon</a
+          >
+        </div>
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Aplicar parte do dinheiro neste período é importantíssimo, devendo ser
-          a primeira coisa a ser feita, antes de começar a gastar. Recebeu?
-          Então reserve aquele valor para qualquer emergência.
-        </p>
+        <!-- Compartilhar -->
+        <div class="flex items-center gap-3">
+          <span class="text-gray-700 text-sm font-semibold">Compartilhe</span>
+          <div class="flex gap-2">
+            <a
+              href="#"
+              class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded transition-colors"
+              title="Compartilhar no Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-gradient-to-br from-purple-600 via-pink-600 to-orange-500 hover:opacity-90 text-white p-2 rounded transition-opacity"
+              title="Compartilhar no Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="bg-green-500 hover:bg-green-600 text-white p-2 rounded transition-colors"
+              title="Compartilhar no WhatsApp"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
 
-        <p class="text-gray-700 leading-relaxed mb-4">
-          Analistas em finanças consultados em Marabá afirmam que a poupança não
-          é a melhor opção do mercado para fazer o nosso dinheiro trabalhar
-          favoravelmente nos beneficiando, pois rende pouco.
-        </p>
+   
+     
 
-        <p class="text-gray-700 leading-relaxed mb-6">
-          O mercado financeiro tem ofertado opções melhores e seguras como os
-          CDBs com liquidez diária e que podem ser resgatados a qualquer
-          momento, e as caixinhas dos bancos digitais são super conhecidas,
-          fáceis de usar e de organizar. O importante é proteger a saúde
-          financeira sempre guardar um pouquinho todo o mês.
-        </p>
+      <!-- Formulário de Comentários -->
+      <div class="bg-white p-6 my-8 border-t-2 border-gray-200">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">DEIXE UMA RESPOSTA</h3>
+
+        <form class="space-y-4">
+          <!-- Campo de Comentário -->
+          <div>
+            <textarea
+              name="comment"
+              placeholder="Comentário:"
+              rows="6"
+              class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-green-600 text-sm"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Campo de Nome -->
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nome:*"
+              class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-green-600 text-sm"
+              required
+            />
+          </div>
+
+          <!-- Campo de E-mail -->
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail:*"
+              class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-green-600 text-sm"
+              required
+            />
+          </div>
+
+          <!-- Checkbox -->
+          <div class="flex items-start gap-2">
+            <input
+              type="checkbox"
+              id="save-info"
+              name="save-info"
+              class="mt-1 w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+            />
+            <label for="save-info" class="text-sm text-gray-700">
+              Clique e salve seu nome, e-mail e site neste navegador para a
+              próxima vez que for comentar
+            </label>
+          </div>
+
+          <!-- Botão de Enviar -->
+          <div>
+            <button
+              type="submit"
+              class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded transition-colors text-sm uppercase"
+            >
+              Publicar comentário
+            </button>
+          </div>
+        </form>
       </div>
 
       <!-- Botão voltar -->
@@ -288,6 +495,8 @@
         </a>
       </div>
     </article>
+
+    <!-- Anuncio -->
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-12">

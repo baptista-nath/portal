@@ -15,6 +15,10 @@
       rel="stylesheet"
     />
     <style>
+      .img-fluid {
+        width: 100%;
+        height: 100px;
+      }
       /* Definição do Gradiente Principal (Ajuste as cores para a tonalidade exata da imagem) */
       .gradiente-esquerda {
         /* O gradiente começa transparente ou amarelo pálido (no lado esquerdo) e se torna verde-limão e verde-esmeralda (no lado direito), como na imagem. */
@@ -111,21 +115,21 @@
   </head>
   <body class="bg-white">
     <!-- Top Bar (Barra Superior Muito Fina) -->
-    <div class="w-full bg-white border-b border-gray-200" style="background-color: #fff59D; width: 90%; margin: 0 auto;">
+    <div class="w-full bg-white border-b border-gray-200" style="background-color: #fff59D; width: 90%; height: 40px;  margin: 0 auto;">
       <div
         class="max-w-7xl mx-auto px-4 py-1 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0"
       >
-        <div id="weatherInfo" class="text-xs text-gray-500 text-center md:text-left flex items-center justify-center md:justify-start gap-1 flex-wrap" style="background-color: #fff59D;">
+        <div id="weatherInfo" class="text-xs text-black text-center md:text-left flex items-center justify-center md:justify-start gap-1 flex-wrap font-bold" style="background-color: #fff59D; font-size: large;">
           <i id="weatherIcon" class="fas fa-sun text-yellow-500 text-sm"></i>
-          <span id="weatherText" class="text-center md:text-left">Carregando previsão do tempo...</span>
+          <span id="weatherText" class="text-center md:text-left" ">Carregando previsão do tempo... </span>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 font-segoe">
-          <a href="quem-somos.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600">Quem Somos</a>
-          <span class="text-xs text-gray-400 hidden md:inline">•</span>
-          <a href="politica-privacidade.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600">Política de Privacidade</a>
-          <span class="text-xs text-gray-400 hidden md:inline">•</span>
-          <a href="fale-conosco.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600">Fale Conosco</a>
-          <span class="text-xs text-gray-400 hidden md:inline">•</span>
+          <a href="quem-somos.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600 font-bold " style="font-size: large;">Quem Somos</a>
+          <span class="text-xs text-gray-400 hidden md:inline"></span>
+          <a href="politica-privacidade.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600 font-bold " style="font-size: large;">Política de Privacidade</a>
+          <span class="text-xs text-gray-400 hidden md:inline"></span>
+          <a href="fale-conosco.html" class="text-xs text-gray-700 hidden md:inline hover:text-green-600 font-bold" style="font-size: large;">Fale Conosco</a>
+          <span class="text-xs text-gray-400 hidden md:inline"></span>
           <img src="../assets/icones.png" alt="redes sociais" class="h-4 md:h-5" />
         </div>
       </div>
@@ -135,159 +139,209 @@
     <div class="w-full bg-white py-4">
       <div class="max-w-7xl mx-auto px-4">
         <!-- Logo -->
-        <div class="flex justify-center items-center mb-2">
-          <span class="text-green-700 font-bold text-3xl md:text-6xl" style="font-family: Cambria, Georgia, serif; ">Jornal</span>
-          <img src="../assets/Logo.webp" alt="logo" class="h-10 md:h-16 mx-2">
-          <span class="text-green-700 font-extrabold text-3xl md:text-6xl" style="font-family: Cambria, Georgia, serif;">Marabá</span>
+        <div class="flex justify-center items-center mb-2 gap-2 md:gap-6">
+          <span class="text-green-700 font-bold" style="font-family: Cambria, Georgia, serif; font-size: 3rem; margin: 10px;">Jornal</span>
+          <img src="../assets/Logo.webp" alt="logo" style="height: 35px; margin-top: 8px;" class="md:hidden">
+          <img src="../assets/Logo.webp" alt="logo" style="height: 60px; margin-top: 15px;" class="hidden md:block">
+          <span class="text-green-700 font-extrabold" style="font-family: Cambria, Georgia, serif; font-size: 3rem; margin: 10px;">Marabá</span>
         </div>
       </div>
     </div>
 
     <!-- Navegação Principal -->
-    <div class="w-full my-4 px-4 md:px-[50px]">
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex items-center justify-center">
-        <div class="bg-green-600 h-1 flex-1"></div>
-        <nav class="flex justify-center flex-shrink-0 text-xs font-semibold space-x-4 mx-4" style="font-family: 'Calibri', Arial, sans-serif;">
-          <a href="#" class="text-green-700 hover:text-green-500">cidadania</a>
-          <a href="#" class="text-green-700 hover:text-green-500">comércio</a>
-          <a href="#" class="text-green-700 hover:text-green-500">notícias</a>
-          <a href="#" class="text-green-700 hover:text-green-500">política</a>
-          <a href="#" class="text-green-700 hover:text-green-500">saúde</a>
-          <a href="#" class="text-green-700 hover:text-green-500">colonista</a>
-          <a href="#" class="text-green-700 hover:text-green-500">fala povo</a>
-        </nav>
-        <div class="bg-green-600 h-1 flex-1"></div>
-      </div>
+    <div class="w-full my-4">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center justify-center">
+          <div class="bg-green-600 h-[2px] flex-1"></div>
+          <nav class="flex justify-center flex-shrink-0 text-sm font-semibold space-x-1 mx-3" style="font-family: 'Calibri', Arial, sans-serif; font-size: 26px;">
+            <a href="#" class="text--700 hover:text-green-500">cidadania</a>
+            <a href="">-</a>
+            <a href="#" class="text-700 hover:text-green-500">comércio</a>
+            
+            <a href="">-</a>
+            <a href="#" class="text--700 hover:text-green-500">notícias</a>
+            <a href="">-</a>
+            <a href="#" class="text--700 hover:text-green-500">política</a>
+            <a href="">-</a>
+            <a href="#" class="text--700 hover:text-green-500">saúde</a>
+            <a href="">-</a>
+            <a href="#" class="text--700 hover:text-green-500">colonista</a>
+            <a href="">-</a>
+            <a href="#" class="text--700 hover:text-green-500">fala povo</a>
+          </nav>
+          <div class="bg-green-600 h-[2px] flex-1"></div>
+        </div>
 
-      <!-- Mobile Menu -->
-      <div class="md:hidden">
-        <div class="flex items-center justify-between">
-          <div class="bg-green-600 h-1 flex-1"></div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden px-4">
+          <div class="flex items-center justify-between">
+            <div class="bg-green-600 h-[2px] flex-1"></div>
           <button id="menuToggle" class="hamburger mx-4 p-2 focus:outline-none" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
           </button>
-          <div class="bg-green-600 h-1 flex-1"></div>
+          <div class="bg-green-600 h-[2px] flex-1"></div>
         </div>
         <nav id="mobileMenu" class="mobile-menu bg-white">
           <div class="flex flex-col items-center py-4 space-y-3">
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">cidadania</a>
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">comércio</a>
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">notícias</a>
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">política</a>
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">saúde</a>
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">colonista</a>
-            <a href="#" class="text-green-700 hover:text-green-500 text-sm font-semibold uppercase">fala povo</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">cidadania</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">comércio</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">notícias</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">política</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">saúde</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">colonista</a>
+            <a href="#" class="text-green-700 hover:text-green-500 text-base font-semibold uppercase">fala povo</a>
           </div>
         </nav>
       </div>
-    </div>
+      </div>
     </div>
 
     <!-- Banner Principal (Natal de Qualidade) -->
     <div class="w-full flex justify-center items-center py-4 md:py-8 bg-white">
-      <div class="max-w-7xl w-full px-4 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8">
-        <!-- Texto Esquerda -->
-        <div class="flex-1 text-center order-2 md:order-1 fade-in-text">
-          <span class="text-green-600 text-3xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            Natal<br />
-          </span>
-          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            de<br />
-          </span>
-          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
-            QUALIDADE<br />
-          </span>
-          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            e<br />
-          </span>
-          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
-            PREÇOS BAIXOS<br />
-          </span>
-          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            é<br />
-          </span>
-          <span class="text-green-600 font-extrabold font-sans text-4xl md:text-5xl leading-tight">
-            Aqui!
-          </span>
-        </div>
-
-        <!-- Imagem Central -->
-        <div class="flex-1 order-1 md:order-2 hidden md:block fade-in-image">
-          <img
-            src="../assets/img-natal.png"
-            alt="Família com carrinho de compras"
-            class="w-full max-w-sm mx-auto"
-          />
-        </div>
-
-        <!-- Publicidade Direita (Carro Chefe) -->
-        <div class="flex-1 text-center order-3 relative">
-          <img
-            src="../assets/img-mercado.png"
-            alt="Carro Chefe Supermercados"
-            class="w-full max-w-xs md:max-w-sm mx-auto"
-          />
-          <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2">SUPERMERCADOS</p>
+      <div class="max-w-7xl w-full px-4" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+        
+        <!-- Mobile: Layout em coluna -->
+        <div class="md:hidden w-full" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+          <!-- Texto Natal -->
+          <div class="text-center fade-in-text">
+            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 2rem;">
+              Natal<br />
+            </span>
+            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
+              de<br />
+            </span>
+            <span class="text-red-700 font-extrabold leading-tight" style="font-size: 2rem;">
+              QUALIDADE<br />
+            </span>
+            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
+              e<br />
+            </span>
+            <span class="text-red-700 font-extrabold leading-tight" style="font-size: 2rem; letter-spacing: 0.05em;">
+              PREÇOS BAIXOS
+            </span>
+            <br />
+            <span class="text-green-600 leading-tight" style="font-family: 'Dancing Script', cursive; font-size: 1.5rem;">
+              é<br />
+            </span>
+            <span class="text-green-600 font-extrabold leading-tight" style="font-size: 2.5rem;">
+              Aqui!
+            </span>
+          </div>
           
-          <!-- Ícones de Acessibilidade -->
-          <div class="fixed right-2 md:right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3">
-            
-            <!-- Libras -->
-            <button 
-              onclick="abrirLibras()" 
-              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
-              title="Tradução em Libras"
-            >
-              <img src="../assets/acessibilidade1.png" alt="Libras" class="w-6 h-6 md:w-8 md:h-8 object-contain">
-            </button>
-            
-            <!-- Informações de Acessibilidade -->
-            <button 
-              onclick="infoAcessibilidade()" 
-              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
-              title="Informações de Acessibilidade"
-            >
-              <img src="../assets/image.png" alt="Acessibilidade" class="w-6 h-6 md:w-8 md:h-8 object-contain">
-            </button>
-
-            <!-- WhatsApp / Contato -->
-            <button 
-              onclick="contato()" 
-              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
-              title="Fale Conosco via WhatsApp"
-            >
-              <img src="../assets/whats-lateral.png" alt="WhatsApp" class="w-6 h-6 md:w-8 md:h-8 object-contain">
-            </button>
-            
+          <!-- Imagem Central -->
+          <div class="fade-in-image">
+            <img
+              src="../assets/imagem-natal.png"
+              alt="Família com carrinho de compras"
+              style="width: 180px; height: auto; object-fit: contain;"
+            />
+          </div>
+          
+          <!-- Publicidade -->
+          <div style="text-align: center; width: 100%;">
+            <img
+              src="../assets/img-mercado.png"
+              alt="Carro Chefe Supermercados"
+              style="max-width: 250px; width: 100%; height: auto; object-fit: contain;"
+            />
+            <p class="text-gray-700 font-semibold text-xs mt-2" style="text-align: left; padding-left: 60px;">SUPERMERCADOS</p>
           </div>
         </div>
+        
+        <!-- Desktop: Layout em linha -->
+        <div class="hidden md:flex w-full" style="flex-direction: row; align-items: flex-end; justify-content: center; gap: 20px;">
+          <!-- Item 1 - Texto -->
+          <div class="text-center fade-in-text" style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; order: 1;">
+            <span class="text-green-600 text-4xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
+              Natal<br />
+            </span>
+            <span class="text-green-600 text-3xl md:text-4xl leading-tight" style="font-family: 'Dancing Script', cursive">
+              de<br />
+            </span>
+            <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
+              QUALIDADE<br />
+            </span>
+            <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
+              e<br />
+            </span>
+            <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight" style="letter-spacing: 0.05em;">
+              PREÇOS BAIXOS
+            </span>
+            <br />
+            <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
+              é<br />
+            </span>
+            <span class="text-green-600 font-extrabold font-sans text-4xl md:text-5xl leading-tight">
+              Aqui!
+            </span>
+          </div>
+          
+          <!-- Item 2 - Imagem Central -->
+          <div class="fade-in-image" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; order: 2;">
+            <img
+              src="../assets/imagem-natal.png"
+              alt="Família com carrinho de compras"
+              style="width: 250px; height: 320px; object-fit: contain;"
+            />
+          </div>
+
+          <!-- Item 3 - Publicidade -->
+          <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start; order: 3;">
+            <div style="width: 100%;">
+              <img
+                src="../assets/img-mercado.png"
+                alt="Carro Chefe Supermercados"
+                style="max-width: 300px; width: 100%; height: auto; object-fit: contain;"
+              />
+              <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2" style="text-align: left; padding-left: 80px;">SUPERMERCADOS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner Centralizado -->
+    <div class="w-full flex justify-center py-2 px-4">
+      <div class="w-full max-w-2xl">
+        <img src="../assets/banner-teste.png" alt="banner" class="w-full h-auto object-cover" />
       </div>
     </div>
 
     <!-- Endereços e Contatos -->
     <div class="w-full bg-white">
       <div class="max-w-7xl mx-auto px-4 mt-4 mb-8">
-        <p class="font-medium text-[9px] md:text-[10px] text-center leading-relaxed font-segoe">
-          <span class="font-bold text-green-700">Loja 1 -</span>
-          <span class="text-red-600">Bairro Independência</span> -
-          <span class="text-black">(94) 991 33 86 86</span>
-          <span class="hidden md:inline"> / </span><br class="md:hidden" />
-          <span class="font-bold text-green-700">Loja 2 -</span>
-          <span class="text-red-600">Bairro Novo Horizonte - Av. Tocantins 918</span>
-          - <span class="text-black">(94) 991 06 28 70</span><br />
-          <span class="font-bold text-green-700">Loja 3 -</span>
-          <span class="text-red-600">Bairro Belo Horizonte - Av. Amazonas 1.607</span>
-          - <span class="text-black">(94) 993 02 69 88</span>
-          <span class="hidden md:inline"> / </span><br class="md:hidden" />
-          <span class="font-bold text-green-700">Loja 4 -</span>
-          <span class="text-red-600">Bairro Vila Militar Presidente Médici</span>
-          - <span class="text-black">(94) 991 34 86 11</span><br />
-          <span class="font-bold text-green-700">Loja 5 -</span>
-          <span class="text-red-600">Rodovia Transamazônica, BR 230, n° 36.385</span>
-          - <span class="text-black">(94) 992 72 24 62</span>
+        <div class="text-center space-y-2 font-segoe">
+          <p class="text-sm md:text-lg font-medium">
+            <span class="font-bold text-green-700">Loja 1</span> - 
+            <span class="text-red-600">Bairro Independência</span> - 
+            <span class="text-black">(94) 991 33 86 86</span>
+          </p>
+          <p class="text-sm md:text-lg font-medium">
+            <span class="font-bold text-green-700">Loja 2</span> - 
+            <span class="text-red-600">Bairro Novo Horizonte - Av. Tocantins 918</span> - 
+            <span class="text-black">(94) 991 06 28 70</span>
+          </p>
+          <p class="text-sm md:text-lg font-medium">
+            <span class="font-bold text-green-700">Loja 3</span> - 
+            <span class="text-red-600">Bairro Belo Horizonte - Av. Amazonas 1.607</span> - 
+            <span class="text-black">(94) 993 02 69 88</span>
+          </p>
+          <p class="text-sm md:text-lg font-medium">
+            <span class="font-bold text-green-700">Loja 4</span> - 
+            <span class="text-red-600">Bairro Vila Militar Presidente Médici</span> - 
+            <span class="text-black">(94) 991 34 86 11</span>
+          </p>
+          <p class="text-sm md:text-lg font-medium">
+            <span class="font-bold text-green-700">Loja 5</span> - 
+            <span class="text-red-600">Rodovia Transamazônica, BR 230, n° 36.385</span> - 
+            <span class="text-black">(94) 992 72 24 62</span>
+          </p>
+        </div>
+      </div>
+    </div>
         </p>
       </div>
     </div>
@@ -302,144 +356,195 @@
 
     <!-- Banner da Prefeitura -->
     <div class="w-full flex justify-center py-2 px-4">
-      <div class="w-full max-w-2xl flex flex-row h-24 md:h-40">
-        <!-- Imagem 1 - Retangular (texto amarelo) -->
-        <div class="flex-[2] h-full fade-in-image-1">
-          <img 
-            src="../assets/prefeitura1.png" 
-            alt="Banner Prefeitura 1" 
-            class="w-full h-full object-cover"
-          >
-        </div>
-        <!-- Imagem 2 - Retangular (família) -->
-        <div class="flex-[2] h-full fade-in-image-2">
-          <img 
-            src="../assets/prefeitura2.png" 
-            alt="Banner Prefeitura 2" 
-            class="w-full h-full object-cover"
-          >
-        </div>
-        <!-- Imagem 3 - Quadrada (logo verde) -->
-        <div class="flex-[1] h-full fade-in-image-3">
-          <img 
-            src="../assets/prefeitura3.png" 
-            alt="Banner Prefeitura 3" 
-            class="w-full h-full object-cover"
-          >
-        </div>
+      <div class="w-full max-w-2xl">
+        <img 
+          src="../assets/banner-prefeitura-mobile.png" 
+          alt="Banner Prefeitura" 
+          class="w-full h-auto object-cover"
+        >
       </div>
     </div>
 
     <!-- Grid de Notícias - 3 Colunas -->
     <div class="w-full bg-gray-50 py-6">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="align-items: flex-start;">
           
           <!-- Coluna 1 - Jornais Impressos -->
-          <div class="space-y-4 flex flex-col justify-end">
-            <div class="bg-white">
-              <h3 class="text-base font-bold text-center mb-3">
-                Clic e leia a última edição dos 10.000 jornais impressos
+          <div style="display: flex; flex-direction: column; gap: 0;">
+            <div class="bg-white" style="padding-top: 70px;">
+              <h3 class="text-base font-bold text-center" style="font-size: 24px; margin-top: 44px;">
+                Click e leia a última edição dos <br>
+                10.000 jornais impressos
               </h3>
+            </div>
+            <div class="bg-white p-3" style="display: flex; flex-direction: column;">
               <div class="flex justify-center">
                 <img src="../assets/jornal.png" 
                      alt="Jornal Impresso" 
-                     class="w-2/3 h-auto mb-2">
+                     class="w-full h-auto"
+              >
+                     
+
+                                   
+                     
+                     
               </div>
-              <p class="text-sm text-gray-700 text-center font-medium">
-                Enfim chegou um novo tempo!
-              </p>
+              
             </div>
           </div>
 
           <!-- Coluna 2 - Cidadania, Comércio, Notícias -->
-          <div class="space-y-4">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; margin-top: 100px;">
             
         <!-- Cidadania -->
-        <div class="bg-white p-3">
-          <a href="noticia-procon-maraba.html" class="block hover:opacity-90 transition-opacity">
-            <img src="../assets/cidadania.png" 
-                 alt="Cidadania" 
-                 class="w-full h-auto cursor-pointer">
-          </a>
-        </div>            <!-- Comércio -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Comércio</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=80&h=100&fit=crop" 
-                     alt="Comércio" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Mix importantes</p>
-                  <div class="h-1 bg-yellow-500 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Inaugura megaloja com preços industriais para a Black Friday e compras de Natal</p>
+        <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+          <a href="noticia-procon-maraba.html" class="block hover:opacity-80 transition-opacity">
+            <!-- Conteúdo principal com imagem e texto -->
+            <div style="display: flex; gap: 8px; align-items: flex-start;">
+              <img src="../assets/cdc.png" 
+                   alt="Cidadania" 
+                   class="object-cover flex-shrink-0 cursor-pointer"
+                   style="width: 120px; height: 120px; margin-top: 42px;">
+                   
+              <div style="flex: 1;">
+                <!-- Título acima do texto, à esquerda -->
+                <div style="margin-bottom: 8px;">
+                  <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Cidadania</h4>
+                  <div class="h-1 bg-green-600" style="width: 80px;"></div>
                 </div>
+                
+                <!-- Texto em 4 linhas -->
+                <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                  Procon Marabá, Guarda Municipal e Vigilância Sanitária promovem ações conjuntas na defesa do cidadão marabaense
+                </p>
               </div>
+            </div>
+          </a>
+        </div>
+
+            <!-- Comércio -->
+            <div class="bg-white p-3">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="../assets/Imagem 9.png" 
+                       alt="Comércio" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Comércio</h4>
+                      <div class="h-1 bg-yellow-500" style="width: 80px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      <span style="font-weight: bold;">Mix Importados</span> inaugura megaloja com <span style="font-weight: bold;">Preços imbatíveis</span> Para a <span style="font-weight: bold;">Black Friday</span> e compras de <span style="font-weight: bold;">Natal</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
             </div>
 
             <!-- Notícias -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Notícias</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=80&h=100&fit=crop" 
-                     alt="Notícias" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Leishmaniose</p>
-                  <div class="h-1 bg-green-600 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Pode causar óbitos em pets ameaçando também humanos prevenção começa em casa</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="../assets/Imagem 7_ (1).png" 
+                       alt="Notícias" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Notícias</h4>
+                      <div class="h-1 bg-green-600" style="width: 80px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                Expansão da doença
+                <span style="font-weight: bold;">Leishmaniose</span> pode causar
+                <span style="font-weight: bold;">óbitos em pets</span> ameaçando
+                também <span style="font-weight: bold;">humanos.</span> prevenção
+                começa <span style="font-weight: bold;">em casa</span>
+              </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
           </div>
 
           <!-- Coluna 3 - Política, Saúde, Da Redação -->
-          <div class="space-y-4">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; margin-top: 100px;">
             
             <!-- Política -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Política</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=100&fit=crop" 
-                     alt="Política" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Prefeito Tião Cunha (PL)</p>
-                  <div class="h-1 bg-yellow-500 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Extensa rejeição onde se conselho Teoria do Caos dos opositores</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=100&fit=crop" 
+                       alt="Política" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Política</h4>
+                      <div class="h-1 bg-yellow-500" style="width: 80px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Prefeito Tião Cunha (PL) Extensa rejeição onde se conselho Teoria do Caos dos opositores
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Saúde -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Saúde</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=80&h=100&fit=crop" 
-                     alt="Saúde" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Cirurgião Refratário</p>
-                  <div class="h-1 bg-green-600 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Marca a excelência em Marabá do procedimento capaz de eliminar uso dos óculos</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="../assets/Imagem 8.png" 
+                       alt="Saúde" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Saúde</h4>
+                      <div class="h-1 bg-green-600" style="width: 80px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      <span style="font-weight: bold;">Cirurgia Refrativa</span> marca a excelência em Marabá do procedimento capaz de <span style="font-weight: bold;">eliminar</span> o uso dos <span style="font-weight: bold;">óculos</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Da Redação -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Da Redação</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=80&h=100&fit=crop" 
-                     alt="Redação" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Jornal da Cidade Marabá</p>
-                  <div class="h-1 bg-yellow-500 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Impresso e Jornal Marabá digital são recebidos pelos políticas da cidade</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=80&h=100&fit=crop" 
+                       alt="Redação" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Da Redação</h4>
+                      <div class="h-1 bg-yellow-500" style="width: 80px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Jornal da Cidade Marabá Impresso e Jornal Marabá digital são recebidos pelos políticas da cidade
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
           </div>
@@ -454,115 +559,163 @@
     <!-- Segundo Grid de Notícias - 3 Colunas -->
     <div class="w-full bg-gray-50 py-6">
       <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" style="align-items: flex-start;">
           
           <!-- Coluna 1 - Mais Saúde -->
-          <div class="space-y-4 flex flex-col justify-end">
-            <div class="bg-white">
+          <div style="display: flex; flex-direction: column;">
+            <div class="bg-white p-3 flex flex-col justify-between">
               <div class="flex justify-center">
                 <img src="../assets/maissaude.png" 
                      alt="Mais Saúde" 
-                     class="w-2/3 h-auto mb-2">
+                     class="w-full h-auto">
               </div>
-              <p class="text-sm text-gray-700 text-center font-medium">
+              <p class="text-sm text-gray-700 text-center font-medium mt-3">
                 Enfim chegou um novo tempo!
               </p>
             </div>
           </div>
+
           <!-- Coluna 2 - Blog Delas, Comércio, Notícias -->
-          <div class="space-y-4">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; margin-top: 100px;">
             
             <!-- Blog Delas -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Blog Delas</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=100&fit=crop" 
-                     alt="Blog Delas" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Observar os "sinais"</p>
-                  <div class="h-1 bg-green-600 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Favorecer relacionamentos e maus temáticos coloridos reforçam atitude sem exceder a sociedade</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=100&fit=crop" 
+                       alt="Blog Delas" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Blog Delas</h4>
+                      <div class="h-1 bg-green-600" style="width: 60px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Observar os "sinais" Favorecer relacionamentos e maus temáticos coloridos reforçam atitude sem exceder a sociedade
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Comércio -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Comércio</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=100&fit=crop" 
-                     alt="Comércio" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Sindicato do Comércio Varejista</p>
-                  <div class="h-1 bg-yellow-500 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">De Marabá defende ações e campanha de fortalecimento dos associados</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=100&fit=crop" 
+                       alt="Comércio" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Comércio</h4>
+                      <div class="h-1 bg-yellow-500" style="width: 60px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Sindicato do Comércio Varejista De Marabá defende ações e campanha de fortalecimento dos associados
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Notícias -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Notícias</h4>
-              <div class="flex gap-2 items-start">
-                <div class="w-16 h-20 bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500 flex-shrink-0"></div>
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">15ª Parada do Orgulho Gay</p>
-                  <div class="h-1 bg-green-600 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">De Marabá abordará temas agregando a qualidade de vida e cidadania LGBTQI+</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <div class="flex-shrink-0" style="width: 120px; height: 120px; margin-top: 42px; background: linear-gradient(to right, #ef4444, #facc15, #22c55e, #3b82f6, #a855f7);"></div>
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Notícias</h4>
+                      <div class="h-1 bg-green-600" style="width: 60px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      15ª Parada do Orgulho Gay De Marabá abordará temas agregando a qualidade de vida e cidadania LGBTQI+
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
           </div>
 
           <!-- Coluna 3 - Cidadania, Fala Povo, Comer Bem -->
-          <div class="space-y-4">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px; margin-top: 100px;">
             
             <!-- Cidadania -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Cidadania</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=80&h=100&fit=crop" 
-                     alt="Cidadania" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Desfile Show "Ajudar ao próximo</p>
-                  <div class="h-1 bg-yellow-500 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Saiu de moda", no Teatro Eduarda Alcântara, atinge objetivos</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=80&h=100&fit=crop" 
+                       alt="Cidadania" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Cidadania</h4>
+                      <div class="h-1 bg-yellow-500" style="width: 60px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Desfile Show "Ajudar ao próximo Saiu de moda", no Teatro Eduarda Alcântara, atinge objetivos
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Fala Povo -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Fala Povo</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1591158855565-e0771db32881?w=80&h=100&fit=crop" 
-                     alt="Fala Povo" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Espaço republicano</p>
-                  <div class="h-1 bg-green-600 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Para as denúncias e cliques dos cidadãos marabaenses aos setores públicos e privados</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=80&h=100&fit=crop" 
+                       alt="Fala Povo" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Fala Povo</h4>
+                      <div class="h-1 bg-green-600" style="width: 60px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Espaço republicano Para as denúncias e cliques dos cidadãos marabaenses aos setores públicos e privados
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <!-- Comer Bem -->
-            <div class="bg-white p-3">
-              <h4 class="text-sm font-bold text-gray-900 mb-2">Comer Bem</h4>
-              <div class="flex gap-2 items-start">
-                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=80&h=100&fit=crop" 
-                     alt="Comer Bem" 
-                     class="w-16 h-20 object-cover flex-shrink-0">
-                <div class="flex-1">
-                  <p class="font-semibold text-xs text-gray-900">Restaurantes de comida árabe</p>
-                  <div class="h-1 bg-yellow-500 w-20 my-1"></div>
-                  <p class="text-xs text-gray-600">Em Marabá aluem público para "1.001 noites de sabores das arábias", fidelizando clientes</p>
+            <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
+              <a href="#" class="block hover:opacity-80 transition-opacity">
+                <div style="display: flex; gap: 8px; align-items: flex-start;">
+                  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=80&h=100&fit=crop" 
+                       alt="Comer Bem" 
+                       class="object-cover flex-shrink-0"
+                       style="width: 120px; height: 120px; margin-top: 42px;">
+                       
+                  <div style="flex: 1;">
+                    <div style="margin-bottom: 8px;">
+                      <h4 class="text-base md:text-lg font-bold text-gray-900 mb-1" style="text-align: left;">Comer Bem</h4>
+                      <div class="h-1 bg-yellow-500" style="width: 60px;"></div>
+                    </div>
+                    
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      Restaurantes de comida árabe Em Marabá aluem público para "1.001 noites de sabores das arábias", fidelizando clientes
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
           </div>
@@ -749,6 +902,39 @@
       // Atualizar a cada 10 minutos (600000 ms)
       setInterval(carregarPrevisaoTempo, 600000);
     </script>
+
+
+          <!-- Ícones de Acessibilidade -->
+          <div class="fixed right-2 md:right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3">
+            
+            <!-- Libras -->
+            <button 
+              onclick="abrirLibras()" 
+              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+              title="Tradução em Libras"
+            >
+              <img src="../assets/acessibilidade1.png" alt="Libras" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+            </button>
+            
+            <!-- Informações de Acessibilidade -->
+            <button 
+              onclick="infoAcessibilidade()" 
+              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+              title="Informações de Acessibilidade"
+            >
+              <img src="../assets/image.png" alt="Acessibilidade" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+            </button>
+
+            <!-- WhatsApp / Contato -->
+            <button 
+              onclick="contato()" 
+              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+              title="Fale Conosco via WhatsApp"
+            >
+              <img src="../assets/whats-lateral.png" alt="WhatsApp" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+            </button>
+            
+          </div> <!-- fim acessibilidade-->
 
   </body>
 </html>

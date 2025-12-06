@@ -14,7 +14,7 @@
     />
     <style>
       /* Classes para destaque de texto */
-      .texto-negrito {
+      .text-negrito {
         font-weight: 700;
         color: #1f2937; /* Cinza escuro */
       }
@@ -51,14 +51,13 @@
     <div class="container mx-auto px-4" ">
       <!-- Header -->
     <header class="bg-white shadow-sm">
-      <div class="max-w-4xl mx-auto px-4 py-4 md:py-6">
-        <a
-          href="index.html"
-          class="text-green-600 hover:text-green-700 font-semibold flex items-center gap-2 text-sm md:text-base"
-        >
-          <i class="fas fa-arrow-left"></i>
-          Voltar ao Portal
-        </a>
+      <div class="max-w-7xl mx-auto px-4 py-3">
+        <!-- Tag Cidadania -->
+        <div class="inline-block bg-yellow-400 px-4 py-1">
+          <span class="text-black font-bold text-sm" style="font-family: 'font-segoe', sans-serif;">
+            Cidadania
+          </span>
+        </div>
       </div>
     </header>
 
@@ -121,16 +120,12 @@
           </div>
 
         <!-- Imagem principal -->
-      <div class="mb-8 flex justify-center  " >
-        <div class="w-full md:w-4/5">
+      <div class="mb-8 flex justify-start" >
+        <div class="w-full">
           <img
             src="../assets/fiscalizacao.png"
             alt="Código de Defesa do Consumidor"
             class="w-full h-auto shadow-md mx-auto"
-            
-            
-            
-            
           />
           <p class="text-sm font-bold text-red-600 mt-2 text-center">
             Procon Marabá, Vigilância Sanitária e Guarda Municipal 
@@ -144,21 +139,22 @@
       </div>
 
       <!-- Conteúdo -->
-      <div class="flex justify-center">
-        <div class="w-full md:w-3/4 prose prose-lg max-w-none">
-          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6 ">
+      <div class="flex justify-start">
+        <div class="w-full">
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
             <p>
             O trabalho das instituições públicas em Marabá reflete no compromisso com a população e revelam o desempenho em conjunto com outras secretarias e autarquias municipais.
              Missões entre a <span class="text-negrito">Guarda Municipal</span>, <span class="text-negrito">Vigilância Sanitária</span> e o <span class="text-negrito">Procon Marabá</span> resultaram neste semestre. Em ações como a fiscalização no comércio contra <span class="text-negrito">bebidas vencidas</span> e suspeitas de adulterações com o metanol. Felizmente nenhum caso de contaminação de contaminação foi registrado. Também a fiscalização atestando a qualidade dos <span class="text-negrito">combustíveis</span> nos postos de gasolina não revelou adulterações.
-         </p>
+            </p>
           </p>
 
           <div class="my-8 flex justify-start">
-            <div class="w-full md:w-4/4">
+            <div class="w-full md:w-5/5">
               <img
                 src="../assets/forca-tarefa.png"
                 alt="Zélia Lopes, coordenadora do Procon Marabá"
                 class="w-full h-auto shadow-md"
+                style="width: 100%;"
               />
               <p class="texto-vermelho mt-2 text-center">
                 Força tarefa defendendo e protegendo a relação de consumo com especialistas do Procon,
@@ -168,27 +164,20 @@
               
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- todo o container -->
-      <div class="w-full">
+          <!-- todo o container -->
+            
           <p class="text-base md:text-lg leading-relaxed mb-6">
             A reportagem destaca em dezembro a atuação do Procon Marabá, tendo a advogada <span class="text-negrito">Zélia Lopes</span>, ex-integrante do setor jurídico do Procon Marabá de 2011 a 2017 e desde 2017 exercendo a coordenadoria da instituição.
-          </p>
-
-          <p class="text-base md:text-lg leading-relaxed mb-6">
+          
+          
             "A prioridade é a vida, e a vida do consumidor não pode correr riscos, mas estar protegida como dispõe o <span class="text-negrito">Código de Defesa do Consumidor (CDC)</span> e a <span class="text-negrito">Constituição</span>. Trabalhamos com ações de prevenção e pós-prevenção diariamente afim de conciliar a relação de consumo entre os consumidores e fornecedores de serviços e produtos em Marabá, tornando maior a visibilidade sobre as ações do Procon.
+          
+          
+              A boa relação de consumo é predominante, pois o consumidor não pode se sentir lesado em seus direitos. A missão do Procon não é simplesmente multar nos casos de infração. O objetivo maior é a antecipação de fatos, criando políticas públicas voltadas ao bem-estar e segurança do consumidor.
           </p>
-
-          <p class="text-base md:text-lg leading-relaxed mb-6">
-            A boa relação de consumo é predominante, pois o consumidor não pode se sentir lesado em seus direitos. A missão do Procon não é simplesmente multar nos casos de infração. O objetivo maior é a antecipação de fatos, criando políticas públicas voltadas ao bem-estar e segurança do consumidor.
-          </p>
-      </div>
          
           <!-- Imagem Zélia Lopes -->
-          <div class="my-8 flex justify-start">
-            <div class="w-full md:w-3/4">
               <img
                 src="../assets/zelha-lopes.png"
                 alt="Zélia Lopes, coordenadora do Procon Marabá"
@@ -197,7 +186,7 @@
               <p class="texto-vermelho mt-2 text-center">
                 Zélia Lopes: "A boa relação de consumo é prioridade em nossa interação"
               </p>
-
+              <br>
               <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
                 A única ocorrência negativa foi a versão de nossa presença feminina comandando uma ação em que fomos obrigados a instalar e dar destino final a grande quantidade de cervejas vencidas, impróprias para a comercialização e consumo humano colocando risco à saúde. A relutância sobre nossa atuação foi contornada graças à presença da Guarda Municipal, parceira constante no suporte e segurança da fiscalização do Procon e Vigilância Sanitária nas incursões de preservação dos direitos do consumidor, saúde e vida.
               </p>
@@ -205,17 +194,8 @@
               Os comerciantes marabaenses compreendem que a fiscalização nos estabelecimentos é uma estratégia de marketing forte e positiva capaz de aumentar as vendas ao tornar público nossa visita não tendo alterações, mas a revelar o zelo, qualidade e segurança de seus produtos e serviços ao consumidor, fidelizando e atraindo novos consumidores.
               Ouvimos diversas sugestões, inclusive a criação do selo “Amigos do PROCON” , confirmando nossa visita e a comprovação da normalidade e segurança do estabelecimento, por ocasião de referência à boa relação de consumo”, conclui Zélia Lopes.
               </p>
-                
-            </div>
-            
-          </div>
 
           <!-- Destaque -->
-
-        
-
-         
-
           
           <!-- Destaque final -->
         
@@ -265,8 +245,10 @@
             >Procon</a
           >
         </div>
-
         <!-- Compartilhar -->
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 my-8 px-4">
         <div class="flex items-center gap-3">
           <span class="text-gray-700 text-sm font-semibold">Compartilhe</span>
           <div class="flex gap-2">
@@ -292,6 +274,69 @@
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
+        </div>
+      </div>
+
+      <!-- Lista Horizontal de Notícias -->
+      <div class="news-list my-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Notícia 1 -->
+          <div class="overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <a href="#" class="block">
+              <img src="../assets/Imagem 7_ (1).png" 
+                   alt="Notícia sobre Leishmaniose" 
+                   class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">Notícias</h3>
+                <div class="h-1 bg-green-600 mb-3" style="width: 60px;"></div>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  Expansão da doença <span class="font-bold">Leishmaniose</span> pode causar
+                  <span class="font-bold">óbitos em pets</span> ameaçando também 
+                  <span class="font-bold">humanos</span>. Prevenção começa 
+                  <span class="font-bold">em casa</span>
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Notícia 2 -->
+          <div class="bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <a href="#" class="block">
+              <img src="../assets/Imagem 8.png" 
+                   alt="Cirurgia Refrativa" 
+                   class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">Saúde</h3>
+                <div class="h-1 bg-green-600 mb-3" style="width: 60px;"></div>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  <span class="font-bold">Cirurgia Refrativa</span> marca a excelência em Marabá do 
+                  procedimento capaz de <span class="font-bold">eliminar</span> uso dos 
+                  <span class="font-bold">óculos</span>
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Notícia 3 -->
+          <div class="bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <a href="#" class="block">
+              <img src="../assets/Imagem 9.png" 
+                   alt="Mix Importados" 
+                   class="w-full h-48 object-cover">
+              <div class="p-4">
+                <h3 class="text-lg font-bold text-gray-900 mb-1">Comércio</h3>
+                <div class="h-1 bg-yellow-500 mb-3" style="width: 60px;"></div>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                  <span class="font-bold">Mix Importados</span> inaugura megaloja com 
+                  <span class="font-bold">preços imbatíveis</span> para a 
+                  <span class="font-bold">Black Friday</span> e compras de 
+                  <span class="font-bold">Natal</span>
+                </p>
+              </div>
+            </a>
+          </div>
+
         </div>
       </div>
 
@@ -382,8 +427,9 @@
           <div class="sticky top-8">
             <!-- Título Destaques -->
             <div class="flex items-center gap-3 mb-6">
-              <div style="height: 2px; width: 60px; background-color: #000;"></div>
+             
               <h2 class="text-2xl font-bold text-gray-900">Destaques</h2>
+               <div style="height: 4px; width: 200px; background-color: #000;"></div>
             </div>
 
             <!-- Notícia 1 -->
@@ -410,7 +456,7 @@
             <div class="bg-white p-3 mb-4 shadow-sm">
               <a href="#" class="block hover:opacity-80 transition-opacity">
                 <div style="display: flex; gap: 8px; align-items: flex-start;">
-                  <img src="../assets/Imagem 7_ (1).png" 
+                  <img src="../assets/Imagem 8.png" 
                        alt="Notícias" 
                        class="object-cover flex-shrink-0"
                        style="width: 80px; height: 80px;">
@@ -430,7 +476,7 @@
             <div class="bg-white p-3 mb-4 shadow-sm">
               <a href="#" class="block hover:opacity-80 transition-opacity">
                 <div style="display: flex; gap: 8px; align-items: flex-start;">
-                  <img src="../assets/Imagem 7_ (1).png" 
+                  <img src="../assets/Imagem 9.png" 
                        alt="Notícias" 
                        class="object-cover flex-shrink-0"
                        style="width: 80px; height: 80px;">

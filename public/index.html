@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
       rel="stylesheet"
     />
-  <style>
+    <style>
       /* Prevenir overflow horizontal */
       * {
         max-width: 100%;
@@ -121,112 +121,6 @@
         animation: fadeIn 1.5s ease-in-out 1.9s forwards;
         opacity: 0;
       }
-
-      /* Banner layout constraints: keep text and images inside the banner width */
-      .banner-wrapper {
-        overflow: hidden;
-      }
-
-      /* Make banner items respect the banner container and scale images */
-      .banner-wrapper .max-w-7xl {
-        max-width: 46rem !important; /* Aumentado de 42rem para 46rem */
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 0 1rem;
-      }
-
-      .banner-wrapper .item1 {
-        flex: 0 0 auto;
-        width: 23%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      
-      /* Reduzir tamanhos das fontes proporcionalmente */
-      .banner-wrapper .item1 span {
-        font-size: clamp(1.1rem, 3.2vw, 1.65rem) !important;
-        line-height: 1.1 !important;
-      }
-
-      .banner-wrapper .item2 {
-        flex: 0 0 auto;
-        width: 38%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .banner-wrapper .item3 {
-        flex: 0 0 auto;
-        width: 38%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-end;
-        overflow: hidden;
-      }
-
-      .banner-wrapper img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-      }
-      
-      .banner-wrapper .item2 img {
-        max-height: 260px;
-        width: auto;
-      }
-      
-      .banner-wrapper .item3 img {
-        max-width: 95%;
-        height: auto;
-      }
-      
-      .banner-wrapper .item3 > div {
-        display: flex;
-        flex-direction: column;
-        height: 260px;
-        justify-content: space-between;
-        width: 100%;
-      }
-
-      /* Keep SUPERMERCADOS label aligned */
-      .banner-wrapper .item3 p {
-        text-align: left;
-        padding-left: 22px !important;
-        margin: 0;
-        font-size: 0.7rem !important;
-      }
-
-      /* Mobile: stack banner items and remove large paddings */
-      @media (max-width: 767px) {
-        .banner-wrapper .max-w-7xl {
-          flex-direction: column;
-          align-items: center;
-          gap: 12px;
-        }
-        .banner-wrapper .item1,
-        .banner-wrapper .item3,
-        .banner-wrapper .item2 {
-          width: 90%;
-          max-width: 90%;
-        }
-        .banner-wrapper .item2 img {
-          max-height: 200px;
-        }
-        .banner-wrapper .item3 {
-          align-items: center;
-        }
-        .banner-wrapper .item3 p {
-          padding-left: 0 !important;
-          text-align: center;
-        }
-      }
     </style>
   </head>
   <body class="bg-white">
@@ -314,56 +208,55 @@
       </div>
     </div>
 
-  <!-- Banner Principal (Natal de Qualidade) -->
-  <div class="banner-wrapper w-full flex justify-center items-center py-4 md:py-8 bg-white">
-      <div class="max-w-7xl w-full px-4">
-        <!-- Item 1 - Texto (à direita na sequência visual) -->
-        <div class="text-center fade-in-text item1">
-          <span class="text-green-600 text-4xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            Natal<br />
-          </span>
-          <span class="text-green-600 text-3xl md:text-4xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            de<br />
-          </span>
-          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight">
-            QUALIDADE<br />
-          </span>
-          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            e<br />
-          </span>
-          <span class="text-red-700 font-extrabold font-segoe text-3xl md:text-4xl leading-tight" style="letter-spacing: 0.05em;">
-            PREÇOS BAIXOS
-          </span>
-          <br />
-          <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
-            é<br />
-          </span>
-          <span class="text-green-600 font-extrabold font-sans text-4xl md:text-5xl leading-tight">
-            Aqui!
-          </span>
-        </div>
-        
-        <!-- Item 2 - Imagem Central (centralizada) -->
-        <div class="item2 fade-in-image">
-          <img
-            src="../assets/imagem-natal.png"
-            alt="Família com carrinho de compras"
-          />
-        </div>
+<div class="w-full flex justify-center items-center py-4 md:py-8 bg-white">
+  <div class="max-w-7xl w-full px-4" style="display: flex; flex-direction: row; align-items: flex-end; justify-content: center; gap: 40px;">
 
-        <!-- Item 3 - Publicidade (à esquerda na sequência visual) -->
-        <div class="item3">
-          <div>
-            <img
-              src="../assets/img-mercado.png"
-              alt="Carro Chefe Supermercados"
-            />
-            <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2" style="margin-left: 55px;">SUPERMERCADOS</p>
-          </div>
-          
-        </div>
+    <div class="text-center fade-in-text item1" style="display: flex; flex-direction: column; align-items: center; text-align: center; order: 1;">
+      <span class="text-green-600 text-4xl md:text-5xl leading-tight" style="font-family: 'Dancing Script', cursive">
+        Natal<br />
+      </span>
+      <span class="text-green-600 text-3xl md:text-4xl leading-tight" style="font-family: 'Dancing Script', cursive">
+        de<br />
+      </span>
+      <span class="text-red-700 font-extrabold font-segoe text-2xl md:text-3xl leading-tight">
+        QUALIDADE<br />
+      </span>
+      <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
+        e
+      </span>
+      <span class="text-red-700 font-extrabold font-segoe text-2xl md:text-3xl leading-tight" >
+        PREÇOS BAIXOS
+      </span>
+      
+      <span class="text-green-600 text-2xl md:text-3xl leading-tight" style="font-family: 'Dancing Script', cursive">
+        é
+      </span>
+      <span class="text-green-600 font-extrabold font-sans text-4xl md:text-5xl leading-tight">
+        Aqui!
+      </span>
+    </div>
+    
+    <div class="item2 fade-in-image" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center; order: 2;">
+      <img
+        src="../assets/imagem-natal.png"
+        alt="Família com carrinho de compras"
+        style="width: 220px; height: 303px; object-fit: contain;"
+        
+      />
+    </div>
+
+    <div class="item3" style="display: flex; flex-direction: column; align-items: center; order: 3;">
+      <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <img
+          src="../assets/img-mercado.png"
+          alt="Carro Chefe Supermercados"
+          style="max-width: 300px; width: 100%; height: auto; object-fit: contain;"
+        />
+        <p class="text-gray-700 font-semibold text-xs md:text-sm mt-2" style="text-align: center; padding-left: 0;">SUPERMERCADOS</p>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- Banner Centralizado -->
     <div class="w-full flex justify-center py-2 px-4">

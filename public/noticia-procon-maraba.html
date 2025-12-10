@@ -13,9 +13,38 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <style>
+      /* Fontes Segoe UI personalizadas */
+      @font-face {
+        font-family: 'Segoe UI';
+        src: url('../assets/fonts/Segoe UI.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Segoe UI';
+        src: url('../assets/fonts/Segoe UI Bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Segoe UI';
+        src: url('../assets/fonts/Segoe UI Italic.ttf') format('truetype');
+        font-weight: normal;
+        font-style: italic;
+      }
+
+      @font-face {
+        font-family: 'Segoe UI';
+        src: url('../assets/fonts/Segoe UI Bold Italic.ttf') format('truetype');
+        font-weight: bold;
+        font-style: italic;
+      }
+
       /* Classes para destaque de texto */
       .text-negrito {
-        font-weight: 700;
+        font-weight: bold;
         color: #1f2937; /* Cinza escuro */
       }
 
@@ -25,8 +54,10 @@
       }
 
       .texto-vermelho {
-        color: #dc2626; /* Vermelho */
-        font-weight: 600;
+        color: #c00000; /* Vermelho */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-size: 11pt;
       }
 
       .texto-azul {
@@ -45,16 +76,21 @@
         border-radius: 2px;
         font-weight: 600;
       }
+      .textos-noticias {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        font-size: 11pt;
+        text-align: justify;
+      }
     </style>
   </head>
   <body class="bg-gray-50">
     <div class="container mx-auto px-4" ">
       <!-- Header -->
     <header class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 py-3">
+      <div class="max-w-7xl mx-auto py-3">
         <!-- Tag Cidadania -->
-        <div class="inline-block bg-yellow-400 px-4 py-1">
-          <span class="text-black font-bold text-sm" style="font-family: 'font-segoe', sans-serif;">
+        <div class="inline-block px-4 py-1">
+          <span class="text-black text-sm" style="background-color: #efff00 ;font-family: 'Segoe UI', sans-serif; font-weight: 500; font-size: 18pt;">
             Cidadania
           </span>
         </div>
@@ -68,12 +104,12 @@
       <div class="mb-8">
         <h1
           class="text-2xl md:text-3xl text-gray-900 mb-4 leading-tight"
-          style="font-family: 'inter', sans-serif; font-size: 2rem;"
+          style="font-family: 'Inter', sans-serif; font-size: 2rem;"
         >
           Procon Marabá, Guarda Municipal e Vigilância Sanitária
-          unem forças na <span class="texto-negrito">prevenção</span> e
-          <span class="texto-negrito">defesa</span> dos
-          <span class="texto-negrito">direitos</span> do cidadão marabaense
+          unem forças na <span style="font-weight: bold;">prevenção</span> e
+          <span style="font-weight: bold;">defesa</span> dos
+          <span style="font-weight: bold;">direitos</span> do cidadão marabaense
         </h1>
 
         <br />
@@ -100,7 +136,7 @@
         <!-- Article (Conteúdo Principal) - Esquerda -->
         <article style="flex: 0 0 66.666%; max-width: 66.666%;">
           <!-- Vídeo Institucional -->
-          <div class="my-8 flex justify-center">
+          <div class="my-8 flex">
             <video
               class="rounded-lg shadow-md"
               style="
@@ -108,6 +144,10 @@
                 width: 100%;
                 height: 250px;
                 object-fit: cover;
+                margin-left: 250px;
+                border-radius: 0;
+                
+                
               "
               controls
             >
@@ -127,26 +167,21 @@
             alt="Código de Defesa do Consumidor"
             class="w-full h-auto shadow-md mx-auto"
           />
-          <p class="text-sm font-bold text-red-600 mt-2 text-center">
+          <p class="text-sm font-bold text-red-600 mt-2 ">
             Procon Marabá, Vigilância Sanitária e Guarda Municipal 
-             atuam em
-            visitações dia e noite 
-            
-            fiscalizando estabelecimentos comerciais por
-            toda cidade em 2025
+             atuam nas fiscalizações dia e <br>noite em estabelecimentos comerciais 
           </p>
         </div>
       </div>
 
       <!-- Conteúdo -->
       <div class="flex justify-start">
-        <div class="w-full">
-          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-            <p>
-            O trabalho das instituições públicas em Marabá reflete no compromisso com a população e revelam o desempenho em conjunto com outras secretarias e autarquias municipais.
+        <div class="w-full" >
+
+          <p class="textos-noticias" style="text-align: justify;">
+            O trabalho das instituições públicas em Marabá reflete no compromisso com a população e revelam o desempenho em conjunto com outras secretarias e autarquias municipais.<br>
              Missões entre a <span class="text-negrito">Guarda Municipal</span>, <span class="text-negrito">Vigilância Sanitária</span> e o <span class="text-negrito">Procon Marabá</span> resultaram neste semestre. Em ações como a fiscalização no comércio contra <span class="text-negrito">bebidas vencidas</span> e suspeitas de adulterações com o metanol. Felizmente nenhum caso de contaminação de contaminação foi registrado. Também a fiscalização atestando a qualidade dos <span class="text-negrito">combustíveis</span> nos postos de gasolina não revelou adulterações.
             </p>
-          </p>
 
           <div class="my-8 flex justify-start">
             <div class="w-full md:w-5/5">
@@ -155,8 +190,9 @@
                 alt="Zélia Lopes, coordenadora do Procon Marabá"
                 class="w-full h-auto shadow-md"
                 style="width: 100%;"
+                
               />
-              <p class="texto-vermelho mt-2 text-center">
+              <p class="texto-vermelho mt-2">
                 Força tarefa defendendo e protegendo a relação de consumo com especialistas do Procon,
                 Vigilância Sanitária e Guarda Municipal atuam dia e noite na cidade
               </p>
@@ -167,15 +203,15 @@
 
           <!-- todo o container -->
             
-          <p class="text-base md:text-lg leading-relaxed mb-6">
-            A reportagem destaca em dezembro a atuação do Procon Marabá, tendo a advogada <span class="text-negrito">Zélia Lopes</span>, ex-integrante do setor jurídico do Procon Marabá de 2011 a 2017 e desde 2017 exercendo a coordenadoria da instituição.
+          
+            <p class="textos-noticias" style="margin-bottom: 50px;">A reportagem destaca em dezembro a atuação do <span class="texto-negrito">Procon Marabá</span> , tendo a advogada <span class="text-negrito">Zélia Lopes</span>, ex-integrante do setor jurídico do Procon Marabá de 2011 a 2017 e desde 2017 exercendo a coordenadoria da instituição.</p>
           
           
-            "A prioridade é a vida, e a vida do consumidor não pode correr riscos, mas estar protegida como dispõe o <span class="text-negrito">Código de Defesa do Consumidor (CDC)</span> e a <span class="text-negrito">Constituição</span>. Trabalhamos com ações de prevenção e pós-prevenção diariamente afim de conciliar a relação de consumo entre os consumidores e fornecedores de serviços e produtos em Marabá, tornando maior a visibilidade sobre as ações do Procon.
+            <p class="textos-noticias" style="margin-bottom: 50px;">"A prioridade é a vida, e a vida do consumidor não pode correr riscos, mas estar protegida como dispõe o <span class="text-negrito">Código de Defesa do Consumidor (CDC)</span> e a <span class="text-negrito">Constituição</span>. Trabalhamos com ações de prevenção e pós-prevenção diariamente afim de conciliar a relação de consumo entre os consumidores e fornecedores de serviços e produtos em Marabá, tornando maior a visibilidade sobre as ações do Procon. </p>
           
           
-              A boa relação de consumo é predominante, pois o consumidor não pode se sentir lesado em seus direitos. A missão do Procon não é simplesmente multar nos casos de infração. O objetivo maior é a antecipação de fatos, criando políticas públicas voltadas ao bem-estar e segurança do consumidor.
-          </p>
+             <p class="textos-noticias" style="margin-bottom: 50px;"> A boa relação de consumo é predominante, pois o consumidor não pode se sentir lesado em seus direitos. A missão do Procon não é simplesmente multar nos casos de infração. O objetivo maior é a antecipação de fatos, criando políticas públicas voltadas ao bem-estar e segurança do consumidor. </p>
+          
          
           <!-- Imagem Zélia Lopes -->
               <img
@@ -183,16 +219,20 @@
                 alt="Zélia Lopes, coordenadora do Procon Marabá"
                 class="w-full h-auto shadow-md"
               />
-              <p class="texto-vermelho mt-2 text-center">
-                Zélia Lopes: "A boa relação de consumo é prioridade em nossa interação"
+              <p class="textos-noticias texto-vermelho mt-2 ">
+                Zélia Lopes: "A boa relação de consumo é prioridade em nossa interação com o comércio e os consumidores
+                 no Procon Marabá"
               </p>
               <br>
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                A única ocorrência negativa foi a versão de nossa presença feminina comandando uma ação em que fomos obrigados a instalar e dar destino final a grande quantidade de cervejas vencidas, impróprias para a comercialização e consumo humano colocando risco à saúde. A relutância sobre nossa atuação foi contornada graças à presença da Guarda Municipal, parceira constante no suporte e segurança da fiscalização do Procon e Vigilância Sanitária nas incursões de preservação dos direitos do consumidor, saúde e vida.
+              <p class="textos-noticias">
+                A única ocorrência negativa foi a versão de nossa presença feminina comandando uma ação em que fomos obrigados a instalar e dar destino final a grande quantidade de cervejas vencidas, impróprias para a comercialização e consumo humano colocando risco à saúde. A relutância sobre nossa atuação foi contornada graças à presença da Guarda Municipal, parceira constante no suporte e segurança da fiscalização do Procon e Vigilância Sanitária nas incursões de <span style="font-weight: bold;">preservação dos direitos do consumidor, saúde e vida.</span> <br>
               </p>
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+              
+              <br>
+              
+              <p class="textos-noticias">
               Os comerciantes marabaenses compreendem que a fiscalização nos estabelecimentos é uma estratégia de marketing forte e positiva capaz de aumentar as vendas ao tornar público nossa visita não tendo alterações, mas a revelar o zelo, qualidade e segurança de seus produtos e serviços ao consumidor, fidelizando e atraindo novos consumidores.
-              Ouvimos diversas sugestões, inclusive a criação do selo “Amigos do PROCON” , confirmando nossa visita e a comprovação da normalidade e segurança do estabelecimento, por ocasião de referência à boa relação de consumo”, conclui Zélia Lopes.
+              Ouvimos diversas sugestões, inclusive a criação do selo <span style="font-weight: bold;">“Amigos do PROCON”</span> , confirmando nossa visita e a comprovação da normalidade e segurança do estabelecimento, por ocasião de referência à boa relação de consumo”, conclui Zélia Lopes.
               </p>
 
           <!-- Destaque -->
@@ -213,14 +253,18 @@
       </div>
 
              <!-- Vídeo Institucional -->
-          <div class="my-8 flex justify-center">
+            <div class="my-8 flex">
             <video
               class="rounded-lg shadow-md"
               style="
-                max-width: 450px;
+                max-width: 300px;
                 width: 100%;
                 height: 250px;
                 object-fit: cover;
+                margin-left: 250px;
+                border-radius: 0;
+                
+                
               "
               controls
             >
@@ -405,7 +449,7 @@
       </div>
 
       <!-- Botão voltar -->
-      <div class="mt-12 pt-8 border-t border-gray-200">
+      <!-- <div class="mt-12 pt-8 border-t border-gray-200">
         <a
           href="index.html"
           class="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold text-sm md:text-base"
@@ -413,7 +457,7 @@
           <i class="fas fa-arrow-left"></i>
           Voltar para o Portal
         </a>
-      </div>
+      </div> -->
     </article>
 
     <!-- Anuncio -->
@@ -439,14 +483,15 @@
                   <img src="../assets/Imagem 7_ (1).png" 
                        alt="Notícias" 
                        class="object-cover flex-shrink-0"
-                       style="width: 80px; height: 80px;">
+                       style="width: 80px; height: 80px; margin-top: 20px;">
                   <div style="flex: 1;">
                     <h4 class="text-sm font-bold text-gray-900 mb-1">Notícias</h4>
                     <div class="h-1 bg-green-600 mb-2" style="width: 50px;"></div>
-                    <p class="text-xs text-gray-900" style="line-height: 1.4;">
-                      Expansão da doença <span style="font-weight: bold;">Leishmaniose</span> pode causar
-                      <span style="font-weight: bold;">óbitos em pets</span>
-                    </p>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                  Expansão da doença <span class="font-bold">Leishmaniose</span> pode causar
+                  <span class="font-bold">óbitos em pets</span> ameaçando também 
+                  <span class="font-bold">humanos</span>. Prevenção começa 
+                  <span class="font-bold">em casa</span>
                   </div>
                 </div>
               </a>
@@ -459,13 +504,11 @@
                   <img src="../assets/Imagem 8.png" 
                        alt="Notícias" 
                        class="object-cover flex-shrink-0"
-                       style="width: 80px; height: 80px;">
+                       style="width: 80px; height: 80px; margin-top: 2px;">
                   <div style="flex: 1;">
                     <h4 class="text-sm font-bold text-gray-900 mb-1">Notícias</h4>
                     <div class="h-1 bg-green-600 mb-2" style="width: 50px;"></div>
-                    <p class="text-xs text-gray-900" style="line-height: 1.4;">
-                      Expansão da doença <span style="font-weight: bold;">Leishmaniose</span> pode causar
-                      <span style="font-weight: bold;">óbitos em pets</span>
+                    Cirurgia Refrativa</span> marca a excelência em Marabá do procedimento capaz de <span style="font-weight: bold;">eliminar</span> o uso dos <span style="font-weight: bold;">óculos</span>
                     </p>
                   </div>
                 </div>
@@ -479,26 +522,32 @@
                   <img src="../assets/Imagem 9.png" 
                        alt="Notícias" 
                        class="object-cover flex-shrink-0"
-                       style="width: 80px; height: 80px;">
+                       style="width: 80px; height: 80px; margin-top: 30px;">
                   <div style="flex: 1;">
                     <h4 class="text-sm font-bold text-gray-900 mb-1">Notícias</h4>
                     <div class="h-1 bg-green-600 mb-2" style="width: 50px;"></div>
-                    <p class="text-xs text-gray-900" style="line-height: 1.4;">
-                      Expansão da doença <span style="font-weight: bold;">Leishmaniose</span> pode causar
-                      <span style="font-weight: bold;">óbitos em pets</span>
+                    <p class="text-sm md:text-lg text-gray-900" style="line-height: 1.5; max-height: 6em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">
+                      <span style="font-weight: bold;">Mix Importados</span> inaugura megaloja com <span style="font-weight: bold;">Preços imbatíveis</span> Para a <span style="font-weight: bold;">Black Friday</span> e compras de <span style="font-weight: bold;">Natal</span>
                     </p>
+                    
                   </div>
                 </div>
               </a>
                 <!-- Vídeo Institucional -->
-          <div class="my-8 flex justify-center">
+          
+
+                  <div class="my-8 flex">
             <video
               class="rounded-lg shadow-md"
               style="
-                max-width: 450px;
+                max-width: 300px;
                 width: 100%;
                 height: 250px;
                 object-fit: cover;
+                
+                border-radius: 0;
+                
+                
               "
               controls
             >
@@ -509,6 +558,11 @@
               Seu navegador não suporta a reprodução de vídeos.
             </video>
           </div>
+
+
+
+
+
             </div>
           </div>
         </aside>

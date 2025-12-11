@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jornal Marabá - Portal de Notícias</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -163,7 +166,7 @@
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center justify-center">
           <div class="bg-green-600 h-[2px] flex-1"></div>
-          <nav class="flex justify-center flex-shrink-0 text-sm  space-x-1 mx-3" style="font-family: 'Calibri', Arial, sans-serif; font-size: 1.6rem;">
+          <nav class="flex justify-center flex-shrink-0 text-sm  space-x-1 m" style="font-family: 'Calibri', Arial, sans-serif; font-size: 1.6rem;">
             <a href="#" class="text--700 hover:text-green-500">cidadania</a>
             <a href="">-</a>
             <a href="#" class="text-700 hover:text-green-500">comércio</a>
@@ -721,49 +724,7 @@
         });
       }
 
-      // Funções de Acessibilidade
-      let tamanhoFonte =80;
-      let contrasteAtivo = false;
-
-      function aumentarFonte() {
-        if (tamanhoFonte < 150) {
-          tamanhoFonte += 10;
-          document.documentElement.style.fontSize = tamanhoFonte + '%';
-        }
-      }
-
-      function diminuirFonte() {
-        if (tamanhoFonte > 80) {
-          tamanhoFonte -= 10;
-          document.documentElement.style.fontSize = tamanhoFonte + '%';
-        }
-      }
-
-      function toggleContraste() {
-        contrasteAtivo = !contrasteAtivo;
-        if (contrasteAtivo) {
-          document.body.style.filter = 'invert(1) hue-rotate(180deg)';
-        } else {
-          document.body.style.filter = 'none';
-        }
-      }
-
-      function abrirLibras() {
-        alert('Funcionalidade de tradução em Libras será implementada em breve!');
-        // Aqui você pode integrar com VLibras: https://www.vlibras.gov.br/
-      }
-
-      function infoAcessibilidade() {
-        alert('Recursos de Acessibilidade:\n\n• A+ / A- : Aumentar e diminuir tamanho da fonte\n• Alto Contraste: Inverter cores para melhor visualização\n• Libras: Tradução em Língua Brasileira de Sinais\n• Este ícone: Informações sobre acessibilidade');
-      }
-
-      function contato() {
-        // Redireciona para o WhatsApp do Jornal Marabá
-        // Substitua o número abaixo pelo número real do jornal (formato: 5594XXXXXXXXX)
-        const numeroWhatsApp = '5594991338686'; // Número da Loja 1
-        const mensagem = encodeURIComponent('Olá! Gostaria de mais informações sobre o Jornal Marabá.');
-        window.open(`https://wa.me/${numeroWhatsApp}?text=${mensagem}`, '_blank');
-      }
+   
 
       // Banner de Cookies
       function checkCookieConsent() {
@@ -859,37 +820,83 @@
     </script>
 
 
-          <!-- Ícones de Acessibilidade -->
-          <div class="fixed right-2 md:right-6 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3">
-            
-            <!-- Libras -->
-            <button 
-              onclick="abrirLibras()" 
-              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
-              title="Tradução em Libras"
-            >
-              <img src="../assets/acessibilidade1.png" alt="Libras" class="w-6 h-6 md:w-8 md:h-8 object-contain">
-            </button>
-            
-            <!-- Informações de Acessibilidade -->
-            <button 
-              onclick="infoAcessibilidade()" 
-              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-transparent border-2 border-green-600" 
-              title="Informações de Acessibilidade"
-            >
-              <img src="../assets/image.png" alt="Acessibilidade" class="w-6 h-6 md:w-8 md:h-8 object-contain">
-            </button>
+<!-- ÍCONES DE ACESSIBILIDADE -->
+<div class="fixed right-2 md:right-6 top-1/4 transform -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3">
+  
+  <!-- LIBRAS -->
+  <button 
+    onclick="abrirLibras()" 
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+    title="Tradução em Libras"
+  >
+    <img src="../assets/acessibilidade1.png" alt="Libras" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+  </button>
+  
+  <!-- Informações de Acessibilidade -->
+  <button 
+    onclick="infoAcessibilidade()" 
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+    title="Informações de Acessibilidade"
+  >
+    <img src="../assets/image.png" alt="Acessibilidade" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+  </button>
 
-            <!-- WhatsApp / Contato -->
-            <button 
-              onclick="contato()" 
-              class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
-              title="Fale Conosco via WhatsApp"
-            >
-              <img src="../assets/whats-lateral.png" alt="WhatsApp" class="w-6 h-6 md:w-8 md:h-8 object-contain">
-            </button>
-            
-          </div> <!-- fim acessibilidade-->
+  <!-- WhatsApp -->
+  <button 
+    onclick="contato()" 
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+    title="Fale Conosco via WhatsApp"
+  >
+    <img src="../assets/whats-lateral.png" alt="WhatsApp" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+  </button>
+  
+</div>
+
+         
+
+<!-- VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="vlibras-plugin-button"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+
+<script src="./acessibilidade.js"></script>
+
+<!-- VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="vlibras-plugin-button"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
 
   </body>
+
+  <!-- VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="vlibras-plugin-button"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
 </html>

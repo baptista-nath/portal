@@ -45,11 +45,25 @@ function fecharAcessibilidade() {
 
 // Abrir VLibras
 function abrirLibras() {
-  const botao = document.querySelector("[vw-access-button]");
+  // Primeiro, tenta selecionar o botão do VLibras
+  const botao = document.querySelector('[vw-access-button]');
+  
   if (botao) {
+    // Clica no botão para abrir o widget
     botao.click();
   } else {
-    alert("VLibras ainda não carregou.");
+    // Se o botão não for encontrado, tenta inicializar o VLibras novamente
+    console.warn('Botão VLibras não encontrado. Tentando reinicializar...');
+    
+    // Aguarda um pouco e tenta novamente
+    setTimeout(() => {
+      const botaoRetry = document.querySelector('[vw-access-button]');
+      if (botaoRetry) {
+        botaoRetry.click();
+      } else {
+        alert("VLibras ainda não carregou. Por favor, aguarde alguns segundos e tente novamente.");
+      }
+    }, 1000);
   }
 }
 

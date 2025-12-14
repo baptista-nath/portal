@@ -779,40 +779,56 @@
   
   
   <!-- VLibras -->
-  <div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
+        <div vw class="enabled">
+           <div vw-access-button class="w-10 h-10 md:w-12 md:h-12 "></div>
+           <div vw-plugin-wrapper>
+           <div class="vw-plugin-top-wrapper"></div>
+           </div>
+        </div>
+
+
+
+        <!-- MODAL ACESSIBILIDADE -->
+<div
+  id="modalAcessibilidade"
+  class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="bg-white max-w-md w-full mx-4 rounded-xl p-6 shadow-lg">
+    <h2 class="text-lg font-bold mb-3">
+      Recursos de Acessibilidade
+    </h2>
+
+    <ul class="text-sm space-y-2">
+      <li><strong>A+ / A-</strong> — Ajuste do tamanho da fonte</li>
+      <li><strong>Alto contraste</strong> — Melhora a visualização</li>
+      <li><strong>Libras</strong> — Tradução automática com VLibras</li>
+      <li><strong>Este ícone</strong> — Informações sobre acessibilidade</li>
+    </ul>
+
+    <button
+      onclick="fecharAcessibilidade()"
+      class="mt-5 w-full bg-green-600 text-white py-2 rounded-lg"
+    >
+      Fechar
+    </button>
   </div>
-  </div>
+</div>
 
  
+
+
+
+
+
+
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 
-
-
-
-
-<div id="acessibilidade"></div>
-
-<script>
-  fetch("/includes/acessibilidade.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("acessibilidade").innerHTML = html;
-    });
-</script>
-
-<script src="/js/acessibilidade.js"></script>
-
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget("https://vlibras.gov.br/app");
-</script>
-
+<script src="./js/acessibilidade.js"></script>
  </body>
 
 

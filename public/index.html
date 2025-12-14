@@ -169,8 +169,8 @@
       <div class="max-w-7xl mx-auto px-4">
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center justify-center">
-          <div class="bg-green-600 h-[2px] flex-1"></div>
-          <nav class="flex justify-center flex-shrink-0 text-sm  space-x-1 m" style="font-family: 'Calibri', Arial, sans-serif; font-size: 1.6rem;">
+          <div class="bg-green-600 h-[2px] flex-1 mr-[40px]"></div>
+          <nav class="flex justify-center flex-shrink-0 text-sm  space-x-1 m" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:1.6rem; font-weight: bold;">
             <a href="#" class="text--700 hover:text-green-500">cidadania</a>
             <a href="">-</a>
             <a href="#" class="text-700 hover:text-green-500">comércio</a>
@@ -182,11 +182,11 @@
             <a href="">-</a>
             <a href="#" class="text--700 hover:text-green-500">saúde</a>
             <a href="">-</a>
-            <a href="#" class="text--700 hover:text-green-500">colonista</a>
+            <a href="#" class="text--700 hover:text-green-500">colunista</a>
             <a href="">-</a>
             <a href="#" class="text--700 hover:text-green-500">fala povo</a>
           </nav>
-          <div class="bg-green-600 h-[2px] flex-1"></div>
+          <div class="bg-green-600 h-[2px] flex-1 ml-[40px]"></div>
         </div>
 
         <!-- Mobile Menu -->
@@ -279,27 +279,27 @@
           <p class="text-sm md:text-lg font-medium">
             <span class="font-bold text-green-700">Loja 1</span> - 
             <span class="text-red-600">Bairro Independência</span> - 
-            <span class="text-black">(94) 991 33 86 86</span>
+            <span class="text-black"><span style="font-size: 12pt;">(94)</span> 991 33 86 86</span>
           </p>
           <p class="text-sm md:text-lg font-medium">
             <span class="font-bold text-green-700">Loja 2</span> - 
             <span class="text-red-600">Bairro Novo Horizonte - Av. Tocantins 918</span> - 
-            <span class="text-black">(94) 991 06 28 70</span>
+            <span class="text-black"><span style="font-size: 12pt;">(94)</span> 991 06 28 70</span>
           </p>
           <p class="text-sm md:text-lg font-medium">
             <span class="font-bold text-green-700">Loja 3</span> - 
             <span class="text-red-600">Bairro Belo Horizonte - Av. Amazonas 1.607</span> - 
-            <span class="text-black">(94) 993 02 69 88</span>
+            <span class="text-black"><span style="font-size: 12pt;">(94)</span> 993 02 69 88</span>
           </p>
           <p class="text-sm md:text-lg font-medium">
             <span class="font-bold text-green-700">Loja 4</span> - 
             <span class="text-red-600">Bairro Vila Militar Presidente Médici</span> - 
-            <span class="text-black">(94) 991 34 86 11</span>
+            <span class="text-black"><span style="font-size: 12pt;">(94)</span> 991 34 86 11</span>
           </p>
           <p class="text-sm md:text-lg font-medium">
             <span class="font-bold text-green-700">Loja 5</span> - 
             <span class="text-red-600">Rodovia Transamazônica, BR 230, n° 36.385</span> - 
-            <span class="text-black">(94) 992 72 24 62</span>
+            <span class="text-black"><span style="font-size: 12pt;">(94)</span> 992 72 24 62</span>
           </p>
         </div>
       </div>
@@ -412,7 +412,7 @@
             <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
               <a href="#" class="block hover:opacity-80 transition-opacity">
                 <div style="display: flex; gap: 8px; align-items: flex-start;">
-                  <img src="../assets/Imagem 7_ (1).png" 
+                  <img src="../assets/Imagem 7_ (1).png " 
                        alt="Notícias" 
                        class="object-cover flex-shrink-0"
                        style="width: 120px; height: 120px; margin-top: 42px;">
@@ -444,7 +444,7 @@
             <div class="bg-white p-3" style="flex: 1; display: flex; flex-direction: column;">
               <a href="noticia-prefeito-tonicunha.html" class="block hover:opacity-80 transition-opacity">
                 <div style="display: flex; gap: 8px; align-items: flex-start;">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=100&fit=crop" 
+                  <img src="../assets/Toni.png" 
                        alt="Política" 
                        class="object-cover flex-shrink-0"
                        style="width: 120px; height: 120px; margin-top: 42px;">
@@ -827,39 +827,72 @@
 
 <!-- ÍCONES DE ACESSIBILIDADE -->
 <div class="fixed right-2 md:right-6 top-1/4 transform -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3">
-  
-  <!-- LIBRAS -->
-  <button 
-    onclick="abrirLibras()" 
-    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+
+  <!-- Libras -->
+  <button
+    onclick="abrirLibras()"
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white"
     title="Tradução em Libras"
+    aria-label="Ativar tradução em Libras"
   >
-    <img src="../assets/acessibilidade1.png" alt="Libras" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+    <img src="../assets/acessibilidade1.png" alt="" class="w-6 h-6 md:w-8 md:h-8 object-contain">
   </button>
-  
+
   <!-- Informações de Acessibilidade -->
-  <button 
-    onclick="infoAcessibilidade()" 
-    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+  <button
+    onclick="infoAcessibilidade()"
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white"
     title="Informações de Acessibilidade"
+    aria-label="Informações sobre acessibilidade"
   >
-    <img src="../assets/image.png" alt="Acessibilidade" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+    <img src="../assets/image.png" alt="" class="w-6 h-6 md:w-8 md:h-8 object-contain">
   </button>
 
   <!-- WhatsApp -->
-  <button 
-    onclick="contato()" 
-    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white" 
+  <button
+    onclick="contato()"
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white"
     title="Fale Conosco via WhatsApp"
+    aria-label="Contato via WhatsApp"
   >
-    <img src="../assets/whats-lateral.png" alt="WhatsApp" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+    <img src="../assets/whats-lateral.png" alt="" class="w-6 h-6 md:w-8 md:h-8 object-contain">
   </button>
-  
+
 </div>
 
-         
+
+<!-- MODAL ACESSIBILIDADE -->
+<!-- MODAL ACESSIBILIDADE -->
+<div
+  id="modalAcessibilidade"
+  class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="bg-white max-w-md w-full mx-4 rounded-xl p-6 shadow-lg">
+    <h2 class="text-lg font-bold mb-3">
+      Recursos de Acessibilidade
+    </h2>
+
+    <ul class="text-sm space-y-2">
+      <li><strong>A+ / A-</strong> — Ajuste do tamanho da fonte</li>
+      <li><strong>Alto contraste</strong> — Melhora a visualização</li>
+      <li><strong>Libras</strong> — Tradução automática com VLibras</li>
+      <li><strong>Este ícone</strong> — Informações sobre acessibilidade</li>
+    </ul>
+
+    <button
+      onclick="fecharAcessibilidade()"
+      class="mt-5 w-full bg-green-600 text-white py-2 rounded-lg"
+    >
+      Fechar
+    </button>
+  </div>
+</div>
+
 
 <!-- VLibras -->
+<<!-- VLibras -->
 <div vw class="enabled">
   <div vw-access-button class="vlibras-plugin-button"></div>
   <div vw-plugin-wrapper>
@@ -869,39 +902,19 @@
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
+  new window.VLibras.Widget("https://vlibras.gov.br/app");
 </script>
 
 
-<script src="./acessibilidade.js"></script>
 
-<!-- VLibras -->
-<div vw class="enabled">
-  <div vw-access-button class="vlibras-plugin-button"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
+
+
+
+
 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
 
+<script src="./js/acessibilidade.js"></script>
 
-  </body>
-
-  <!-- VLibras -->
-<div vw class="enabled">
-  <div vw-access-button class="vlibras-plugin-button"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
-
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
-</script>
-
+</body>
 </html>

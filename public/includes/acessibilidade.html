@@ -1,0 +1,68 @@
+<!-- ÍCONES DE ACESSIBILIDADE -->
+<div class="fixed right-2 md:right-6 top-1/4 transform -translate-y-1/2 z-50 flex flex-col gap-2 md:gap-3">
+
+  <!-- Libras -->
+  <button
+    onclick="abrirLibras()"
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white"
+    title="Tradução em Libras"
+    aria-label="Ativar tradução em Libras"
+  >
+    <img src="/assets/acessibilidade1.png" alt="" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+  </button>
+
+  <!-- Informações -->
+  <button
+    onclick="infoAcessibilidade()"
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white"
+    title="Informações de Acessibilidade"
+    aria-label="Informações sobre acessibilidade"
+  >
+    <img src="/assets/image.png" alt="" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+  </button>
+
+  <!-- WhatsApp -->
+  <button
+    onclick="contato()"
+    class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full shadow-lg transition-all hover:scale-110 bg-white"
+    title="Fale Conosco via WhatsApp"
+    aria-label="Contato via WhatsApp"
+  >
+    <img src="/assets/whats-lateral.png" alt="" class="w-6 h-6 md:w-8 md:h-8 object-contain">
+  </button>
+
+</div>
+
+<!-- MODAL ACESSIBILIDADE -->
+<div
+  id="modalAcessibilidade"
+  class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50"
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="bg-white max-w-md w-full mx-4 rounded-xl p-6 shadow-lg">
+    <h2 class="text-lg font-bold mb-3">Recursos de Acessibilidade</h2>
+
+    <ul class="text-sm space-y-2">
+      <li><strong>A+ / A-</strong> — Ajuste do tamanho da fonte</li>
+      <li><strong>Alto contraste</strong> — Melhora a visualização</li>
+      <li><strong>Libras</strong> — Tradução automática com VLibras</li>
+      <li><strong>Este ícone</strong> — Informações sobre acessibilidade</li>
+    </ul>
+
+    <button
+      onclick="fecharAcessibilidade()"
+      class="mt-5 w-full bg-green-600 text-white py-2 rounded-lg"
+    >
+      Fechar
+    </button>
+  </div>
+</div>
+
+<!-- VLibras -->
+<div vw class="enabled">
+  <div vw-access-button class="vlibras-plugin-button"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>

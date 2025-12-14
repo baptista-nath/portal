@@ -172,19 +172,22 @@
           </div>
 
         <!-- Imagem principal -->
-      <div class="mb-8 flex justify-start" >
+      <div class=" flex justify-start" style="margin-bottom: -50px;" >
         <div class="w-full">
           <img
             src="../assets/prefeito/img-principal.png"
             alt="Código de Defesa do Consumidor"
             class="w-full h-auto shadow-md mx-auto"
+            
            
           />
+
+          <p class="text-lg font-semibold" style=" font-size: 8pt;"> <span style="font-size: 9pt;">Por: <span style="font-size: 8pt; font-style: italic;"> Carlos Santos*</span></p>
+
          
 
           <div class="flex items-center space-x-3" style="height: 80px;">
-          <img src="../assets/Logo.webp" alt="Logo" class="w-12 h-8">
-          <p class="text-lg font-semibold" style="margin-top: 18px; font-size: 8pt;"> <span style="font-size: 9pt;">Da Redação</span> / Por: <span style="font-size: 8pt; font-style: italic;"> Carlos Santos*</span></p>
+          
 </div>
 
 
@@ -193,10 +196,10 @@
       </div>
 
       <!-- Conteúdo -->
-      <div class="flex justify-start">
+      <div class="flex justify-start" >
         <div class="w-full" >
 
-          <p class="notícias">
+          <p class="notícias" ">
             A atual <span class="text-negrito">política de Marabá</span> motivada pela troca de cadeiras no Poder Executivo envolve tramas com fatos inusitados, mas previsíveis. 
             Episódios, atores principais e meros figurantes integram o palco político guardando semelhanças com personagens de um quadro cubista do mestre do surrealismo espanhol Salvador Dalí: <span>sem pé e nem cabeça</span>.
             E lembrando a frase de filósofo alemão Friedrich Nietzsche, <span class="text-negrito">“Contra fatos não restam argumentos”</span>; vamos aos fatos. <br><br>
@@ -260,13 +263,13 @@
                 "
                 
               />
-             <div style="width: 85%;">
-                 <p class="texto-vermelho" style="width: 85%;">
+             
+                 <p class="texto-vermelho textos-noticias" style="margin-top: 20px;">
                Novas ambulâncias e unidades de saúde móvel estarão
             transitando e atendendo a zona urbana e rural de Marabá
 
               </p>
-             </div>
+             
 
               <br>
               <p class="textos-noticias">
@@ -353,16 +356,19 @@
                     *Carlos Santos
 
                 </p>
+
+
+              <div style="display: flex; gap: 30px; align-items: center;">  
               <img
                 src="../assets/prefeito/imagem 5.png"
                 alt="Zélia Lopes, coordenadora do Procon Marabá"
                 class="w-full h-auto shadow-md"
                 style="width: 30%;
                 height: 300px;"
-                
-              />
+                />
 
-              <div style="width: 75%; color: #c00000; font-style: italic;">
+
+                 <div style=" color: #c00000; font-style: italic;">
                 <p class="textos-noticias" style="margin-top: 20px;">
                 É ex-militar do Exército, palestrante, especialista em Marketing
                 Político, diretor e fundador de jornais impressos no Rio de janeiro,
@@ -376,6 +382,11 @@
 
               </p>
               </div>
+
+
+
+            </div>
+             
               
              
 
@@ -764,33 +775,46 @@
             
           </div> <!-- fim acessibilidade-->
   
-          <!-- VLibras -->
-  <div vw class="enabled">
-  <div vw-access-button class="vlibras-plugin-button"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-  </div>
+ 
   
   
   <!-- VLibras -->
   <div vw class="enabled">
-  <div vw-access-button class="vlibras-plugin-button"></div>
+  <div vw-access-button class="active"></div>
   <div vw-plugin-wrapper>
     <div class="vw-plugin-top-wrapper"></div>
   </div>
   </div>
-</div>
-  </body>
+
+ 
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
   new window.VLibras.Widget('https://vlibras.gov.br/app');
 </script>
 
+
+
+
+
+<div id="acessibilidade"></div>
+
+<script>
+  fetch("/includes/acessibilidade.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("acessibilidade").innerHTML = html;
+    });
+</script>
+
+<script src="/js/acessibilidade.js"></script>
+
 <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 <script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app');
+  new window.VLibras.Widget("https://vlibras.gov.br/app");
 </script>
+
+ </body>
+
 
 
 </html>
